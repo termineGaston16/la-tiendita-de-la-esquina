@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {}
+html {
+  scroll-behavior: smooth;
+}
+
+/* IMPORTS */
+.headerIndex .menuNavIndexFondoNegro {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.659);
+  z-index: 10;
+}
+.headerIndex .menuNavOpen {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 20%;
+  height: 100%;
+  z-index: 15;
+}
+
+/*# sourceMappingURL=estilo.css.map */
