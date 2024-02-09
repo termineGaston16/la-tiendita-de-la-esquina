@@ -1,22 +1,162 @@
 .headerIndex {
-    .menuNavIndexFondoNegro {
-        position: fixed;
-        top: 0px;
-        left: 0px;
+    background-color: white;
+    box-shadow: 0px 0px 20px white;
 
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.659);
-        z-index: 10;
+    .headerIndexNav {
+
+        /* Menu header */
+        .menuHeader {
+            .menuHeaderContenedorBtn {
+                .menuHeaderBtn {
+                    background-color: black;
+                    border: 1px solid black;
+                    border: none;
+                    color: white;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: white;
+                        color: black;
+                        box-shadow: 0px 0px 10px black;
+                    }
+                }
+            }
+
+            .menuHeaderForm {
+                width: 50%;
+
+                .menuHeaderFormInput {
+                    background-color: rgb(19, 19, 19);
+                    color: white;
+
+                    &::placeholder {
+                        color: white;
+                    }
+
+                    &::-webkit-search-cancel-button {
+                        display: none;
+                    }
+
+                    &:focus {
+                        box-shadow: 0px 0px 0px white;
+                        border: 1px solid white;
+                    }
+                }
+
+                .menuHeaderFormInputBtn {
+                    background-color: white;
+                    color: black;
+                    border: 1px solid black;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                        text-shadow: 0px 0px 2px white;
+                    }
+                }
+            }
+        }
+
+        /* fondo del nav */
+        .menuNavIndexFondoNegro {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.659);
+            z-index: 10;
+        }
+
+        /* Menu Nav */
+        .menuNavOpen {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+
+            width: 20%;
+            height: 100%;
+            z-index: 15;
+
+            background-color: black;
+            transform: translateX(-100%);
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+            .menuNavOpenLink {
+                width: 100%;
+
+                .menuNavOpenLinkImg {
+                    width: 100%;
+                }
+            }
+
+            .menuNavOpenUl {
+                .menuNavOpenUlLi {
+                    .menuNavOpenUlLiLink {
+                        color: white;
+                        transition: 0.3s;
+
+                        &:hover {
+                            background-color: white;
+                            border-radius: 15px;
+                            box-shadow: 0px 0px 5px white;
+                        }
+                    }
+
+                    .hoverLink {
+                        &:hover {
+                            color: aqua;
+                            text-shadow: 0px 0px 5px aqua;
+                        }
+                    }
+
+                    .playLink {
+                        &:hover {
+                            color: blue;
+                            text-shadow: 0px 0px 5px blue;
+                        }
+                    }
+
+                    .nintendoLink {
+                        &:hover {
+                            color: red;
+                            text-shadow: 0px 0px 5px red;
+                        }
+                    }
+
+                    .xboxLink {
+                        &:hover {
+                            color: rgb(26, 255, 0);
+                            text-shadow: 0px 0px 5px rgb(26, 255, 0);
+                        }
+                    }
+                }
+            }
+
+            .menuNavOpenPerfil {
+                .menuNavOpenPerfilLink {
+                    color: white;
+                    transition: 0.3s;
+                    border-radius: 15px;
+                    padding: 5%;
+
+                    &:hover {
+                        color: black;
+                        background-color: white;
+                        box-shadow: 0px 0px 5px white;
+                    }
+                }
+            }
+        }
+
+        .menuNavOpen.open {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+
     }
 
-    .menuNavOpen {
-        position: fixed;
-        top: 0px;
-        left: 0px;
-
-        width: 20%;
-        height: 100%;
-        z-index: 15;
-    }
 }

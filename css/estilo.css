@@ -1,15 +1,72 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
 }
 
-@font-face {}
+@font-face {
+  font-family: "Didact Gothic", sans-serif;
+}
 html {
   scroll-behavior: smooth;
 }
 
 /* IMPORTS */
-.headerIndex .menuNavIndexFondoNegro {
+.bodyIndex {
+  background-color: rgb(14, 14, 14);
+  font-family: "Didact Gothic", sans-serif;
+}
+
+.headerIndex {
+  background-color: white;
+  box-shadow: 0px 0px 20px white;
+}
+.headerIndex .headerIndexNav {
+  /* Menu header */
+  /* fondo del nav */
+  /* Menu Nav */
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderContenedorBtn .menuHeaderBtn {
+  background-color: black;
+  border: 1px solid black;
+  border: none;
+  color: white;
+  transition: 0.3s;
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderContenedorBtn .menuHeaderBtn:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0px 0px 10px black;
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderForm {
+  width: 50%;
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderForm .menuHeaderFormInput {
+  background-color: rgb(19, 19, 19);
+  color: white;
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderForm .menuHeaderFormInput::placeholder {
+  color: white;
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderForm .menuHeaderFormInput::-webkit-search-cancel-button {
+  display: none;
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderForm .menuHeaderFormInput:focus {
+  box-shadow: 0px 0px 0px white;
+  border: 1px solid white;
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderForm .menuHeaderFormInputBtn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+.headerIndex .headerIndexNav .menuHeader .menuHeaderForm .menuHeaderFormInputBtn:hover {
+  background-color: black;
+  color: white;
+  text-shadow: 0px 0px 2px white;
+}
+.headerIndex .headerIndexNav .menuNavIndexFondoNegro {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -18,13 +75,192 @@ html {
   background-color: rgba(0, 0, 0, 0.659);
   z-index: 10;
 }
-.headerIndex .menuNavOpen {
+.headerIndex .headerIndexNav .menuNavOpen {
   position: fixed;
   top: 0px;
   left: 0px;
   width: 20%;
   height: 100%;
   z-index: 15;
+  background-color: black;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenLink {
+  width: 100%;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenLink .menuNavOpenLinkImg {
+  width: 100%;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenUl .menuNavOpenUlLi .menuNavOpenUlLiLink {
+  color: white;
+  transition: 0.3s;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenUl .menuNavOpenUlLi .menuNavOpenUlLiLink:hover {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px white;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenUl .menuNavOpenUlLi .hoverLink:hover {
+  color: aqua;
+  text-shadow: 0px 0px 5px aqua;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenUl .menuNavOpenUlLi .playLink:hover {
+  color: blue;
+  text-shadow: 0px 0px 5px blue;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenUl .menuNavOpenUlLi .nintendoLink:hover {
+  color: red;
+  text-shadow: 0px 0px 5px red;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenUl .menuNavOpenUlLi .xboxLink:hover {
+  color: rgb(26, 255, 0);
+  text-shadow: 0px 0px 5px rgb(26, 255, 0);
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenPerfil .menuNavOpenPerfilLink {
+  color: white;
+  transition: 0.3s;
+  border-radius: 15px;
+  padding: 5%;
+}
+.headerIndex .headerIndexNav .menuNavOpen .menuNavOpenPerfil .menuNavOpenPerfilLink:hover {
+  color: black;
+  background-color: white;
+  box-shadow: 0px 0px 5px white;
+}
+.headerIndex .headerIndexNav .menuNavOpen.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.mainIndex {
+  /* Portadas */
+  /* Descripción */
+  /* Catálogo */
+}
+.mainIndex .mainIndexPortadas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid white;
+  margin: 5% 0px;
+  overflow: hidden;
+  background-color: white;
+  /* Logo Cargando */
+  /* Imagenes Cargadas */
+}
+.mainIndex .mainIndexPortadas .mainIndexPortadasContenedor {
+  background-color: black;
+  box-shadow: 0px 0px 5px black;
+  margin: 2px;
+}
+.mainIndex .mainIndexPortadas .mainIndexPortadasPart1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.mainIndex .mainIndexPortadas .mainIndexPortadasPart1 .mainIndexPortadasPart1Img {
+  width: 90%;
+}
+.mainIndex .mainIndexPortadas .mainIndexPortadasPart2 {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.mainIndex .mainIndexDescripcion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5% 0px;
+}
+.mainIndex .mainIndexDescripcion .mainIndexDescripcionTitle, .mainIndex .mainIndexDescripcion .mainIndexDescripcionText {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  text-align: center;
+}
+.mainIndex .mainIndexCatalogoContendor {
+  margin: 5% 0px;
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(50, 50, 50);
+  border-radius: 15px;
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorLogo .mainIndexCatalogoContendorLogoSvg {
+  width: 50%;
+  height: 50%;
+  color: white;
+}
+.mainIndex .mainIndexCatalogoContendor .logoPlay {
+  background-color: rgb(0, 204, 255);
+  box-shadow: 0px 0px 10px rgb(0, 204, 255);
+}
+.mainIndex .mainIndexCatalogoContendor .logoNintendo {
+  background-color: red;
+  box-shadow: 0px 0px 10px red;
+}
+.mainIndex .mainIndexCatalogoContendor .logoXbox {
+  background-color: rgb(30, 255, 0);
+  box-shadow: 0px 0px 10px rgb(30, 255, 0);
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsTitle, .mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsText {
+  color: black;
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsBtn {
+  background-color: black;
+  transition: 0.3s;
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsBtn .mainIndexCatalogoContendorTextsBtnLink {
+  color: white;
+  text-decoration: none;
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsBtn:hover {
+  transform: scale(0.9);
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .btnPlay {
+  background-color: rgb(0, 204, 255);
+  border: 1px solid rgb(0, 204, 255);
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .btnNintendo {
+  background-color: red;
+  border: 1px solid red;
+}
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .btnXbox {
+  background-color: rgb(30, 255, 0);
+  border: 1px solid rgb(30, 255, 0);
+}
+
+.footerGlobal .footerGlobalCopy {
+  color: aqua;
+  margin-left: 2%;
+  text-shadow: 0px 0px 5px aqua;
+}
+.footerGlobal .footerGlobalCopyUl {
+  margin-right: 2%;
+}
+.footerGlobal .footerGlobalCopyUl .footerGlobalCopyUlLi .footerGlobalCopyUlLiLink {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  transition: 0.3s;
+}
+.footerGlobal .footerGlobalCopyUl .footerGlobalCopyUlLi .footerGlobalCopyUlLiLink:hover {
+  transform: scale(0.9);
 }
 
 /*# sourceMappingURL=estilo.css.map */

@@ -1,0 +1,23 @@
+.footerGlobal{
+    .footerGlobalCopy{
+        color: aqua;
+        margin-left: 2%;
+        text-shadow: 0px 0px 5px aqua;
+    }
+
+    .footerGlobalCopyUl{
+        margin-right: 2%;
+
+        .footerGlobalCopyUlLi{
+            .footerGlobalCopyUlLiLink{
+                color: white;
+                text-shadow: 0px 0px 5px white;
+                transition: 0.3s;
+
+                &:hover{
+                    transform: scale(0.9);
+                }
+            }
+        }
+    }
+}

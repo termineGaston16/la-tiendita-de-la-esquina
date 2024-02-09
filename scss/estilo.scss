@@ -4,6 +4,7 @@
 }
 
 @font-face {
+    font-family: 'Didact Gothic', sans-serif;
 }
 
 html {
@@ -11,4 +12,4 @@ html {
 }
 
 /* IMPORTS */
-@import "header";
+@import "mixin","bodys","header","mains","footers";

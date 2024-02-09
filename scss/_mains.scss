@@ -1,0 +1,126 @@
+.mainIndex {
+
+    /* Portadas */
+    .mainIndexPortadas {
+        @include allCentro;
+        border: 5px solid white;
+
+        margin: 5% 0px;
+        overflow: hidden;
+        background-color: white;
+
+
+        /* Logo Cargando */
+        .mainIndexPortadasContenedor {
+            background-color: black;
+            box-shadow: 0px 0px 5px black;
+            margin: 2px;
+
+        }
+
+        /* Imagenes Cargadas */
+        .mainIndexPortadasPart1 {
+            @include allCentro;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+
+            .mainIndexPortadasPart1Img {
+                width: 90%;
+            }
+        }
+
+        .mainIndexPortadasPart2 {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+
+        }
+
+    }
+
+    /* Descripción */
+    .mainIndexDescripcion{
+        @include allCentro;
+        flex-direction: column;
+        margin: 5% 0px;
+
+        .mainIndexDescripcionTitle, .mainIndexDescripcionText{
+            color: white;
+            text-shadow: 0px 0px 5px white;
+            text-align: center;
+        }
+
+    }
+
+    /* Catálogo */
+    .mainIndexCatalogoContendor{
+        margin: 5% 0px;
+
+        .mainIndexCatalogoContendorLogo{
+            @include allCentro;
+            background-color: rgb(50, 50, 50);
+            border-radius: 15px;
+
+            .mainIndexCatalogoContendorLogoSvg{
+                width: 50%;
+                height: 50%;
+                color: white;
+            }
+        }
+        .logoPlay{
+            background-color: rgb(0, 204, 255);
+            box-shadow: 0px 0px 10px rgb(0, 204, 255);
+        }
+        .logoNintendo{
+            background-color: red;
+            box-shadow: 0px 0px 10px red;
+        }
+        .logoXbox{
+            background-color: rgb(30, 255, 0);
+            box-shadow: 0px 0px 10px rgb(30, 255, 0);
+        }
+
+        .mainIndexCatalogoContendorTexts{
+            @include allCentro;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 15px;
+
+            .mainIndexCatalogoContendorTextsTitle, .mainIndexCatalogoContendorTextsText{
+                color: black;
+            }
+      
+            .mainIndexCatalogoContendorTextsBtn{
+                background-color: black;
+                transition: 0.3s;
+
+                .mainIndexCatalogoContendorTextsBtnLink{
+                    color: white;
+                    text-decoration: none;
+                }
+
+                &:hover{
+                    transform: scale(0.9);
+                }
+            }
+
+            .btnPlay{
+                background-color: rgb(0, 204, 255);
+                border: 1px solid rgb(0, 204, 255);
+            }
+            .btnNintendo{
+                background-color: red;
+                border: 1px solid red;
+            }
+            .btnXbox{
+                background-color: rgb(30, 255, 0);
+                border: 1px solid rgb(30, 255, 0);
+            }
+        }
+    }
+
+
+}
