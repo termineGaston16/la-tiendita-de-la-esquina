@@ -221,6 +221,7 @@ html {
 }
 .mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsTitle, .mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsText {
   color: black;
+  text-align: center;
 }
 .mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsBtn {
   background-color: black;
