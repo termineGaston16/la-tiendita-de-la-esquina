@@ -17,6 +17,12 @@ html {
   font-family: "Didact Gothic", sans-serif;
 }
 
+/* playStation */
+.bodyProductos {
+  background-color: rgb(14, 14, 14);
+  font-family: "Didact Gothic", sans-serif;
+}
+
 .headerIndex {
   background-color: white;
   box-shadow: 0px 0px 20px white;
@@ -179,7 +185,8 @@ html {
   flex-direction: column;
   margin: 5% 0px;
 }
-.mainIndex .mainIndexDescripcion .mainIndexDescripcionTitle, .mainIndex .mainIndexDescripcion .mainIndexDescripcionText {
+.mainIndex .mainIndexDescripcion .mainIndexDescripcionTitle,
+.mainIndex .mainIndexDescripcion .mainIndexDescripcionText {
   color: white;
   text-shadow: 0px 0px 5px white;
   text-align: center;
@@ -219,7 +226,8 @@ html {
   background-color: white;
   border-radius: 15px;
 }
-.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsTitle, .mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsText {
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsTitle,
+.mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .mainIndexCatalogoContendorTextsText {
   color: black;
   text-align: center;
 }
@@ -245,6 +253,176 @@ html {
 .mainIndex .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts .btnXbox {
   background-color: rgb(30, 255, 0);
   border: 1px solid rgb(30, 255, 0);
+}
+
+/* Productos */
+.mainProductos {
+  /* mini-header */
+  /* productos */
+}
+.mainProductos .mainProductosMiniHeader {
+  background-color: black;
+  /* titulo */
+  /* filtros */
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderTitulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3% 0px;
+  gap: 10px;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderTitulo .mainProductosMiniHeaderTituloLogo {
+  color: white;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderTitulo .mainProductosMiniHeaderTituloText {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros {
+  background-color: white;
+  padding: 3%;
+  /* precio */
+  /* categoría */
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios .mainProductosMiniHeaderFiltrosPreciosText {
+  font-style: italic;
+  margin-top: 7px;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios .mainProductosMiniHeaderFiltrosPreciosInputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios .mainProductosMiniHeaderFiltrosPreciosInputs .mainProductosMiniHeaderFiltrosPreciosInputsCasillero {
+  width: 50%;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: white;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios .mainProductosMiniHeaderFiltrosPreciosInputs .mainProductosMiniHeaderFiltrosPreciosInputsCasillero::placeholder {
+  color: rgba(255, 255, 255, 0.492);
+  margin-left: 5px;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios .mainProductosMiniHeaderFiltrosPreciosBotones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios .mainProductosMiniHeaderFiltrosPreciosBotones .mainProductosMiniHeaderFiltrosPreciosBtn {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios .mainProductosMiniHeaderFiltrosPreciosBotones .mainProductosMiniHeaderFiltrosPreciosBtn:hover {
+  background-color: white;
+  color: black;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosCategorias {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosCategorias .mainProductosMiniHeaderFiltrosCategoriasText {
+  font-style: italic;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosCategorias .mainProductosMiniHeaderFiltrosCategoriasSub .mainProductosMiniHeaderFiltrosCategoriasBtnOpen {
+  background-color: black;
+  border: 1px solid black;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosCategorias .mainProductosMiniHeaderFiltrosCategoriasSub .mainProductosMiniHeaderFiltrosCategoriasMenu {
+  border: 1px solid black;
+  background-color: black;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosCategorias .mainProductosMiniHeaderFiltrosCategoriasSub .mainProductosMiniHeaderFiltrosCategoriasMenu .mainProductosMiniHeaderFiltrosCategoriasMenuBtn {
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosCategorias .mainProductosMiniHeaderFiltrosCategoriasSub .mainProductosMiniHeaderFiltrosCategoriasMenu .mainProductosMiniHeaderFiltrosCategoriasMenuBtn:hover {
+  background-color: white;
+  color: black;
+}
+.mainProductos .portadaSony {
+  background-color: rgb(0, 204, 255);
+}
+.mainProductos .portadaNintendo {
+  background-color: red;
+}
+.mainProductos .portadaXbox {
+  background-color: rgb(30, 255, 0);
+}
+.mainProductos .mainProductosConsolasTitle {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  margin: 3% 0px 0px 5%;
+}
+.mainProductos .mainProductosConsolas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* logo loading */
+  /* productos cargados */
+}
+.mainProductos .mainProductosConsolas .textNoEncontrado {
+  color: white;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasLoading {
+  color: white;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados .mainProductosConsolasProductosCargadosImg {
+  width: 100%;
+  height: 50%;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados .mainProductosConsolasProductosCargadosFav {
+  cursor: pointer;
+  margin: 5%;
+  transition: 0.3s;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados .mainProductosConsolasProductosCargadosFav:hover {
+  transform: scale(1.2);
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados .mainProductosConsolasProductosCargadosNombreConsola {
+  text-align: start;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados .mainProductosConsolasProductosCargadosAnioDeEstreno {
+  font-style: italic;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados .mainProductosConsolasProductosCargadosPrecio {
+  background-color: black;
+  border-radius: 15px;
+  padding: 5px;
+  color: white;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados .btnAgregarAlCarrito {
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados .btnAgregarAlCarrito:hover {
+  transform: scale(0.9);
 }
 
 .footerGlobal .footerGlobalCopy {

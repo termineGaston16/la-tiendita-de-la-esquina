@@ -24,19 +24,19 @@ fetch(url)
     .then(response => response.json())
     .then(todasLasConsolas => {
 
-        let consolasDeSony = todasLasConsolas.filter(consola => {
-            return consola.id >= "00" && consola.id <= "07";
+        let consolasDeXbox = todasLasConsolas.filter(consola => {
+            return consola.id >= "19" && consola.id <= "24";
         })
 
-        cargarConsolas(consolasDeSony)
-        filtrarConsolasPorPrecio(consolasDeSony, cargarConsolas)
-        limpiarFiltracionPorPrecio(consolasDeSony, cargarConsolas,)
-        filtrarConsolasMenorPrecio(consolasDeSony, cargarConsolas)
-        filtrarConsolasMayorPrecio(consolasDeSony, cargarConsolas)
-        filtrarConsolasAZ(consolasDeSony, cargarConsolas)
-        filtrarConsolasZA(consolasDeSony, cargarConsolas)
-        filtrarConsolasMasNuevo(consolasDeSony, cargarConsolas)
-        filtrarConsolasMasViejo(consolasDeSony, cargarConsolas)
+        cargarConsolas(consolasDeXbox)
+        filtrarConsolasPorPrecio(consolasDeXbox, cargarConsolas)
+        limpiarFiltracionPorPrecio(consolasDeXbox, cargarConsolas,)
+        filtrarConsolasMenorPrecio(consolasDeXbox, cargarConsolas)
+        filtrarConsolasMayorPrecio(consolasDeXbox, cargarConsolas)
+        filtrarConsolasAZ(consolasDeXbox, cargarConsolas)
+        filtrarConsolasZA(consolasDeXbox, cargarConsolas)
+        filtrarConsolasMasNuevo(consolasDeXbox, cargarConsolas)
+        filtrarConsolasMasViejo(consolasDeXbox, cargarConsolas)
     })
     .catch(error => console.error('Error al cargar las consolas.', error));
 

@@ -24,19 +24,19 @@ fetch(url)
     .then(response => response.json())
     .then(todasLasConsolas => {
 
-        let consolasDeSony = todasLasConsolas.filter(consola => {
-            return consola.id >= "00" && consola.id <= "07";
+        let consolasDeNintendo = todasLasConsolas.filter(consola => {
+            return consola.id >= "08" && consola.id <= "18";
         })
 
-        cargarConsolas(consolasDeSony)
-        filtrarConsolasPorPrecio(consolasDeSony, cargarConsolas)
-        limpiarFiltracionPorPrecio(consolasDeSony, cargarConsolas,)
-        filtrarConsolasMenorPrecio(consolasDeSony, cargarConsolas)
-        filtrarConsolasMayorPrecio(consolasDeSony, cargarConsolas)
-        filtrarConsolasAZ(consolasDeSony, cargarConsolas)
-        filtrarConsolasZA(consolasDeSony, cargarConsolas)
-        filtrarConsolasMasNuevo(consolasDeSony, cargarConsolas)
-        filtrarConsolasMasViejo(consolasDeSony, cargarConsolas)
+        cargarConsolas(consolasDeNintendo)
+        filtrarConsolasPorPrecio(consolasDeNintendo, cargarConsolas)
+        limpiarFiltracionPorPrecio(consolasDeNintendo, cargarConsolas,)
+        filtrarConsolasMenorPrecio(consolasDeNintendo, cargarConsolas)
+        filtrarConsolasMayorPrecio(consolasDeNintendo, cargarConsolas)
+        filtrarConsolasAZ(consolasDeNintendo, cargarConsolas)
+        filtrarConsolasZA(consolasDeNintendo, cargarConsolas)
+        filtrarConsolasMasNuevo(consolasDeNintendo, cargarConsolas)
+        filtrarConsolasMasViejo(consolasDeNintendo, cargarConsolas)
     })
     .catch(error => console.error('Error al cargar las consolas.', error));
 

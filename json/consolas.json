@@ -6,7 +6,8 @@
         "descripcion":"La PlayStation original marcó el inicio de la saga, introduciendo gráficos 3D revolucionarios para la época y consolidándose como una de las consolas más influyentes de la historia.",
         "compania":"PlayStation",
         "imagenReferente":"../img/consolas/sony/ps1.png",
-        "precioConsola":5
+        "precioConsola":5,
+        "cantidad":0
     },
     {
         "id":"01",
@@ -15,10 +16,11 @@
         "descripcion":"La PS2 se convirtió en la consola más vendida de todos los tiempos. Además de sus capacidades de juego avanzadas, también era compatible con DVD, lo que contribuyó a su éxito masivo.",
         "compania":"PlayStation",
         "imagenReferente":"../img/consolas/sony/ps2.png",
-        "precioConsola":100
+        "precioConsola":100,
+        "cantidad":0
     },
     {
-        "id":"03",
+        "id":"02",
         "nombreConsola":"PlayStation Portable",
         "anioDeEstreno":"2004",
         "descripcion":"La PSP marcó la incursión de Sony en el mercado de las consolas portátiles, ofreciendo gráficos impresionantes y una amplia variedad de juegos en un formato portátil.",
@@ -27,7 +29,7 @@
         "precioConsola":8
     },
     {
-        "id":"04",
+        "id":"03",
         "nombreConsola":"PlayStation 3",
         "anioDeEstreno":"2006",
         "descripcion":"La PS3 destacó por su potencia de procesamiento, introduciendo capacidades multimedia avanzadas y la plataforma en línea PlayStation Network (PSN).",
@@ -36,7 +38,7 @@
         "precioConsola":200
     },
     {
-        "id":"05",
+        "id":"04",
         "nombreConsola":"PlayStation Vita",
         "anioDeEstreno":"2011",
         "descripcion":"La PS Vita continuó la tradición de las consolas portátiles de Sony, con una pantalla táctil, capacidades de juego en línea y compatibilidad con juegos de alta calidad.",
