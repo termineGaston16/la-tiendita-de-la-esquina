@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse | Tiendita de la Esquina</title>
+
+    <!-- CSS BS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- ------------------------------------ -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <!-- ------------------------------------ -->
+    <!-- ESTILO DE FUENTE EXTERNA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+
+
+    <!-- ------------------------------------ -->
+    <!-- SEO -->
+    <link rel="icon" href="../img/index/logo-favicon.png" type="image/png">
+    <meta name="title" content="Registrarse | Tiendita de la Esquina">
+    <meta name="description"
+        content="¡Registrate gratuitamente para poder empezar a conseguir tus consolas favoritas y revivir la nostalgia!">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="container-fluid">
+        <nav>
+            <button class="btn">
+                <a href="../index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                    </svg>
+                </a>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ------ -->
+    <!-- MAIN -->
+    <main class="container-fluid">
+        <div class="py-5 text-center">
+            <img src="../img/index/logo-principal.png" alt="" style="width: 40%;">
+            <p class="lead">¡Registrate gratuitamente para poder empezar a conseguir tus consolas favoritas y revivir la
+                nostalgia!</p>
+        </div>
+
+        <div class="row g-5">
+            <div>
+                <h4 class="mb-3">Datos personales:</h4>
+                <div class="row g-3">
+
+                    <!-- Nombres -->
+                    <div class="col-sm-6" id="nombresRegistrarContenedor">
+                        <label for="nombresRegistrar" class="form-label">Nombres:</label>
+                        <input type="text" class="form-control" id="nombresRegistrar"
+                            placeholder="(Introduce tus nombres aquí)">
+                    </div>
+
+                    <!-- Apellidos -->
+                    <div class="col-sm-6" id="apellidosRegistrarContenedor">
+                        <label for="apellidosRegistrar" class="form-label">Apellidos:</label>
+                        <input type="text" class="form-control" id="apellidosRegistrar"
+                            placeholder="(Introduce tus apellidos aquí)">
+                    </div>
+
+                    <!-- Nombre de usuario -->
+                    <div class="col-12" id="nombreDeUsuarioRegistrarContenedor">
+                        <label for="nombreDeUsuarioRegistrar" class="form-label">Nombre de Usuario:</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control" id="nombreDeUsuarioRegistrar"
+                                placeholder="(Nombre para el perfil)">
+                        </div>
+                    </div>
+
+                    <!-- Correo electrónico -->
+                    <div class="col-12" id="correoElectronicoRegistrarContenedor">
+                        <label for="correoElectronicoRegistrar" class="form-label">Correo Electrónico:</label>
+                        <input type="email" class="form-control" id="correoElectronicoRegistrar"
+                            placeholder="(nombreYapellido@example.com)">
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="col-12" id="contraseniaRegistrarContenedor">
+                        <label for="contraseniaRegistrar" class="form-label">Crea una contraseña:</label>
+                        <input type="password" class="form-control" id="contraseniaRegistrar" placeholder="(****)">
+                    </div>
+
+                    <!-- Revisar Contraseña -->
+                    <div class="col-12" id="revisarContraseniaRegistrarContenedor">
+                        <label for="revisarContraseniaRegistrar" class="form-label">Confirmar contraseña:</label>
+                        <input type="password" class="form-control" id="revisarContraseniaRegistrar"
+                            placeholder="(Vuelve a introducir tu contraseña para validarla)">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" id="btnRegistrarDatos">¡Registrarse!</button>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- ------------------------------------ -->
+    <!-- SWEET ALERT -->
+
+    <!-- ------------------------------------ -->
+    <!-- JS BS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- ------------------------------------ -->
+    <!-- JS -->
+    <script src="../js/registracion.js"></script>
+</body>
+
+</html>
