@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -29,14 +29,14 @@
         content="¡Registrate gratuitamente para poder empezar a conseguir tus consolas favoritas y revivir la nostalgia!">
 </head>
 
-<body>
+<body class="bodyRegistrar">
     <!-- HEADER -->
-    <header class="container-fluid">
-        <nav>
-            <button class="btn">
-                <a href="../index.html">
+    <header class="container-fluid bodyRegistrarHeader">
+        <nav class="bodyRegistrarHeaderNav">
+            <button class="btn bodyRegistrarHeaderBtnVolver">
+                <a href="../index.html" class="bodyRegistrarHeaderBtnVolverLink">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                        class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                        class="bi bi-arrow-left-circle bodyRegistrarHeaderBtnVolverLinkLogo" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
                     </svg>
@@ -47,71 +47,72 @@
 
     <!-- ------ -->
     <!-- MAIN -->
-    <main class="container-fluid">
-        <div class="py-5 text-center">
-            <img src="../img/index/logo-principal.png" alt="" style="width: 40%;">
-            <p class="lead">¡Registrate gratuitamente para poder empezar a conseguir tus consolas favoritas y revivir la
+    <main class="container-fluid bodyRegistrarMain">
+        <div class="py-5 text-center bodyRegistrarMainLogoContenedor">
+            <img src="../img/index/logo-principal.png" alt="logo-principal" class="bodyRegistrarMainLogoContenedorImg">
+            <p class="lead bodyRegistrarMainLogoContenedorImgText">¡Registrate gratuitamente para poder empezar a conseguir tus consolas favoritas y revivir la
                 nostalgia!</p>
         </div>
 
-        <div class="row g-5">
-            <div>
-                <h4 class="mb-3">Datos personales:</h4>
-                <div class="row g-3">
+        <div class="row g-5 bodyRegistrarMainBodyContenedor">
+            <div class="bodyRegistrarMainBodyContenedorSub">
+                <h4 class="mb-3 bodyRegistrarMainBodyContenedorTitle">Datos personales:</h4>
+                
+                <div class="row g-3 bodyRegistrarMainBodyContenedorSub1">
 
                     <!-- Nombres -->
-                    <div class="col-sm-6" id="nombresRegistrarContenedor">
-                        <label for="nombresRegistrar" class="form-label">Nombres:</label>
-                        <input type="text" class="form-control" id="nombresRegistrar"
+                    <div class="col-sm-6 bodyRegistrarMainBodyCasillero" id="nombresRegistrarContenedor">
+                        <label for="nombresRegistrar" class="form-label bodyRegistrarMainBodyCasilleroText">Nombres:</label>
+                        <input type="text" class="form-control bodyRegistrarMainBodyCasilleroInput" id="nombresRegistrar"
                             placeholder="(Introduce tus nombres aquí)">
                     </div>
 
                     <!-- Apellidos -->
-                    <div class="col-sm-6" id="apellidosRegistrarContenedor">
-                        <label for="apellidosRegistrar" class="form-label">Apellidos:</label>
-                        <input type="text" class="form-control" id="apellidosRegistrar"
+                    <div class="col-sm-6 bodyRegistrarMainBodyCasillero" id="apellidosRegistrarContenedor">
+                        <label for="apellidosRegistrar" class="form-label bodyRegistrarMainBodyCasilleroText">Apellidos:</label>
+                        <input type="text" class="form-control bodyRegistrarMainBodyCasilleroInput" id="apellidosRegistrar"
                             placeholder="(Introduce tus apellidos aquí)">
                     </div>
 
                     <!-- Nombre de usuario -->
-                    <div class="col-12" id="nombreDeUsuarioRegistrarContenedor">
-                        <label for="nombreDeUsuarioRegistrar" class="form-label">Nombre de Usuario:</label>
-                        <div class="input-group has-validation">
-                            <span class="input-group-text">@</span>
-                            <input type="text" class="form-control" id="nombreDeUsuarioRegistrar"
+                    <div class="col-12 bodyRegistrarMainBodyCasillero" id="nombreDeUsuarioRegistrarContenedor">
+                        <label for="nombreDeUsuarioRegistrar" class="form-label bodyRegistrarMainBodyCasilleroText">Nombre de Usuario:</label>
+                        <div class="input-group has-validation bodyRegistrarMainBodyCasilleroUser">
+                            <span class="input-group-text bodyRegistrarMainBodyCasilleroUserSpan">@</span>
+                            <input type="text" class="form-control bodyRegistrarMainBodyCasilleroUserInput" id="nombreDeUsuarioRegistrar"
                                 placeholder="(Nombre para el perfil)">
                         </div>
                     </div>
 
                     <!-- Correo electrónico -->
-                    <div class="col-12" id="correoElectronicoRegistrarContenedor">
-                        <label for="correoElectronicoRegistrar" class="form-label">Correo Electrónico:</label>
-                        <input type="email" class="form-control" id="correoElectronicoRegistrar"
+                    <div class="col-12 bodyRegistrarMainBodyCasillero" id="correoElectronicoRegistrarContenedor">
+                        <label for="correoElectronicoRegistrar" class="form-label bodyRegistrarMainBodyCasilleroText">Correo Electrónico:</label>
+                        <input type="email" class="form-control bodyRegistrarMainBodyCasilleroInput" id="correoElectronicoRegistrar"
                             placeholder="(nombreYapellido@example.com)">
                     </div>
 
                     <!-- Contraseña -->
-                    <div class="col-12" id="contraseniaRegistrarContenedor">
-                        <label for="contraseniaRegistrar" class="form-label">Crea una contraseña:</label>
-                        <input type="password" class="form-control" id="contraseniaRegistrar" placeholder="(****)">
+                    <div class="col-12 bodyRegistrarMainBodyCasillero" id="contraseniaRegistrarContenedor">
+                        <label for="contraseniaRegistrar" class="form-label bodyRegistrarMainBodyCasilleroText">Crea una contraseña:</label>
+                        <input type="password" class="form-control bodyRegistrarMainBodyCasilleroInput" id="contraseniaRegistrar" placeholder="(****)">
                     </div>
 
                     <!-- Revisar Contraseña -->
-                    <div class="col-12" id="revisarContraseniaRegistrarContenedor">
-                        <label for="revisarContraseniaRegistrar" class="form-label">Confirmar contraseña:</label>
-                        <input type="password" class="form-control" id="revisarContraseniaRegistrar"
+                    <div class="col-12 bodyRegistrarMainBodyCasillero" id="revisarContraseniaRegistrarContenedor">
+                        <label for="revisarContraseniaRegistrar" class="form-label bodyRegistrarMainBodyCasilleroText">Confirmar contraseña:</label>
+                        <input type="password" class="form-control bodyRegistrarMainBodyCasilleroInput" id="revisarContraseniaRegistrar"
                             placeholder="(Vuelve a introducir tu contraseña para validarla)">
                     </div>
                 </div>
 
-                <button class="btn btn-primary" id="btnRegistrarDatos">¡Registrarse!</button>
+                <button class="btn bodyRegistrarMainBodyContenedorBtn" id="btnRegistrarDatos">¡Registrarse!</button>
             </div>
         </div>
     </main>
 
-
     <!-- ------------------------------------ -->
     <!-- SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- ------------------------------------ -->
     <!-- JS BS -->

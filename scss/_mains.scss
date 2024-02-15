@@ -207,34 +207,34 @@
                     }
                 }
 
-            } 
+            }
 
             /* categoría */
-            .mainProductosMiniHeaderFiltrosCategorias{
+            .mainProductosMiniHeaderFiltrosCategorias {
                 @include allCentro;
                 flex-direction: column;
 
-                .mainProductosMiniHeaderFiltrosCategoriasText{
+                .mainProductosMiniHeaderFiltrosCategoriasText {
                     font-style: italic;
                 }
 
-                .mainProductosMiniHeaderFiltrosCategoriasSub{
-                    .mainProductosMiniHeaderFiltrosCategoriasBtnOpen{
+                .mainProductosMiniHeaderFiltrosCategoriasSub {
+                    .mainProductosMiniHeaderFiltrosCategoriasBtnOpen {
                         background-color: black;
                         border: 1px solid black;
                     }
 
-                    .mainProductosMiniHeaderFiltrosCategoriasMenu{
+                    .mainProductosMiniHeaderFiltrosCategoriasMenu {
                         border: 1px solid black;
                         background-color: black;
 
-                        .mainProductosMiniHeaderFiltrosCategoriasMenuBtn{
+                        .mainProductosMiniHeaderFiltrosCategoriasMenuBtn {
                             text-align: center;
                             color: white;
                             cursor: pointer;
                             transition: 0.3s;
 
-                            &:hover{
+                            &:hover {
                                 background-color: white;
                                 color: black;
                             }
@@ -242,43 +242,43 @@
                     }
                 }
             }
-        }      
+        }
     }
 
-    .portadaSony{
+    .portadaSony {
         background-color: rgb(0, 204, 255);
     }
-    
-    .portadaNintendo{
+
+    .portadaNintendo {
         background-color: red;
     }
 
-    .portadaXbox{
+    .portadaXbox {
         background-color: rgb(30, 255, 0);
     }
 
     /* productos */
-    .mainProductosConsolasTitle{
+    .mainProductosConsolasTitle {
         color: white;
         text-shadow: 0px 0px 5px white;
         margin: 3% 0px 0px 5%;
     }
 
-    .mainProductosConsolas{
+    .mainProductosConsolas {
         @include allCentro;
         flex-direction: column;
 
-        .textNoEncontrado{
+        .textNoEncontrado {
             color: white;
         }
 
         /* logo loading */
-        .mainProductosConsolasLoading{
+        .mainProductosConsolasLoading {
             color: white;
         }
 
         /* productos cargados */
-        .mainProductosConsolasProductosCargados{
+        .mainProductosConsolasProductosCargados {
             display: flex;
             align-items: start;
             justify-content: center;
@@ -288,43 +288,141 @@
             border: 1px solid black;
             border-radius: 10px;
 
-            .mainProductosConsolasProductosCargadosImg{
+            .mainProductosConsolasProductosCargadosImg {
                 width: 100%;
                 height: 50%;
             }
 
-            .mainProductosConsolasProductosCargadosFav{
+            .mainProductosConsolasProductosCargadosFav {
                 cursor: pointer;
                 margin: 5%;
                 transition: 0.3s;
 
-                &:hover{
+                &:hover {
                     transform: scale(1.2);
                 }
             }
 
-            .mainProductosConsolasProductosCargadosNombreConsola{
+            .mainProductosConsolasProductosCargadosNombreConsola {
                 text-align: start;
             }
-            .mainProductosConsolasProductosCargadosAnioDeEstreno{
+
+            .mainProductosConsolasProductosCargadosAnioDeEstreno {
                 font-style: italic;
             }
-            .mainProductosConsolasProductosCargadosPrecio{
+
+            .mainProductosConsolasProductosCargadosPrecio {
                 background-color: black;
                 border-radius: 15px;
                 padding: 5px;
                 color: white;
             }
-            .btnAgregarAlCarrito{
+
+            .btnAgregarAlCarrito {
                 border: 1px solid black;
                 border-radius: 10px;
                 transition: 0.3s;
 
-                &:hover{
+                &:hover {
                     transform: scale(0.9);
                 }
             }
         }
     }
 
+}
+
+/* Registrar */
+.bodyRegistrarMain {
+    @include allCentro;
+    flex-direction: column;
+
+    /* logo */
+    .bodyRegistrarMainLogoContenedor {
+        background-color: white;
+        border-radius: 15px;
+        margin-top: 2%;
+
+        .bodyRegistrarMainLogoContenedorImg {
+            width: 50%;
+        }
+
+        .bodyRegistrarMainLogoContenedorImgText {}
+    }
+
+    /* cuerpo */
+    .bodyRegistrarMainBodyContenedor {
+        width: 80%;
+        margin: 5% 0px;
+
+        .bodyRegistrarMainBodyContenedorSub {
+            @include allCentro;
+            flex-direction: column;
+
+            .bodyRegistrarMainBodyContenedorTitle {
+                color: white;
+                text-shadow: 0px 0px 5px white;
+
+            }
+
+            .bodyRegistrarMainBodyContenedorSub1 {
+                .bodyRegistrarMainBodyCasillero {
+                    .bodyRegistrarMainBodyCasilleroText {
+                        color: white;
+                    }
+
+                    .bodyRegistrarMainBodyCasilleroInput {
+                        background-color: rgb(12, 12, 12);
+                        color: white;
+
+                        &::placeholder {
+                            color: rgb(212, 212, 212);
+                            font-style: italic;
+                        }
+
+                        &:focus {
+                            box-shadow: 0px 0px 5px white;
+                            border: 1px solid white;
+                        }
+                    }
+
+                    .bodyRegistrarMainBodyCasilleroUser {
+                        .bodyRegistrarMainBodyCasilleroUserSpan {
+                            background-color: black;
+                            color: white;
+                        }
+
+                        .bodyRegistrarMainBodyCasilleroUserInput {
+                            background-color: rgb(12, 12, 12);
+                            color: white;
+
+                            &::placeholder {
+                                color: rgb(212, 212, 212);
+                                font-style: italic;
+                            }
+
+                            &:focus {
+                                box-shadow: 0px 0px 5px white;
+                                border: 1px solid white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bodyRegistrarMainBodyContenedorBtn{
+                border: 1px solid white;
+                color: white;
+
+                margin: 2%;
+                transition: 0.5s;
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                    box-shadow: 0px 0px 5px white;
+                }
+            }
+        }
+    }
 }

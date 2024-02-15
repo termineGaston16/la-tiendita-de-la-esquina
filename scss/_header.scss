@@ -160,3 +160,28 @@
     }
 
 }
+
+/* registrar */
+.bodyRegistrarHeader{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    background-color: rgb(23, 23, 23);
+
+    .bodyRegistrarHeaderNav{
+        .bodyRegistrarHeaderBtnVolver{
+            .bodyRegistrarHeaderBtnVolverLink{
+                .bodyRegistrarHeaderBtnVolverLinkLogo{
+                    color: black;
+                    transition: 0.3s;
+
+                    &:hover{
+                        transform: scale(1.1);
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

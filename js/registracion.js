@@ -27,6 +27,55 @@ document.querySelector("#btnRegistrarDatos").addEventListener("click", () => {
     correoValido = validarElCorreoElectronico("#correoElectronicoRegistrar", "#correoElectronicoRegistrarContenedor")
     contraseniaValida = validarSiLasContraseniasCoinciden("#contraseniaRegistrar", "#revisarContraseniaRegistrar", "#revisarContraseniaRegistrarContenedor")
 
+
+    /* validarQueNoExistaElMismoUsuario */
+    /* nombre de usuario */
+    if (usuariosRegistradosEnElSistema.length != 0) {
+        let avisoExistente = document.querySelector("#avisoNombreDeUsuarioNoEstáDisponible");
+
+        if (usuariosRegistradosEnElSistema.some(usuario => usuario.nombreDeUsuario === document.querySelector("#nombreDeUsuarioRegistrar").value)) {
+            if (!avisoExistente) {
+                let aviso = document.createElement("p");
+                aviso.id = "avisoNombreDeUsuarioNoEstáDisponible";
+                aviso.innerHTML = "* Este nombre de usuario no está disponible.";
+                aviso.style.color = "red";
+
+                let campoContenedor = document.querySelector("#nombreDeUsuarioRegistrarContenedor");
+                campoContenedor.appendChild(aviso);
+            }
+            nombreDeUsuarioValido = false;
+        } else {
+            if (avisoExistente) {
+                avisoExistente.parentElement.removeChild(avisoExistente);
+            }
+            nombreDeUsuarioValido = true;
+        }
+    }
+
+    /* correo electrónico */
+    if (usuariosRegistradosEnElSistema.length != 0) {
+        let avisoExistente = document.querySelector("#avisoCorreoNoDisponible");
+
+        if (usuariosRegistradosEnElSistema.some(usuario => usuario.correoElectronico === document.querySelector("#correoElectronicoRegistrar").value)) {
+            if (!avisoExistente) {
+                let aviso = document.createElement("p");
+                aviso.id = "avisoCorreoNoDisponible";
+                aviso.innerHTML = "* Este correo electónico ya está registrado.";
+                aviso.style.color = "red";
+
+                let campoContenedor = document.querySelector("#correoElectronicoRegistrarContenedor");
+                campoContenedor.appendChild(aviso);
+            }
+            correoValido = false;
+        } else {
+            if (avisoExistente) {
+                avisoExistente.parentElement.removeChild(avisoExistente);
+            }
+            correoValido = true;
+        }
+    }
+
+    /* --- */
     /* creando nuevo usuario */
     if (nombresValidos && apellidosValidos && nombreDeUsuarioValido && correoValido && contraseniaValida) {
 
@@ -57,10 +106,22 @@ document.querySelector("#btnRegistrarDatos").addEventListener("click", () => {
         nuevoUsuario.contrasenia = document.querySelector("#contraseniaRegistrar").value;
 
         /* subirlo al local storage */
-        alert("¡Usuario Registrado!")
         usuariosRegistradosEnElSistema.push(nuevoUsuario)
         localStorage.setItem("usuariosRegistrados", JSON.stringify(usuariosRegistradosEnElSistema));
-        window.location.href = "../index.html";
+
+        Swal.fire({
+            html: `
+                <div class="custom-swal-content alertUsuarioRegistrado"> 
+                    <p class="alertUsuarioRegistradoText">¡Usuario registrado!</p>
+                    <a href="../index.html" class="btn alertUsuarioRegistradoBtn">Volver</a>
+                </div>
+            `,
+            customClass: {
+                popup: 'alertFondo',
+            },
+            showConfirmButton: false,
+        });
+
     }
 
 
@@ -71,23 +132,22 @@ document.querySelector("#btnRegistrarDatos").addEventListener("click", () => {
 
 /* validar si están vacíos */
 function validarQueElCampoNoEsteVacio(idDeCampo, idDeCampoContenedor) {
-    let aviso = document.createElement("p");
-    aviso.innerHTML = "* Completa este campo.";
-    aviso.style.color = "red"; // Modificación para aplicar estilo de color
-
     let campoContenedor = document.querySelector(idDeCampoContenedor);
-    let avisoExistente = campoContenedor.querySelector("#aviso");
+    let avisoExistente = campoContenedor.querySelector("#avisoCampoVacio");
 
     if (document.querySelector(idDeCampo).value === "") {
         if (!avisoExistente) {
-            aviso.id = "aviso";
+            let aviso = document.createElement("p");
+            aviso.id = "avisoCampoVacio";
+            aviso.innerHTML = "* Completa este campo.";
+            aviso.style.color = "red";
+
             campoContenedor.appendChild(aviso);
         }
-
         return false;
     } else {
         if (avisoExistente) {
-            campoContenedor.removeChild(avisoExistente);
+            avisoExistente.parentElement.removeChild(avisoExistente);
         }
 
         return true;
@@ -96,29 +156,28 @@ function validarQueElCampoNoEsteVacio(idDeCampo, idDeCampoContenedor) {
 
 /* validar el correo */
 function validarElCorreoElectronico(idDeCampo, idDeCampoContenedor) {
+    let campoContenedor = document.querySelector(idDeCampoContenedor);
+    let avisoExistente = campoContenedor.querySelector("#avisoValidarCorreo");
+
+    let correoElectronico = document.querySelector(idDeCampo).value;
+    let expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
     if (document.querySelector(idDeCampo).value !== "") {
-
-        let correoElectronico = document.querySelector(idDeCampo).value;
-        let expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        let aviso = document.createElement("p");
-        aviso.innerHTML = "* Por favor, ingrese una dirección de correo electrónico válida.";
-        aviso.style.color = "red";
-
-        let campoContenedor = document.querySelector(idDeCampoContenedor);
-        let avisoExistente = campoContenedor.querySelector("#aviso");
-
-
         if (!expresionRegular.test(correoElectronico)) {
             if (!avisoExistente) {
-                aviso.id = "aviso";
+                let aviso = document.createElement("p");
+                aviso.innerHTML = "* Por favor, ingrese una dirección de correo electrónico válida.";
+                aviso.style.color = "red";
+
+                aviso.id = "avisoValidarCorreo";
                 campoContenedor.appendChild(aviso);
             }
 
             return false;
         } else {
             if (avisoExistente) {
-                campoContenedor.removeChild(avisoExistente);
+                avisoExistente.parentElement.removeChild(avisoExistente);
             }
 
             return true;
@@ -130,30 +189,28 @@ function validarElCorreoElectronico(idDeCampo, idDeCampoContenedor) {
 
 /* validar si las contraseñas coinciden */
 function validarSiLasContraseniasCoinciden(idDeCampoContrasenia1, idDeCampoContrasenia2, idDeCampoContenedor) {
+    let campoContenedor = document.querySelector(idDeCampoContenedor);
+    let avisoExistente = campoContenedor.querySelector("#avisoContraNoCoinciden");
+
     if (document.querySelector(idDeCampoContrasenia1).value !== "" && document.querySelector(idDeCampoContrasenia2).value !== "") {
-
-        let aviso = document.createElement("p");
-        aviso.innerHTML = "* Las contraseñas no coinciden.";
-        aviso.style.color = "red";
-
-        let campoContenedor = document.querySelector(idDeCampoContenedor);
-        let avisoExistente = campoContenedor.querySelector("#aviso");
-
         if (document.querySelector(idDeCampoContrasenia1).value !== document.querySelector(idDeCampoContrasenia2).value) {
             if (!avisoExistente) {
-                aviso.id = "aviso";
+                let aviso = document.createElement("p");
+                aviso.innerHTML = "* Las contraseñas no coinciden.";
+                aviso.style.color = "red";
+
+                aviso.id = "avisoContraNoCoinciden";
                 campoContenedor.appendChild(aviso);
             }
 
             return false;
         } else {
             if (avisoExistente) {
-                campoContenedor.removeChild(avisoExistente);
+                avisoExistente.parentElement.removeChild(avisoExistente);
             }
 
             return true;
         }
     }
-
     return false;
 }

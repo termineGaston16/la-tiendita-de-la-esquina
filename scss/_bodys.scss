@@ -1,10 +1,43 @@
-.bodyIndex{
+.bodyIndex {
     background-color: rgb(14, 14, 14);
     font-family: 'Didact Gothic', sans-serif;
 }
 
-/* playStation */
-.bodyProductos{
+/* productos */
+.bodyProductos {
     background-color: rgb(14, 14, 14);
     font-family: 'Didact Gothic', sans-serif;
+}
+
+/* registrar */
+.bodyRegistrar {
+    background-color: black;
+    font-family: 'Didact Gothic', sans-serif;
+
+    /* alert */
+
+    .alertFondo{
+        background-color: rgba(255, 255, 255, 0)
+    }
+
+    .alertUsuarioRegistrado{
+        font-family: 'Didact Gothic', sans-serif;
+        background-color: rgb(40, 40, 40);
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 5%;
+
+        @include allCentro;
+        flex-direction: column;
+
+        .alertUsuarioRegistradoText{
+            color: white;
+            text-shadow: 0px 0px 5px white;
+        }
+        .alertUsuarioRegistradoBtn{
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+        }
+    }
 }
