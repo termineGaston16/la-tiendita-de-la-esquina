@@ -28,7 +28,7 @@
     <meta name="description" content="¡Logueate con tu cuenta gratis!">
 </head>
 
-<body>
+<body class="bodyRegistrar">
     <!-- HEADER -->
     <header class="container-fluid bodyRegistrarHeader">
         <nav class="bodyRegistrarHeaderNav">
@@ -45,21 +45,21 @@
     </header>
 
     <!-- MAIN -->
-    <main class="container-fluid form-signin w-100 m-auto">
-        <h1 class="h3 mb-3 fw-normal">Ingresa tu cuenta</h1>
+    <main class="container-fluid bodyLoguearseMain">
+        <h1 class="h3 mb-3 fw-normal bodyLoguearseMainTitle">Ingresa tu cuenta</h1>
 
-        <div class="form-floating" id="correoElectronicoLoguearContenedor">
-            <input type="email" class="form-control" id="correoElectronicoLoguear"
+        <div class="form-floating bodyLoguearseMainContCorreo" id="correoElectronicoLoguearContenedor">
+            <input type="email" class="form-control bodyLoguearseMainContCorreoInput" id="correoElectronicoLoguear"
                 placeholder="(nombreYapellido@example.com)">
             <label for="correoElectronicoLoguear">Correo Electrónico:</label>
         </div>
 
-        <div class="form-floating" id="contraseniaRegistrarloguearContenedor">
-            <input type="password" class="form-control" id="contraseniaRegistrarloguear" placeholder="(****)">
+        <div class="form-floating bodyLoguearseMainContContra" id="contraseniaRegistrarloguearContenedor">
+            <input type="password" class="form-control bodyLoguearseMainContContraInput" id="contraseniaRegistrarloguear" placeholder="(****)">
             <label for="contraseniaRegistrarloguear">Contraseña:</label>
         </div>
         
-        <button class="btn btn-primary" id="btnLoguearDatos">Entrar</button>
+        <button class="btn btn-primary bodyLoguearseMainBtn" id="btnLoguearDatos">Entrar</button>
     </main>
 
     <!-- ------------------------------------ -->

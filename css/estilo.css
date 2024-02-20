@@ -545,6 +545,46 @@ html {
   box-shadow: 0px 0px 5px white;
 }
 
+/* Loguearse */
+.bodyLoguearseMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5%;
+}
+.bodyLoguearseMain .bodyLoguearseMainTitle {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  margin: 2%;
+}
+.bodyLoguearseMain .bodyLoguearseMainContCorreo, .bodyLoguearseMain .bodyLoguearseMainContContra {
+  margin: 5px;
+  width: 30%;
+}
+.bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContCorreoInput, .bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContContraInput, .bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContCorreoInput, .bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContContraInput {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}
+.bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContCorreoInput:focus, .bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContContraInput:focus, .bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContCorreoInput:focus, .bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContContraInput:focus {
+  box-shadow: 0px 0px 5px white;
+}
+.bodyLoguearseMain .bodyLoguearseMainBtn {
+  width: 30%;
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  transition: 0.3s;
+}
+.bodyLoguearseMain .bodyLoguearseMainBtn:hover {
+  box-shadow: 0px 0px 10px white;
+}
+.bodyLoguearseMain .bodyLoguearseMainBtn:active {
+  background-color: black;
+  border: 1px solid white;
+}
+
 .footerGlobal .footerGlobalCopy {
   color: aqua;
   margin-left: 2%;

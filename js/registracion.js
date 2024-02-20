@@ -87,7 +87,8 @@ document.querySelector("#btnRegistrarDatos").addEventListener("click", () => {
             apellidos: "",
             nombreDeUsuario: "",
             correoElectronico: "",
-            contrasenia: ""
+            contrasenia: "",
+            fotoPerfil:""
         };
 
         /* ------------------- */
@@ -123,7 +124,6 @@ document.querySelector("#btnRegistrarDatos").addEventListener("click", () => {
         });
 
     }
-
 
 })
 
