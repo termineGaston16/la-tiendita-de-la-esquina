@@ -88,7 +88,9 @@ document.querySelector("#btnRegistrarDatos").addEventListener("click", () => {
             nombreDeUsuario: "",
             correoElectronico: "",
             contrasenia: "",
-            fotoPerfil:""
+            fotoPerfil:"",
+            carrito:[],
+            fav:[],
         };
 
         /* ------------------- */

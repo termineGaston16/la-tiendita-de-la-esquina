@@ -53,6 +53,12 @@ html {
   border: 1px solid white;
 }
 
+/* perfil */
+.bodyPerfil {
+  background-color: rgb(11, 11, 11);
+  font-family: "Didact Gothic", sans-serif;
+}
+
 .headerIndex {
   background-color: white;
   box-shadow: 0px 0px 20px white;
@@ -154,6 +160,11 @@ html {
   text-shadow: 0px 0px 5px rgb(26, 255, 0);
 }
 .headerIndex .headerIndexNav .menuNavOpen .menuNavOpenPerfil .menuNavOpenPerfilLink {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: row;
+  gap: 10px;
   color: white;
   transition: 0.3s;
   border-radius: 15px;
@@ -183,6 +194,75 @@ html {
 .bodyRegistrarHeader .bodyRegistrarHeaderNav .bodyRegistrarHeaderBtnVolver .bodyRegistrarHeaderBtnVolverLink .bodyRegistrarHeaderBtnVolverLinkLogo:hover {
   transform: scale(1.1);
   color: white;
+}
+
+/* perfil */
+.headerPerfil {
+  width: 240px;
+  background-color: rgb(5, 5, 5);
+  border-radius: 100px;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  border: 1px solid white;
+  transition: 0.3s;
+}
+.headerPerfil:hover {
+  box-shadow: 0px 0px 5px white;
+}
+.headerPerfil .headerPerfilNav {
+  /* Menu header */
+  /* fondo del nav */
+  /* Menu Nav */
+}
+.headerPerfil .headerPerfilNav .menuHeaderPerfil .menuHeaderPerfilLi {
+  transition: 0.3s;
+}
+.headerPerfil .headerPerfilNav .menuHeaderPerfil .menuHeaderPerfilLi .menuHeaderPerfilLiLink {
+  transition: 0.3s;
+}
+.headerPerfil .headerPerfilNav .menuHeaderPerfil .menuHeaderPerfilLi .menuHeaderPerfilLiLink .menuHeaderPerfilLiLinkLogo {
+  transition: 0.3s;
+  color: white;
+}
+.headerPerfil .headerPerfilNav .menuHeaderPerfil .menuHeaderPerfilLi:hover .menuHeaderPerfilLiLink .menuHeaderPerfilLiLinkLogo {
+  transform: scale(1.1);
+  color: rgb(125, 125, 125);
+}
+.headerPerfil .headerPerfilNav .menuNavPerfilFondoNegro {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.659);
+  z-index: 10;
+}
+.headerPerfil .headerPerfilNav .menuNavPerfilOpen {
+  position: fixed;
+  top: 0px;
+  left: 20%;
+  z-index: 15;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+  /* -- */
+  width: 60%;
+  padding: 2%;
+  background-color: rgb(11, 11, 11);
+  border: 1px solid white;
+}
+.headerPerfil .headerPerfilNav .menuNavPerfilOpen .menuNavPerfilOpenBtn {
+  border: 1px solid black;
+  background-color: rgb(32, 32, 32);
+  color: white;
+  transition: 0.3s;
+}
+.headerPerfil .headerPerfilNav .menuNavPerfilOpen .menuNavPerfilOpenBtn:hover {
+  text-shadow: 0px 0px 5px white;
+  border: 1px solid white;
+}
+.headerPerfil .headerPerfilNav .menuNavPerfilOpen.open {
+  transform: translateY(0);
+  visibility: visible;
 }
 
 .mainIndex {
@@ -558,16 +638,23 @@ html {
   text-shadow: 0px 0px 5px white;
   margin: 2%;
 }
-.bodyLoguearseMain .bodyLoguearseMainContCorreo, .bodyLoguearseMain .bodyLoguearseMainContContra {
+.bodyLoguearseMain .bodyLoguearseMainContCorreo,
+.bodyLoguearseMain .bodyLoguearseMainContContra {
   margin: 5px;
   width: 30%;
 }
-.bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContCorreoInput, .bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContContraInput, .bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContCorreoInput, .bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContContraInput {
+.bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContCorreoInput,
+.bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContContraInput,
+.bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContCorreoInput,
+.bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContContraInput {
   border: 1px solid white;
   background-color: black;
   color: white;
 }
-.bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContCorreoInput:focus, .bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContContraInput:focus, .bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContCorreoInput:focus, .bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContContraInput:focus {
+.bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContCorreoInput:focus,
+.bodyLoguearseMain .bodyLoguearseMainContCorreo .bodyLoguearseMainContContraInput:focus,
+.bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContCorreoInput:focus,
+.bodyLoguearseMain .bodyLoguearseMainContContra .bodyLoguearseMainContContraInput:focus {
   box-shadow: 0px 0px 5px white;
 }
 .bodyLoguearseMain .bodyLoguearseMainBtn {
@@ -583,6 +670,87 @@ html {
 .bodyLoguearseMain .bodyLoguearseMainBtn:active {
   background-color: black;
   border: 1px solid white;
+}
+
+/* perfil */
+.mainPerfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* Tarjeta usuario */
+  /* Tarjeta datos */
+}
+.mainPerfil .mainPerfilTarjetaUsuario {
+  width: 100%;
+  /* loading */
+  /* datos cargados */
+}
+.mainPerfil .mainPerfilTarjetaUsuario .mainPerfilTarjetaUsuarioLogoLoading {
+  color: white;
+}
+.mainPerfil .mainPerfilTarjetaUsuario .mainPerfilTarjetaUsuarioPerfil {
+  width: 90%;
+  padding: 3% 6%;
+  background-color: white;
+  border-radius: 15px;
+}
+.mainPerfil .mainPerfilTarjetaUsuario .mainPerfilTarjetaUsuarioPerfil .mainPerfilTarjetaUsuarioPerfilLogo {
+  width: 130px;
+  height: 130px;
+  border-radius: 100px;
+  overflow: hidden;
+  background-color: rgb(114, 114, 114);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+}
+.mainPerfil .mainPerfilTarjetaUsuario .mainPerfilTarjetaUsuarioPerfil .mainPerfilTarjetaUsuarioPerfilLogo .mainPerfilTarjetaUsuarioPerfilLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Esta propiedad ajustará la imagen para cubrir el contenedor */
+}
+.mainPerfil .mainPerfilTarjetaUsuario .mainPerfilTarjetaUsuarioPerfil .mainPerfilTarjetaUsuarioPerfilNames {
+  font-size: 2rem;
+  color: black;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.523);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+.mainPerfil .mainPerfilTarjetaUsuario .mainPerfilTarjetaUsuarioPerfil .mainPerfilTarjetaUsuarioPerfilNamesUser {
+  font-size: 1.5rem;
+  color: rgb(71, 71, 71);
+  font-style: italic;
+}
+.mainPerfil .mainPerfilTarjetaDatos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor {
+  background-color: white;
+  margin-top: 4%;
+  width: 90%;
+  border-radius: 15px;
+}
+.mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosContenedorSub .mainPerfilTarjetaDatosContenedorInput {
+  color: black;
+  background-color: rgb(207, 207, 207);
+}
+.mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosContenedorSub .mainPerfilTarjetaDatosContenedorInput::placeholder {
+  color: black;
+}
+.mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosContenedorSub .mainPerfilTarjetaDatosContenedorInput:focus {
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px black;
+}
+.mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosContenedorSub .mainPerfilTarjetaDatosContenedorBtn {
+  background-color: black;
+  color: white;
+  margin: 2%;
 }
 
 .footerGlobal .footerGlobalCopy {

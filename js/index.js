@@ -43,7 +43,7 @@ fetch(url)
 
             document.querySelector("#contendorPortadaIndex").append(contendorRow);
 
-            
+
             setTimeout(() => {
                 contendorRow.querySelectorAll('.mainIndexPortadasPart1, .mainIndexPortadasPart2').forEach(element => {
                     element.style.opacity = 1;
@@ -74,7 +74,7 @@ if (localStorage.getItem("usuarioLogueado") != null) {
 
 if (usuarioLogeado == null) {
 
-    document.querySelector("#idMenuNavOpenPerfilRegister").innerHTML=`
+    document.querySelector("#idMenuNavOpenPerfilRegister").innerHTML = `
         <a href="index/registracion.html" class="nav-link menuNavOpenPerfilLink">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
             class="bi bi-person" viewBox="0 0 16 16">
@@ -85,7 +85,7 @@ if (usuarioLogeado == null) {
         </a>
     `
 
-    document.querySelector("#idMenuNavOpenPerfilLogueader").innerHTML=`
+    document.querySelector("#idMenuNavOpenPerfilLogueader").innerHTML = `
         <a href="index/loguearse.html" class="nav-link menuNavOpenPerfilLink">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
             class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -96,9 +96,18 @@ if (usuarioLogeado == null) {
         Loguearse
         </a>
     `
-}else{
-
-    document.querySelector("#idMenuNavOpenPerfilLogueader").innerHTML=`
+} else {
+    if (usuarioLogeado.fotoPerfil != "") {
+        document.querySelector("#idMenuNavOpenPerfilLogueader").innerHTML = `
+        <a href="index/perfil.html" class="nav-link menuNavOpenPerfilLink">
+        <div id="contenedorFotoPerfil" style="width: 30px; height: 30px; border-radius: 100px; overflow:hidden; display: flex; align-items: center; justify-content: center;">
+                <img src="${usuarioLogeado.fotoPerfil}" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        Mi perfil
+        </a>
+    `
+    } else {
+        document.querySelector("#idMenuNavOpenPerfilLogueader").innerHTML = `
         <a href="index/perfil.html" class="nav-link menuNavOpenPerfilLink">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
             class="bi bi-person" viewBox="0 0 16 16">
@@ -108,6 +117,8 @@ if (usuarioLogeado == null) {
         Mi perfil
         </a>
     `
+    }
+
 }
 
 

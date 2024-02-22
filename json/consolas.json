@@ -26,7 +26,8 @@
         "descripcion":"La PSP marcó la incursión de Sony en el mercado de las consolas portátiles, ofreciendo gráficos impresionantes y una amplia variedad de juegos en un formato portátil.",
         "compania":"PlayStation",
         "imagenReferente":"../img/consolas/sony/psp.png",
-        "precioConsola":8
+        "precioConsola":8,
+        "cantidad":0
     },
     {
         "id":"03",
@@ -35,7 +36,8 @@
         "descripcion":"La PS3 destacó por su potencia de procesamiento, introduciendo capacidades multimedia avanzadas y la plataforma en línea PlayStation Network (PSN).",
         "compania":"PlayStation",
         "imagenReferente":"../img/consolas/sony/ps3.jpg",
-        "precioConsola":200
+        "precioConsola":200,
+        "cantidad":0
     },
     {
         "id":"04",
@@ -44,7 +46,8 @@
         "descripcion":"La PS Vita continuó la tradición de las consolas portátiles de Sony, con una pantalla táctil, capacidades de juego en línea y compatibilidad con juegos de alta calidad.",
         "compania":"PlayStation",
         "imagenReferente":"../img/consolas/sony/psvita.jpg",
-        "precioConsola":9
+        "precioConsola":9,
+        "cantidad":0
     },
     {
         "id":"05",
@@ -53,7 +56,8 @@
         "descripcion":"La PS4 se centró en la conectividad social y el juego en línea, introduciendo funciones como Share Play y Remote Play. También destacó por sus gráficos de alta definición y su amplio catálogo de juegos.",
         "compania":"PlayStation",
         "imagenReferente":"../img/consolas/sony/ps4.png",
-        "precioConsola":200
+        "precioConsola":200,
+        "cantidad":0
     },
     {
         "id":"06",
@@ -62,7 +66,8 @@
         "descripcion":"Una versión mejorada de la PS4, la Pro ofreció capacidades mejoradas de procesamiento gráfico y soporte para resolución 4K, brindando una experiencia de juego más inmersiva.",
         "compania":"PlayStation",
         "imagenReferente":"../img/consolas/sony/ps4-pro.png",
-        "precioConsola":300
+        "precioConsola":300,
+        "cantidad":0
     },
     {
         "id":"07",
@@ -71,7 +76,8 @@
         "descripcion":"La PS5 representa la última generación de consolas de Sony, con un rendimiento de vanguardia, gráficos de alta calidad, y características innovadoras como el control DualSense y una unidad de estado sólido (SSD) para tiempos de carga ultra rápidos.",
         "compania":"PlayStation",
         "imagenReferente":"../img/consolas/sony/ps5.png",
-        "precioConsola":700
+        "precioConsola":700,
+        "cantidad":0
     },
     {
         "id":"08",
@@ -80,7 +86,8 @@
         "descripcion":"La NES fue la primera consola de Nintendo lanzada en América del Norte. Introdujo juegos icónicos como Super Mario Bros. y The Legend of Zelda, estableciendo las bases para el éxito de la compañía.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/nes.png",
-        "precioConsola":5
+        "precioConsola":5,
+        "cantidad":0
     },
     {
         "id":"09",
@@ -89,7 +96,8 @@
         "descripcion":"La SNES mejoró los gráficos y el sonido, presentando clásicos como Super Mario World y The Legend of Zelda: A Link to the Past. Es considerada una de las mejores consolas de todos los tiempos.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/snes.png",
-        "precioConsola":6
+        "precioConsola":6,
+        "cantidad":0
     },
     {
         "id":"10",
@@ -98,7 +106,8 @@
         "descripcion":"La Game Boy fue una de las consolas portátiles más exitosas, con su pantalla en blanco y negro y el lanzamiento del fenómeno cultural Pokémon en 1996.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/game-boy.jpg",
-        "precioConsola":4
+        "precioConsola":4,
+        "cantidad":0
     },
     {
         "id":"11",
@@ -107,7 +116,8 @@
         "descripcion":"La N64 fue la primera consola de Nintendo en presentar gráficos 3D. Introdujo el control analógico y títulos como Super Mario 64 y The Legend of Zelda: Ocarina of Time.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/nintendo-64.png",
-        "precioConsola":10
+        "precioConsola":10,
+        "cantidad":0
     },
     {
         "id":"12",
@@ -116,7 +126,8 @@
         "descripcion":"La GBA llevó los juegos portátiles a una nueva era con gráficos mejorados. También fue compatible con títulos de la Game Boy original.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/game-boy-advance.jpg",
-        "precioConsola":9
+        "precioConsola":9,
+        "cantidad":0
     },
     {
         "id":"13",
@@ -125,7 +136,8 @@
         "descripcion":"La GameCube presentó discos ópticos miniDVD y el innovador control WaveBird. Aunque no tuvo el mismo éxito que otras consolas de la época, albergó juegos como Super Smash Bros. Melee.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/gamecube.png",
-        "precioConsola":15
+        "precioConsola":15,
+        "cantidad":0
     },
     {
         "id":"14",
@@ -134,7 +146,8 @@
         "descripcion":"La Nintendo DS revolucionó los juegos portátiles al incorporar una pantalla táctil. Con títulos como Nintendogs y Brain Age, atrajo a un nuevo público.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/nintendo-ds.png",
-        "precioConsola":5
+        "precioConsola":5,
+        "cantidad":0
     },
     {
         "id":"15",
@@ -143,7 +156,8 @@
         "descripcion":"La Wii se destacó por su control de movimiento, el Wiimote, y atrajo a jugadores casuales con títulos como Wii Sports. Fue un gran éxito comercial.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/wii.png",
-        "precioConsola":20
+        "precioConsola":20,
+        "cantidad":0
     },
     {
         "id":"16",
@@ -152,7 +166,8 @@
         "descripcion":"La Nintendo 3DS continuó la línea DS con funciones 3D sin gafas. Ofreció una biblioteca diversa de juegos, incluyendo títulos de realidad aumentada.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/nintendo-3ds.png",
-        "precioConsola":20
+        "precioConsola":20,
+        "cantidad":0
     },
     {
         "id":"17",
@@ -161,7 +176,8 @@
         "descripcion":"La Wii U introdujo el GamePad con pantalla táctil, permitiendo experiencias asimétricas. Aunque no tuvo un éxito masivo, sentó las bases para ideas utilizadas en la Nintendo Switch.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/wii-u.jpg",
-        "precioConsola":120
+        "precioConsola":120,
+        "cantidad":0
     },
     {
         "id":"18",
@@ -170,7 +186,8 @@
         "descripcion":"La Nintendo Switch es una consola híbrida que puede ser utilizada tanto en modo portátil como en el televisor. Con títulos como The Legend of Zelda: Breath of the Wild y Animal Crossing: New Horizons, ha ganado popularidad mundial.",
         "compania":"Nintendo",
         "imagenReferente":"../img/consolas/nintendo/nintendo-switch.png",
-        "precioConsola":300
+        "precioConsola":300,
+        "cantidad":0
     },
     {
         "id":"19",
@@ -179,7 +196,8 @@
         "descripcion":"La Xbox original marcó la entrada de Microsoft en la industria de las consolas. Ofrecía gráficos potentes, un disco duro incorporado y el servicio en línea Xbox Live.",
         "compania":"Xbox",
         "imagenReferente":"../img/consolas/xbox/xbox.png",
-        "precioConsola":10
+        "precioConsola":10,
+        "cantidad":0
     },
     {
         "id":"20",
@@ -188,7 +206,8 @@
         "descripcion":"La Xbox 360 se convirtió en un fenómeno mundial con su potencia de procesamiento, el control inalámbrico y una extensa biblioteca de juegos. Introdujo el concepto de logros y la interfaz Xbox Live Marketplace.",
         "compania":"Xbox",
         "imagenReferente":"../img/consolas/xbox/xbox-360.jpg",
-        "precioConsola":100
+        "precioConsola":100,
+        "cantidad":0
     },
     {
         "id":"21",
@@ -197,7 +216,8 @@
         "descripcion":"Una versión más delgada y silenciosa de la Xbox 360, el modelo Slim mantuvo las características principales y mejoró el diseño y la eficiencia energética.",
         "compania":"Xbox",
         "imagenReferente":"../img/consolas/xbox/xbox-360-slim.png",
-        "precioConsola":200
+        "precioConsola":200,
+        "cantidad":0
     },
     {
         "id":"22",
@@ -206,7 +226,8 @@
         "descripcion":"La Xbox One destacó por su integración multimedia, permitiendo cambiar entre juegos, televisión y aplicaciones con comandos de voz. También introdujo la cámara Kinect como parte del paquete inicial.",
         "compania":"Xbox",
         "imagenReferente":"../img/consolas/xbox/xbox-one.jpg",
-        "precioConsola":300
+        "precioConsola":300,
+        "cantidad":0
     },
     {
         "id":"23",
@@ -215,7 +236,8 @@
         "descripcion":"La Xbox One S ofreció mejoras en el diseño, soporte para video en 4K y una unidad de disco Blu-ray 4K. También eliminó la dependencia de Kinect al hacerlo un accesorio opcional.",
         "compania":"Xbox",
         "imagenReferente":"../img/consolas/xbox/xbox-one-s.jpg",
-        "precioConsola":350
+        "precioConsola":350,
+        "cantidad":0
     },
     {
         "id":"24",
@@ -224,6 +246,7 @@
         "descripcion":"La Xbox Series S es una versión más asequible y compacta de la Serie X, enfocada en la reproducción de juegos en resolución 1440p y la entrega de una experiencia de próxima generación.",
         "compania":"Xbox",
         "imagenReferente":"../img/consolas/xbox/xbox-series.jpg",
-        "precioConsola":500
+        "precioConsola":500,
+        "cantidad":0
     }
 ]
