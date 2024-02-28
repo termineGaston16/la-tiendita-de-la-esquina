@@ -48,29 +48,61 @@ document.querySelector("#idProductosContenedor").innerHTML = `
         </div>
     </div>
 `
-document.querySelector("#idProductosRow").innerHTML = ""
 
 function cargarConsolas(arrayDeConsolas) {
+    document.querySelector("#idProductosRow").innerHTML = ""
+
     arrayDeConsolas.forEach(consolaSony => {
 
+        /* actualizar lista de fav */
+        let listaFavActualUsuario=JSON.parse(localStorage.getItem("usuarioLogueado")).fav
+        
+        if (listaFavActualUsuario.length != 0) {
+            consolaSony.aniadidaAFav = listaFavActualUsuario.some(consola => consola.id == consolaSony.id)
+        }
+
+        /* crear el div */
         let div1 = document.createElement("div")
         div1.classList.add("col")
         div1.classList.add("mainProductosConsolasProductosCargados")
-        div1.innerHTML = `
+
+        /* evaluar si está agregado a fav */
+        if (!consolaSony.aniadidaAFav) {
+
+            div1.innerHTML = `
             <img src="${consolaSony.imagenReferente}" class="mainProductosConsolasProductosCargadosImg" alt="${consolaSony.nombreConsola}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-heart mainProductosConsolasProductosCargadosFav" viewBox="0 0 16 16">
-                <path
-                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-            </svg>
+            <button type="button" class="btn btnFav" id="${consolaSony.id + "idBtnFav"}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-heart mainProductosConsolasProductosCargadosFav" viewBox="0 0 16 16">
+                    <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                </svg>
+            </button>
             <h5 class="mainProductosConsolasProductosCargadosNombreConsola">${consolaSony.nombreConsola}</h5>
             <h6 class="mainProductosConsolasProductosCargadosAnioDeEstreno"> Fecha de salida: ${consolaSony.anioDeEstreno}.</h6>
             <p class="mainProductosConsolasProductosCargadosPrecio"> Precio: $${consolaSony.precioConsola}.</p>
             <button id="${consolaSony.id}" type="button" class="btn btnAgregarAlCarrito" >Agregar al carrito</button>
-        `
-        document.querySelector("#idProductosRow").append(div1);
+            `
+        } else {
 
+            div1.innerHTML = `
+            <img src="${consolaSony.imagenReferente}" class="mainProductosConsolasProductosCargadosImg" alt="${consolaSony.nombreConsola}">
+            <button type="button" class="btn btnFav" id="${consolaSony.id + "idBtnFav"}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill mainProductosConsolasProductosCargadosFav" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                </svg>
+            </button>
+            <h5 class="mainProductosConsolasProductosCargadosNombreConsola">${consolaSony.nombreConsola}</h5>
+            <h6 class="mainProductosConsolasProductosCargadosAnioDeEstreno"> Fecha de salida: ${consolaSony.anioDeEstreno}.</h6>
+            <p class="mainProductosConsolasProductosCargadosPrecio"> Precio: $${consolaSony.precioConsola}.</p>
+            <button id="${consolaSony.id}" type="button" class="btn btnAgregarAlCarrito" >Agregar al carrito</button>
+            `
+        }
+
+        document.querySelector("#idProductosRow").append(div1);
     });
+
+    agregarAFavoritos(arrayDeConsolas, ".btnFav", cargarConsolas)
 }
 
 /* --------------- */
@@ -230,7 +262,6 @@ if (usuarioLogeado == null) {
 
 /* ------------------------- */
 /* Agregar al Carrito */
-
 function agregarAlCarrito(arrayDeConsolas, claseBoton) {
     let botonesAniadirCarrito = document.querySelectorAll(claseBoton);
 
@@ -293,6 +324,78 @@ function agregarAlCarrito(arrayDeConsolas, claseBoton) {
     });
 }
 
+/* ------------------------- */
+/* Agregar al Favoritos */
+function agregarAFavoritos(arrayDeConsolas, claseBoton, callBack) {
+    let botonesAniadirFavoritos = document.querySelectorAll(claseBoton);
+
+    botonesAniadirFavoritos.forEach(boton => {
+        boton.addEventListener("click", (e) => {
+
+            let usuarioLogeado = null;
+            let productosEnFavoritos = null;
+
+            if (localStorage.getItem("usuarioLogueado") != null) {
+                usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+            }
+
+            if (usuarioLogeado != null) {
+
+                /* obtener los favoritos del usuario logueado */
+                productosEnFavoritos = usuarioLogeado.fav;
+
+                /* encontrar la consola cuando se hace click en "añadir a favorito" */
+                let consolaEncontrada = arrayDeConsolas.find(consola => (consola.id + "idBtnFav") == e.currentTarget.id)
+
+                /* verificamos si ya está marcada o no */
+                let fav = productosEnFavoritos.some(producto => producto.id == consolaEncontrada.id)
+
+                if (!fav) {
+
+                    /* se actualiza el logo marcado */
+                    consolaEncontrada.aniadidaAFav = true;
+
+                    /* se agrega a la lista de favoritos del usuario */
+                    productosEnFavoritos.push(consolaEncontrada)
+                    usuarioLogeado.fav = productosEnFavoritos;
+
+                    /* actualizar el local */
+                    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogeado));
+                    let listaDeUsuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+                    let usuarioEncontrado = listaDeUsuarios.find(usuarioLista => usuarioLista.id == usuarioLogeado.id);
+                    if (usuarioEncontrado) {
+                        usuarioEncontrado.fav = usuarioLogeado.fav;
+                        localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
+                    }
+
+                } else {
+
+                    /* se desactualiza el logo marcado */
+                    consolaEncontrada.aniadidaAFav = false;
+
+                    /* se quita de la lista de favoritos del usuario */
+                    let index = productosEnFavoritos.findIndex(producto => producto.id == consolaEncontrada.id)
+                    if (index !== -1) {
+                        productosEnFavoritos.splice(index, 1);
+                        usuarioLogeado.fav = productosEnFavoritos;
+                    }
+
+                    /* actualizar el local */
+                    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogeado));
+                    let listaDeUsuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+                    let usuarioEncontrado = listaDeUsuarios.find(usuarioLista => usuarioLista.id == usuarioLogeado.id);
+                    if (usuarioEncontrado) {
+                        usuarioEncontrado.fav = usuarioLogeado.fav;
+                        localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
+                    }
+                }
+
+                callBack(arrayDeConsolas)
+            }
+        });
+    })
+
+}
 
 
 

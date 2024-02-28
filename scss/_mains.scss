@@ -538,6 +538,7 @@
         @include allCentro;
         flex-direction: column;
 
+        /* cambiar los datos */
         .mainPerfilTarjetaDatosContenedor {
             background-color: white;
             margin-top: 4%;
@@ -566,6 +567,135 @@
                     color: white;
                     margin: 2%;
                 }
+            }
+        }
+
+        /* carrito vacío */
+        .mainPerfilTarjetaDatosCarritoVacio {
+            margin-top: 5%;
+            color: white;
+            padding: 2%;
+        }
+
+        .mainPerfilTarjetaDatosCarritoVacioText {
+            margin-bottom: 5%;
+            color: white;
+            text-shadow: 0px 0px 5px white;
+        }
+
+        /* carrito con productos */
+        .mainPerfilTarjetaDatosCarritoLleno {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            background-color: white;
+            margin: 4% 0px;
+
+            border: 1px solid black;
+            border-radius: 10px;
+
+            .btnAnularUnidadProducto {
+                color: red;
+                transition: 0.3s;
+
+                &:hover {
+                    color: gray;
+                }
+            }
+
+            .mainPerfilTarjetaDatosCarritoLlenoImg {
+                width: 100%;
+                height: 50%;
+            }
+
+            .mainPerfilTarjetaDatosCarritoLlenoName {
+                text-align: start;
+            }
+
+            .carritoLlenoOpciones {
+                @include allCentro;
+                flex-direction: row;
+
+                .btnRestarUnidadProducto {
+                    color: rgb(70, 70, 70);
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: red;
+                    }
+                }
+
+                .carritoLlenoOpcionesProductoCantidad {
+                    background-color: rgb(37, 37, 37);
+                    border-radius: 15px;
+                    color: white;
+                    width: 50px;
+                }
+
+                .btnSumarUnidadProducto {
+                    color: gray;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: rgb(0, 255, 0);
+                    }
+                }
+            }
+
+            .mainPerfilTarjetaDatosCarritoLlenoPrecio {
+                background-color: black;
+                border-radius: 15px;
+                padding: 5px;
+                color: white;
+            }
+
+        }
+
+        /* lista da favoritos vacía*/
+        .mainPerfilTarjetaDatosFavVacia{
+            margin-top: 5%;
+            color: white;
+            padding: 2%;
+        }
+
+        .mainPerfilTarjetaDatosFavVaciaText{
+            margin-bottom: 5%;
+            color: white;
+            text-shadow: 0px 0px 5px white;
+        }
+
+        /* lista da favoritos llena*/
+        .mainPerfilTarjetaDatosFavLlena{
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            background-color: white;
+            margin: 4% 0px;
+
+            border: 1px solid black;
+            border-radius: 10px;
+
+            .mainPerfilTarjetaDatosFavLlenaImg{
+                width: 100%;
+                height: 50%;
+            }
+
+            .mainPerfilTarjetaDatosFavLlenaNome{
+                text-align: start;
+            }
+
+            .mainPerfilTarjetaDatosFavLlenaFecha{
+                font-style: italic;
+                color: gray;
+            }
+
+            .mainPerfilTarjetaDatosFavLlenaPrecio{
+                background-color: black;
+                border-radius: 15px;
+                padding: 5px;
+                color: white;
             }
         }
     }
