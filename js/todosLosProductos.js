@@ -55,11 +55,20 @@ function cargarConsolas(arrayDeConsolas) {
     arrayDeConsolas.forEach(consolaSony => {
 
         /* actualizar lista de fav */
-        let listaFavActualUsuario=JSON.parse(localStorage.getItem("usuarioLogueado")).fav
-        
-        if (listaFavActualUsuario.length != 0) {
-            consolaSony.aniadidaAFav = listaFavActualUsuario.some(consola => consola.id == consolaSony.id)
+        let usuarioLogueado = null;
+        let listaFavActualUsuario = null;
+
+        usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+        if (usuarioLogueado) {
+            listaFavActualUsuario = usuarioLogueado.fav
         }
+
+        if (listaFavActualUsuario && listaFavActualUsuario.length != 0) {
+            consolaSony.aniadidaAFav = listaFavActualUsuario.some(consola => consola.id == consolaSony.id)
+        } else {
+            consolaSony.aniadidaAFav = false;
+        }
+
 
         /* crear el div */
         let div1 = document.createElement("div")
@@ -102,6 +111,7 @@ function cargarConsolas(arrayDeConsolas) {
         document.querySelector("#idProductosRow").append(div1);
     });
 
+    agregarAlCarrito(arrayDeConsolas, ".btnAgregarAlCarrito")
     agregarAFavoritos(arrayDeConsolas, ".btnFav", cargarConsolas)
 }
 
@@ -125,6 +135,8 @@ function filtrarConsolasPorPrecio(arrayDeConsolas, callback) {
             document.querySelector("#idProductosRow").innerHTML = ""
             callback(arrayFiltradoXPrecios.sort((a, b) => a.precioConsola - b.precioConsola));
         }
+
+        agregarAlCarrito(arrayFiltradoXPrecios, ".btnAgregarAlCarrito")
     })
 }
 
@@ -134,6 +146,7 @@ function limpiarFiltracionPorPrecio(arrayCompleto, callback) {
     document.querySelector("#btnLimpiarFiltracion").addEventListener("click", () => {
         document.querySelector("#idProductosRow").innerHTML = ""
         callback(arrayCompleto);
+        agregarAlCarrito(arrayCompleto, ".btnAgregarAlCarrito")
     })
 }
 
@@ -147,6 +160,7 @@ function filtrarConsolasMenorPrecio(arrayDeConsolas, callback) {
 
         document.querySelector("#idProductosRow").innerHTML = ""
         callback(arrayFiltradoMenorPrecio);
+        agregarAlCarrito(arrayFiltradoMenorPrecio, ".btnAgregarAlCarrito")
     });
 }
 
@@ -157,6 +171,7 @@ function filtrarConsolasMayorPrecio(arrayDeConsolas, callback) {
 
         document.querySelector("#idProductosRow").innerHTML = ""
         callback(arrayFiltradoMayorPrecio);
+        agregarAlCarrito(arrayFiltradoMayorPrecio, ".btnAgregarAlCarrito")
     });
 }
 
@@ -167,6 +182,7 @@ function filtrarConsolasAZ(arrayDeConsolas, callback) {
 
         document.querySelector("#idProductosRow").innerHTML = ""
         callback(arrayFiltradoAZ);
+        agregarAlCarrito(arrayFiltradoAZ, ".btnAgregarAlCarrito")
     });
 }
 
@@ -177,6 +193,7 @@ function filtrarConsolasZA(arrayDeConsolas, callback) {
 
         document.querySelector("#idProductosRow").innerHTML = ""
         callback(arrayFiltradoZA);
+        agregarAlCarrito(arrayFiltradoZA, ".btnAgregarAlCarrito")
     });
 }
 
@@ -187,6 +204,7 @@ function filtrarConsolasMasNuevo(arrayDeConsolas, callback) {
 
         document.querySelector("#idProductosRow").innerHTML = ""
         callback(arrayFiltradoMasNuevo);
+        agregarAlCarrito(arrayFiltradoMasNuevo, ".btnAgregarAlCarrito")
     });
 }
 
@@ -197,6 +215,7 @@ function filtrarConsolasMasViejo(arrayDeConsolas, callback) {
 
         document.querySelector("#idProductosRow").innerHTML = ""
         callback(arrayFiltradoMasViejo);
+        agregarAlCarrito(arrayFiltradoMasViejo, ".btnAgregarAlCarrito")
     });
 }
 
@@ -316,8 +335,36 @@ function agregarAlCarrito(arrayDeConsolas, claseBoton) {
 
                 }
 
+                /* notificacion de que se agregó */
+                Swal.fire({
+                    width: 300,
+                    html: `
+                        <div class="custom-swal-content"> 
+                            <p>¡Producto agregado!</p>
+                        </div>
+                    `,
+                    customClass: {
+                        popup: 'alertFondo',
+                    },
+                    position: "top-right",
+                    showConfirmButton: false,
+                    timer: 700
+                });
+
             } else {
-                alert("Introduce una cuenta primero")
+                Swal.fire({
+                    html: `
+                        <div class="custom-swal-content"> 
+                            <p>Ingrese un usuario para continuar</p>
+                        </div>
+                    `,
+                    customClass: {
+                        popup: 'alertFondo',
+                    },
+                    position: "center",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
             }
 
         });
@@ -368,6 +415,22 @@ function agregarAFavoritos(arrayDeConsolas, claseBoton, callBack) {
                         localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
                     }
 
+                    /* notificacion de que se agregó */
+                    Swal.fire({
+                        width: 300,
+                        html: `
+                        <div class="custom-swal-content"> 
+                            <p>¡Agregado a Favoritos!</p>
+                        </div>
+                    `,
+                        customClass: {
+                            popup: 'alertFondo',
+                        },
+                        position: "top-right",
+                        showConfirmButton: false,
+                        timer: 700
+                    });
+
                 } else {
 
                     /* se desactualiza el logo marcado */
@@ -391,11 +454,39 @@ function agregarAFavoritos(arrayDeConsolas, claseBoton, callBack) {
                 }
 
                 callBack(arrayDeConsolas)
+            } else {
+                Swal.fire({
+                    html: `
+                        <div class="custom-swal-content"> 
+                            <p>Ingrese un usuario para continuar</p>
+                        </div>
+                    `,
+                    customClass: {
+                        popup: 'alertFondo',
+                    },
+                    position: "center",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
             }
         });
     })
 
 }
+
+/* ------------------------- */
+/* Buscador */
+
+/* click en Search */
+document.querySelector("#btnSearch").addEventListener("click",()=>{
+
+    let palabraBuscada = null;
+    palabraBuscada=document.querySelector("#inputSearch").value;
+    localStorage.setItem("palabraBuscada",palabraBuscada)
+    window.location.href ="../index/buscador.html"
+    
+})
+
 
 
 

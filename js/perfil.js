@@ -379,6 +379,12 @@ document.querySelector("#btnCambiarContrasenia").addEventListener("click", () =>
     document.querySelector("#idMenuPerfilOpen").classList.remove("open")
 })
 
+document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
+    document.querySelector("#idMenuNavPerfilFondoNegro").classList.add("d-none")
+    document.querySelector("#idMenuPerfilOpen").classList.add("opacity-0")
+    document.querySelector("#idMenuPerfilOpen").classList.remove("open")
+})
+
 /* ------------------- */
 /* carrito */
 let carritoActual = null;
@@ -631,7 +637,7 @@ document.querySelector("#btnFavPerfilNav").addEventListener("click", () => {
 function cargarFav(arrayFav) {
     document.querySelector("#idProductosCarritoRow").innerHTML = "";
 
-    arrayFav.forEach(consola => { 
+    arrayFav.forEach(consola => {
 
         let div1 = document.createElement("div")
         div1.classList.add("col")
@@ -647,3 +653,65 @@ function cargarFav(arrayFav) {
 
 }
 
+/* --------------- */
+/* Métodos de Pago */
+/* Mercado Pago, Tarjeta, Efectivo, Paypal, Cuenta Bancaria */
+
+document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
+
+    /* cargar la planilla */
+    document.querySelector("#tarjetaDatos").innerHTML = `
+
+    <div class="row g-3 mainPerfilTarjetaDatosContenedor">
+        <h4>Métodos de Pago:</h4>
+                
+        <div class="row">
+
+            <!-- Agregar Método de pago -->
+            <div class="col-xl-6 col-md-6 col-sm-12 container text-center">
+
+                <h6>Agregar método de pago: </h6>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                                <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                                <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16">
+                                <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+                                <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Métodos de pago del usuario -->
+            <div class="col-xl-6 col-md-6 col-sm-12">
+                <h6>Tús metodos de pago: </h6>
+                
+            </div>
+        </div>
+        
+    </div>
+    `
+})

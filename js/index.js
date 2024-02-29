@@ -121,6 +121,18 @@ if (usuarioLogeado == null) {
 
 }
 
+/* ------------------------- */
+/* Buscador */
+
+/* click en Search */
+document.querySelector("#btnSearch").addEventListener("click",()=>{
+
+    let palabraBuscada = null;
+    palabraBuscada=document.querySelector("#inputSearch").value;
+    localStorage.setItem("palabraBuscada",palabraBuscada)
+    window.location.href ="../index/buscador.html"
+    
+})
 
 
 

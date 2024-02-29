@@ -91,6 +91,7 @@ document.querySelector("#btnRegistrarDatos").addEventListener("click", () => {
             fotoPerfil:"",
             carrito:[],
             fav:[],
+            metodosDePago:[],
         };
 
         /* ------------------- */

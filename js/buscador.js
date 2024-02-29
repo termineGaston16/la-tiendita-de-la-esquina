@@ -24,23 +24,49 @@ fetch(url)
     .then(response => response.json())
     .then(todasLasConsolas => {
 
-        let consolasDeSony = todasLasConsolas.filter(consola => {
-            return consola.id >= "00" && consola.id <= "07";
-        })
+        /* obtener la palabra buscada */
+        let palabraBuscada = null;
 
-        cargarConsolas(consolasDeSony)
-        filtrarConsolasPorPrecio(consolasDeSony, cargarConsolas)
-        limpiarFiltracionPorPrecio(consolasDeSony, cargarConsolas,)
-        filtrarConsolasMenorPrecio(consolasDeSony, cargarConsolas)
-        filtrarConsolasMayorPrecio(consolasDeSony, cargarConsolas)
-        filtrarConsolasAZ(consolasDeSony, cargarConsolas)
-        filtrarConsolasZA(consolasDeSony, cargarConsolas)
-        filtrarConsolasMasNuevo(consolasDeSony, cargarConsolas)
-        filtrarConsolasMasViejo(consolasDeSony, cargarConsolas)
+        if (localStorage.getItem("palabraBuscada") != null) {
+            palabraBuscada = localStorage.getItem("palabraBuscada");
+        }
 
-        agregarAlCarrito(consolasDeSony, ".btnAgregarAlCarrito")
+        /* verificar si la palabra no está vacía o si existe el local */
+        if (palabraBuscada == null || palabraBuscada == "") {
+            document.querySelector("#idProductosContenedor").innerHTML = `
+            <div class="container text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-slash-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M11.354 4.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708"/>
+                </svg>
+                <p style="color:white;">Consola no encontrada.</p>
+            </div>
+        `
+        }
+
+        /* filtrar el array según la palabra buscada */
+        let resultados = todasLasConsolas.filter(consola => {
+            return consola.nombreConsola.toLowerCase().includes(palabraBuscada.toLowerCase());
+        });
+
+        /* Si no se encontraron resultados al respecto */
+        if (resultados.length == 0) {
+            document.querySelector("#idProductosContenedor").innerHTML = `
+            <div class="container text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-slash-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M11.354 4.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708"/>
+                </svg>
+                <p style="color:white;">Consola no encontrada.</p>
+            </div>
+        `
+        }
+
+        cargarConsolas(resultados);
+        agregarAlCarrito(resultados, ".btnAgregarAlCarrito");
     })
     .catch(error => console.error('Error al cargar las consolas.', error));
+
 
 document.querySelector("#idProductosContenedor").innerHTML = `
     <div class="container text-center">
@@ -48,6 +74,7 @@ document.querySelector("#idProductosContenedor").innerHTML = `
         </div>
     </div>
 `
+
 
 function cargarConsolas(arrayDeConsolas) {
     document.querySelector("#idProductosRow").innerHTML = ""
@@ -68,6 +95,7 @@ function cargarConsolas(arrayDeConsolas) {
         } else {
             consolaSony.aniadidaAFav = false;
         }
+
 
         /* crear el div */
         let div1 = document.createElement("div")
@@ -108,116 +136,10 @@ function cargarConsolas(arrayDeConsolas) {
         }
 
         document.querySelector("#idProductosRow").append(div1);
-
     });
 
     agregarAlCarrito(arrayDeConsolas, ".btnAgregarAlCarrito")
     agregarAFavoritos(arrayDeConsolas, ".btnFav", cargarConsolas)
-}
-
-/* --------------- */
-/* Filtar por precio */
-function filtrarConsolasPorPrecio(arrayDeConsolas, callback) {
-
-    document.querySelector("#btnFiltrarPrecio").addEventListener("click", () => {
-        let precioDesde = document.querySelector("#filtrarPrecioDesde").value;
-        let precioHasta = document.querySelector("#filtrarPrecioHasta").value;
-
-        let arrayFiltradoXPrecios = arrayDeConsolas.filter(consola => {
-            return consola.precioConsola >= precioDesde && consola.precioConsola <= precioHasta;
-        })
-
-        if (precioDesde == "" && precioDesde == "" || arrayFiltradoXPrecios.length == 0) {
-            document.querySelector("#idProductosRow").innerHTML = `
-                <p class="textNoEncontrado"> No se encotraron productos :( </p>
-            `
-        } else {
-            document.querySelector("#idProductosRow").innerHTML = ""
-            callback(arrayFiltradoXPrecios.sort((a, b) => a.precioConsola - b.precioConsola));
-        }
-
-        agregarAlCarrito(arrayFiltradoXPrecios, ".btnAgregarAlCarrito")
-    })
-}
-
-/* --------------- */
-/* Limpiar filtración */
-function limpiarFiltracionPorPrecio(arrayCompleto, callback) {
-    document.querySelector("#btnLimpiarFiltracion").addEventListener("click", () => {
-        document.querySelector("#idProductosRow").innerHTML = ""
-        callback(arrayCompleto);
-
-        agregarAlCarrito(arrayCompleto, ".btnAgregarAlCarrito")
-    })
-}
-
-/* --------------- */
-/* Filtar por catergorias */
-
-/* menor precio */
-function filtrarConsolasMenorPrecio(arrayDeConsolas, callback) {
-    document.querySelector("#btnMenorPrecioFiltro").addEventListener("click", () => {
-        let arrayFiltradoMenorPrecio = arrayDeConsolas.sort((a, b) => a.precioConsola - b.precioConsola);
-
-        document.querySelector("#idProductosRow").innerHTML = ""
-        callback(arrayFiltradoMenorPrecio);
-        agregarAlCarrito(arrayFiltradoMenorPrecio, ".btnAgregarAlCarrito")
-    });
-}
-
-/* mayor precio */
-function filtrarConsolasMayorPrecio(arrayDeConsolas, callback) {
-    document.querySelector("#btnMayorPrecioFiltro").addEventListener("click", () => {
-        let arrayFiltradoMayorPrecio = arrayDeConsolas.sort((a, b) => b.precioConsola - a.precioConsola);
-
-        document.querySelector("#idProductosRow").innerHTML = ""
-        callback(arrayFiltradoMayorPrecio);
-        agregarAlCarrito(arrayFiltradoMayorPrecio, ".btnAgregarAlCarrito")
-    });
-}
-
-/* A / Z */
-function filtrarConsolasAZ(arrayDeConsolas, callback) {
-    document.querySelector("#btnAZPrecioFiltro").addEventListener("click", () => {
-        let arrayFiltradoAZ = arrayDeConsolas.sort((a, b) => a.nombreConsola.localeCompare(b.nombreConsola));
-
-        document.querySelector("#idProductosRow").innerHTML = ""
-        callback(arrayFiltradoAZ);
-        agregarAlCarrito(arrayFiltradoAZ, ".btnAgregarAlCarrito")
-    });
-}
-
-/* Z / A */
-function filtrarConsolasZA(arrayDeConsolas, callback) {
-    document.querySelector("#btnZAPrecioFiltro").addEventListener("click", () => {
-        let arrayFiltradoZA = arrayDeConsolas.sort((a, b) => b.nombreConsola.localeCompare(a.nombreConsola));
-
-        document.querySelector("#idProductosRow").innerHTML = ""
-        callback(arrayFiltradoZA);
-        agregarAlCarrito(arrayFiltradoZA, ".btnAgregarAlCarrito")
-    });
-}
-
-/* mas nuevo (año) */
-function filtrarConsolasMasNuevo(arrayDeConsolas, callback) {
-    document.querySelector("#btnMasNuevoPrecioFiltro").addEventListener("click", () => {
-        let arrayFiltradoMasNuevo = arrayDeConsolas.sort((a, b) => parseInt(b.anioDeEstreno) - parseInt(a.anioDeEstreno));
-
-        document.querySelector("#idProductosRow").innerHTML = ""
-        callback(arrayFiltradoMasNuevo);
-        agregarAlCarrito(arrayFiltradoMasNuevo, ".btnAgregarAlCarrito")
-    });
-}
-
-/* mas viejo (año) */
-function filtrarConsolasMasViejo(arrayDeConsolas, callback) {
-    document.querySelector("#btnMasAntiguoPrecioFiltro").addEventListener("click", () => {
-        let arrayFiltradoMasViejo = arrayDeConsolas.sort((a, b) => parseInt(a.anioDeEstreno) - parseInt(b.anioDeEstreno));
-
-        document.querySelector("#idProductosRow").innerHTML = ""
-        callback(arrayFiltradoMasViejo);
-        agregarAlCarrito(arrayFiltradoMasViejo, ".btnAgregarAlCarrito")
-    });
 }
 
 /* ------------------------- */
@@ -258,7 +180,7 @@ if (usuarioLogeado == null) {
 
     if (usuarioLogeado.fotoPerfil != "") {
         document.querySelector("#idMenuNavOpenPerfilLogueader").innerHTML = `
-        <a href="/index/perfil.html" class="nav-link menuNavOpenPerfilLink">
+        <a href="../index/perfil.html" class="nav-link menuNavOpenPerfilLink">
         <div id="contenedorFotoPerfil" style="width: 30px; height: 30px; border-radius: 100px; overflow:hidden; display: flex; align-items: center; justify-content: center;">
                 <img src="${usuarioLogeado.fotoPerfil}" alt="" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
@@ -374,7 +296,7 @@ function agregarAlCarrito(arrayDeConsolas, claseBoton) {
 
 /* ------------------------- */
 /* Agregar al Favoritos */
-function agregarAFavoritos(arrayDeConsolas, claseBoton, callBack, callBack2) {
+function agregarAFavoritos(arrayDeConsolas, claseBoton, callBack) {
     let botonesAniadirFavoritos = document.querySelectorAll(claseBoton);
 
     botonesAniadirFavoritos.forEach(boton => {
@@ -479,11 +401,11 @@ function agregarAFavoritos(arrayDeConsolas, claseBoton, callBack, callBack2) {
 /* Buscador */
 
 /* click en Search */
-document.querySelector("#btnSearch").addEventListener("click",()=>{
+document.querySelector("#btnSearch").addEventListener("click", () => {
 
     let palabraBuscada = null;
-    palabraBuscada=document.querySelector("#inputSearch").value;
-    localStorage.setItem("palabraBuscada",palabraBuscada)
-    window.location.href ="../index/buscador.html"
-    
+    palabraBuscada = document.querySelector("#inputSearch").value;
+    localStorage.setItem("palabraBuscada", palabraBuscada)
+    window.location.href = "../index/buscador.html"
+
 })
