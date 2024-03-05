@@ -655,7 +655,6 @@ function cargarFav(arrayFav) {
 
 /* --------------- */
 /* Métodos de Pago */
-/* Mercado Pago, Tarjeta, Efectivo, Paypal, Cuenta Bancaria */
 
 document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
 
@@ -673,40 +672,36 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
                 <h6>Agregar método de pago: </h6>
                 <div class="row">
                     <div class="col">
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" id="btnAgregarTarjeta">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
                                 <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
                             </svg>
                         </button>
+                        <p>Tarjeta (Crédito / Débido)</p>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" id="btnAgregarEfectivo">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
                                 <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
                                 <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
                             </svg>
-                        </button>
+                        </button> 
+                        <p>Efectivo</p>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" id="btnAgregarPaypal">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16">
                                 <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z"/>
                             </svg>
                         </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
-                                <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z"/>
-                            </svg>
-                        </button>
+                        <p>Paypal</p>
                     </div>
                 </div>
             </div>
 
             <!-- Métodos de pago del usuario -->
-            <div class="col-xl-6 col-md-6 col-sm-12">
+            <div class="col-xl-6 col-md-6 col-sm-12" id="metodosDePagosDelUsuario">
                 <h6>Tús metodos de pago: </h6>
                 
             </div>
@@ -714,4 +709,634 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
         
     </div>
     `
+
+    /* ------------------- */
+    /* agregar método de pago */
+
+    /* tarjeta */
+    document.querySelector("#btnAgregarTarjeta").addEventListener("click", () => {
+        Swal.fire({
+            html: `
+                <div class="custom-swal-content container-fluid"> 
+                    <h4> Datos de la Tarjeta: </h4>
+
+                    <div class="row gy-3">
+                        <div class="col-md-6" id="tarjetaNombreContenedor">
+                            <label for="tarjetaNombre" class="form-label">Titular de la tarjeta: </label>
+                            <input type="text" class="form-control" id="tarjetaNombre" placeholder="nombre y apellidos completos">
+                        </div>
+
+                        <div class="col-md-6" id="tarjetaNumeroContenedor">
+                            <label for="tarjetaNumero" class="form-label">Nº Tarjeta: </label>
+                            <input type="number" class="form-control" id="tarjetaNumero" placeholder="1111 1111 1111 1111">
+                        </div>
+
+                        <div class="col-md-6" id="tarjetaVenciContenedor">
+                            <label for="tarjetaVenci" class="form-label">Fecha de Vencimiento: </label>
+                            <input type="number" class="form-control" id="tarjetaVenci" placeholder="MM / YY">
+                        </div>
+
+                        <div class="col-md-6" id="tarjetaCvvContenedor">
+                            <label for="tarjetaCvv" class="form-label">CVV</label>
+                            <input type="number" class="form-control" id="tarjetaCvv" placeholder="123">
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="btn btn-primary" type="submit" id="btnMetodoPagoTarjeta">Agregar Tarjeta</button>
+                </div>
+            `,
+            customClass: {
+                popup: '',
+            },
+            showConfirmButton: false,
+            width: 700
+        });
+
+        /* ------------------- */
+        /* acción de agregar método */
+        document.querySelector("#btnMetodoPagoTarjeta").addEventListener("click", () => {
+
+            /* variables */
+            let titularValido = false;
+            let numeroTarjetaValido = false;
+            let fechaVencimientoValido = false;
+            let cvvValido = false;
+
+            /* funciones */
+            titularValido = validarQueElCampoNoEsteVacio("#tarjetaNombre", "#tarjetaNombreContenedor")
+            numeroTarjetaValido = validarQueElCampoNoEsteVacio("#tarjetaNumero", "#tarjetaNumeroContenedor")
+            fechaVencimientoValido = validarQueElCampoNoEsteVacio("#tarjetaVenci", "#tarjetaVenciContenedor")
+            cvvValido = validarQueElCampoNoEsteVacio("#tarjetaCvv", "#tarjetaCvvContenedor")
+
+            numeroTarjetaValido = validarNumeroTarjeta("#tarjetaNumero", "#tarjetaNumeroContenedor")
+            fechaVencimientoValido = validarFechaVencimiento("#tarjetaVenci", "#tarjetaVenciContenedor")
+            cvvValido = validarCodigoSeguridad("#tarjetaCvv", "#tarjetaCvvContenedor")
+
+            /* validar que no exista la misma tarjeta */
+            let metodosDePagosDelUsuario = null;
+            metodosDePagosDelUsuario = usuario.metodosDePago;
+
+            let avisoExistente = document.querySelector("#avisoTarjetaYaRegistrada");
+            let numeroTarjeta = document.querySelector("#tarjetaNumero").value;
+            let fechaVenciTarjeta = document.querySelector("#tarjetaVenci").value;
+            let cvvTarjeta = document.querySelector("#tarjetaCvv").value;
+
+            if (metodosDePagosDelUsuario.length != 0) {
+                if (metodosDePagosDelUsuario.some(metodo =>
+                    metodo.numeroTarjetaUser == numeroTarjeta || metodo.fechaVencimientoUser == fechaVenciTarjeta
+                    || metodo.cvvUser == cvvTarjeta)) {
+
+                    if (!avisoExistente) {
+                        let aviso = document.createElement("p");
+                        aviso.id = "avisoTarjetaYaRegistrada";
+                        aviso.innerHTML = "* Esta tarjeta ya está registrada.";
+                        aviso.style.color = "red";
+
+                        let campoContenedor = document.querySelector("#tarjetaCvvContenedor");
+                        campoContenedor.appendChild(aviso);
+                    }
+
+                    titularValido = false;
+
+                } else {
+
+                    if (avisoExistente) {
+                        avisoExistente.parentElement.removeChild(avisoExistente);
+                    }
+
+                    titularValido = true;
+                }
+            }
+
+            /* agregar nueva tarjeta */
+            if (titularValido && numeroTarjetaValido && fechaVencimientoValido && cvvValido) {
+
+                /* ------------------- */
+                /* tarjeta objeto */
+                let nuevoMetodoDePago = {
+                    tipoUser: "",
+                    nombreTitularUser: "",
+                    numeroTarjetaUser: 0,
+                    fechaVencimientoUser: 0,
+                    cvvUser: 0
+                };
+
+                /* resto de datos */
+                nuevoMetodoDePago.tipoUser = "TARJETA";
+                nuevoMetodoDePago.nombreTitularUser = document.querySelector("#tarjetaNombre").value.toLowerCase();
+                nuevoMetodoDePago.numeroTarjetaUser = document.querySelector("#tarjetaNumero").value;
+                nuevoMetodoDePago.fechaVencimientoUser = document.querySelector("#tarjetaVenci").value;
+                nuevoMetodoDePago.cvvUser = document.querySelector("#tarjetaCvv").value;
+
+                /* subirlo al local storage */
+                metodosDePagosDelUsuario.push(nuevoMetodoDePago)
+                usuario.metodosDePago = metodosDePagosDelUsuario;
+
+                /* actualizar el local */
+                localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+                let listaDeUsuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+                let usuarioEncontrado = listaDeUsuarios.find(usuarioLista => usuarioLista.id == usuario.id);
+                if (usuarioEncontrado) {
+                    usuarioEncontrado.metodosDePago = usuario.metodosDePago;
+                    localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
+                }
+
+                Swal.fire({
+                    html: `
+                        <div class="custom-swal-content alertUsuarioRegistrado"> 
+                            <p class="alertUsuarioRegistradoText">¡Tarjeta registrada!</p>
+                            <a href="../index/perfil.html" class="btn alertUsuarioRegistradoBtn">Volver</a>
+                        </div>
+                    `,
+                    customClass: {
+                        popup: 'alertFondo',
+                    },
+                    showConfirmButton: false,
+                });
+            }
+        })
+    })
+
+    /* efectivo */
+    document.querySelector("#btnAgregarEfectivo").addEventListener("click", () => {
+        Swal.fire({
+            html: `
+                <div class="custom-swal-content container-fluid"> 
+                    <h4> Datos Voleta Efectiva: </h4>
+
+                    <div class="row gy-3">
+                        <div class="col-md-6" id="efectivoNombreContenedor">
+                            <label for="efectivoNombre" class="form-label">Titular: </label>
+                            <input type="text" class="form-control" id="efectivoNombre" placeholder="nombre y apellidos completos">
+                        </div>
+
+                        <div class="col-md-6" id="efectivoNumeroCelularContenedor">
+                            <label for="efectivoNumeroCelular" class="form-label">Nº de Celular: </label>
+                            <input type="number" class="form-control" id="efectivoNumeroCelular" placeholder="15-1111-1111">
+                        </div>
+
+                        <div class="col-md-6" id="direccionDeEntregaContenedor">
+                            <label for="direccionDeEntrega" class="form-label">Dirección de Entrega: </label>
+                            <input type="text" class="form-control" id="direccionDeEntrega" placeholder="calle falsa 123">
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="btn btn-primary" type="submit" id="btnMetodoPagoEfectivo">Agregar Efectivo</button>
+                </div>
+            `,
+            customClass: {
+                popup: '',
+            },
+            showConfirmButton: false,
+            width: 700
+        });
+
+        /* ------------------- */
+        /* acción de agregar método */
+        document.querySelector("#btnMetodoPagoEfectivo").addEventListener("click", () => {
+
+            /* variables */
+            let titularValido = false;
+            let numeroCelularValido = false;
+            let direccionEntregaValido = false;
+
+            /* funciones */
+            titularValido = validarQueElCampoNoEsteVacio("#efectivoNombre", "#efectivoNombreContenedor")
+            numeroCelularValido = validarQueElCampoNoEsteVacio("#efectivoNumeroCelular", "#efectivoNumeroCelularContenedor")
+            direccionEntregaValido = validarQueElCampoNoEsteVacio("#direccionDeEntrega", "#direccionDeEntregaContenedor")
+
+            numeroCelularValido = validarNumeroCelular("#efectivoNumeroCelular", "#efectivoNumeroCelularContenedor")
+
+            /* validar que no exista el mismo efectivo */
+            let metodosDePagosDelUsuario = null;
+            metodosDePagosDelUsuario = usuario.metodosDePago;
+
+            let avisoExistente = document.querySelector("#avisoEfectivoYaRegistrada");
+            let nombreTitular = document.querySelector("#efectivoNombre").value;
+            let numeroTitular = document.querySelector("#efectivoNumeroCelular").value;
+            let direccionTitular = document.querySelector("#direccionDeEntrega").value;
+
+            if (metodosDePagosDelUsuario.length != 0) {
+                if (metodosDePagosDelUsuario.some(metodo => metodo.numeroTitularUser == numeroTitular || metodo.direccionTitularUser == direccionTitular)) {
+
+                    if (!avisoExistente) {
+                        let aviso = document.createElement("p");
+                        aviso.id = "avisoEfectivoYaRegistrada";
+                        aviso.innerHTML = "* Este método de efectivo ya está registrada.";
+                        aviso.style.color = "red";
+
+                        let campoContenedor = document.querySelector("#direccionDeEntregaContenedor");
+                        campoContenedor.appendChild(aviso);
+                    }
+
+                    titularValido = false;
+
+                } else {
+
+                    if (avisoExistente) {
+                        avisoExistente.parentElement.removeChild(avisoExistente);
+                    }
+
+                    titularValido = true;
+                }
+            }
+
+            /* agregar nuevo efectivo */
+            if (titularValido && numeroCelularValido && direccionEntregaValido) {
+
+                /* ------------------- */
+                /* tarjeta objeto */
+                let nuevoMetodoDePago = {
+                    tipoUser: "",
+                    nombreTitularUser: "",
+                    numeroTitularUser: 0,
+                    direccionTitularUser: "",
+                };
+
+                /* resto de datos */
+                nuevoMetodoDePago.tipoUser = "EFECTIVO";
+                nuevoMetodoDePago.nombreTitularUser = document.querySelector("#efectivoNombre").value.toLowerCase();
+                nuevoMetodoDePago.numeroTitularUser = document.querySelector("#efectivoNumeroCelular").value;
+                nuevoMetodoDePago.direccionTitularUser = document.querySelector("#direccionDeEntrega").value.toLowerCase();
+
+                /* subirlo al local storage */
+                metodosDePagosDelUsuario.push(nuevoMetodoDePago)
+                usuario.metodosDePago = metodosDePagosDelUsuario;
+
+                /* actualizar el local */
+                localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+                let listaDeUsuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+                let usuarioEncontrado = listaDeUsuarios.find(usuarioLista => usuarioLista.id == usuario.id);
+                if (usuarioEncontrado) {
+                    usuarioEncontrado.metodosDePago = usuario.metodosDePago;
+                    localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
+                }
+
+                Swal.fire({
+                    html: `
+                        <div class="custom-swal-content alertUsuarioRegistrado"> 
+                            <p class="alertUsuarioRegistradoText">¡Efectivo registrado!</p>
+                            <a href="../index/perfil.html" class="btn alertUsuarioRegistradoBtn">Volver</a>
+                        </div>
+                    `,
+                    customClass: {
+                        popup: 'alertFondo',
+                    },
+                    showConfirmButton: false,
+                });
+            }
+        })
+    })
+
+    /* paypal */
+    document.querySelector("#btnAgregarPaypal").addEventListener("click", () => {
+        Swal.fire({
+            html: `
+                <div class="custom-swal-content container-fluid"> 
+                    <h4> PayPal: </h4>
+
+                    <div class="row gy-3">
+                        <div class="col-md-12" id="paypalCorreoElectronicoContenedor">
+                            <label for="paypalCorreoElectronico" class="form-label">Correo Electrónico asociado a Paypal: </label>
+                            <input type="email" class="form-control" id="paypalCorreoElectronico" placeholder="nombreYapellido@example.com">
+                        </div>
+
+                        <div class="col-md-12" id="paypalContraseniaContenedor">
+                            <label for="paypalContrasenia" class="form-label">Contraseña asociada a Paypal: </label>
+                            <input type="password" class="form-control" id="paypalContrasenia" placeholder="******">
+                        </div>
+
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="btn btn-primary" type="submit" id="btnMetodoPagoPaypal">Agregar Paypal</button>
+                </div>
+            `,
+            customClass: {
+                popup: '',
+            },
+            showConfirmButton: false,
+            width: 700
+        });
+
+        /* ------------------- */
+        /* acción de agregar método */
+        document.querySelector("#btnMetodoPagoPaypal").addEventListener("click", () => {
+
+            /* variables */
+            let correoValido = false;
+            let contraseniaValido = false;
+
+            /* funciones */
+            correoValido = validarQueElCampoNoEsteVacio("#paypalCorreoElectronico", "#paypalCorreoElectronicoContenedor")
+            contraseniaValido = validarQueElCampoNoEsteVacio("#paypalContrasenia", "#paypalContraseniaContenedor")
+
+            correoValido = validarElCorreoElectronico("#paypalCorreoElectronico", "#paypalCorreoElectronicoContenedor")
+
+
+            /* validar que no exista el mismo correo */
+            let metodosDePagosDelUsuario = null;
+            metodosDePagosDelUsuario = usuario.metodosDePago;
+
+            let avisoExistente = document.querySelector("#avisoPaypalYaRegistrado");
+            let correoTitular = document.querySelector("#paypalCorreoElectronico").value;
+            let contraseniaTitular = document.querySelector("#paypalContrasenia").value;
+
+            if (metodosDePagosDelUsuario.length != 0) {
+                if (metodosDePagosDelUsuario.some(metodo => metodo.correoTitularUser == correoTitular && metodo.contraseniaTitularUser == contraseniaTitular)) {
+
+                    if (!avisoExistente) {
+                        let aviso = document.createElement("p");
+                        aviso.id = "avisoPaypalYaRegistrado";
+                        aviso.innerHTML = "* Esta cuenta de PayPal ya está registrada.";
+                        aviso.style.color = "red";
+
+                        let campoContenedor = document.querySelector("#paypalCorreoElectronicoContenedor");
+                        campoContenedor.appendChild(aviso);
+                    }
+
+                    titularValido = false;
+
+                } else {
+
+                    if (avisoExistente) {
+                        avisoExistente.parentElement.removeChild(avisoExistente);
+                    }
+
+                    titularValido = true;
+                }
+            }
+
+            /* agregar nuevo paypal */
+            if (correoValido && contraseniaValido) {
+
+                /* ------------------- */
+                /* tarjeta objeto */
+                let nuevoMetodoDePago = {
+                    tipoUser: "",
+                    correoTitularUser: "",
+                    contraseniaTitularUser: "",
+                };
+
+                /* resto de datos */
+                nuevoMetodoDePago.tipoUser = "PAYPAL";
+                nuevoMetodoDePago.correoTitularUser = document.querySelector("#paypalCorreoElectronico").value;
+                nuevoMetodoDePago.contraseniaTitularUser = document.querySelector("#paypalContrasenia").value;
+
+                /* subirlo al local storage */
+                metodosDePagosDelUsuario.push(nuevoMetodoDePago)
+                usuario.metodosDePago = metodosDePagosDelUsuario;
+
+                /* actualizar el local */
+                localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+                let listaDeUsuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+                let usuarioEncontrado = listaDeUsuarios.find(usuarioLista => usuarioLista.id == usuario.id);
+                if (usuarioEncontrado) {
+                    usuarioEncontrado.metodosDePago = usuario.metodosDePago;
+                    localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
+                }
+
+                Swal.fire({
+                    html: `
+                        <div class="custom-swal-content alertUsuarioRegistrado"> 
+                            <p class="alertUsuarioRegistradoText">¡PayPal registrado!</p>
+                            <a href="../index/perfil.html" class="btn alertUsuarioRegistradoBtn">Volver</a>
+                        </div>
+                    `,
+                    customClass: {
+                        popup: 'alertFondo',
+                    },
+                    showConfirmButton: false,
+                });
+            }
+        })
+    })
+
+    /* ------------------- */
+    /* validar los campos */
+
+    /* validar si están vacíos */
+    function validarQueElCampoNoEsteVacio(idDeCampo, idDeCampoContenedor) {
+        let campoContenedor = document.querySelector(idDeCampoContenedor);
+        let avisoExistente = campoContenedor.querySelector("#avisoCampoVacioTarjeta");
+
+        if (document.querySelector(idDeCampo).value === "") {
+            if (!avisoExistente) {
+                let aviso = document.createElement("p");
+                aviso.id = "avisoCampoVacioTarjeta";
+                aviso.innerHTML = "* Completa este campo.";
+                aviso.style.color = "red";
+
+                campoContenedor.appendChild(aviso);
+            }
+
+            return false;
+        } else {
+            if (avisoExistente) {
+                avisoExistente.parentElement.removeChild(avisoExistente);
+            }
+
+            return true;
+        }
+    }
+
+    /* validar numero tarjeta */
+    function validarNumeroTarjeta(idDeCampo, idDeCampoContenedor) {
+        let campoContenedor = document.querySelector(idDeCampoContenedor);
+        let avisoExistente = campoContenedor.querySelector("#avisoNumeroTarjeta");
+
+        let numeroTarjeta = document.querySelector(idDeCampo).value;
+
+        if (document.querySelector(idDeCampo).value !== "") {
+
+            if (numeroTarjeta.length != 16) {
+                if (!avisoExistente) {
+                    let aviso = document.createElement("p");
+                    aviso.innerHTML = "* Por favor, ingrese número de tarjeta válido.";
+                    aviso.style.color = "red";
+
+                    aviso.id = "avisoNumeroTarjeta";
+                    campoContenedor.appendChild(aviso);
+                }
+
+                return false;
+
+            } else {
+
+                if (avisoExistente) {
+                    avisoExistente.parentElement.removeChild(avisoExistente);
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /* validar fecha de vencimiento */
+    function validarFechaVencimiento(idDeCampo, idDeCampoContenedor) {
+        let campoContenedor = document.querySelector(idDeCampoContenedor);
+        let avisoExistente = campoContenedor.querySelector("#avisoFechaVencimientoTarjeta");
+
+        let fechaVencimiento = document.querySelector(idDeCampo).value;
+        let primerosDosDigitos = fechaVencimiento.substring(0, 2);
+        let ultimosDosDigitos = fechaVencimiento.substring(2, 4);
+
+        if (document.querySelector(idDeCampo).value !== "") {
+
+            if (fechaVencimiento.length != 4 || primerosDosDigitos < 1 || primerosDosDigitos > 12 || ultimosDosDigitos < 25) {
+                if (!avisoExistente) {
+                    let aviso = document.createElement("p");
+                    aviso.innerHTML = "* Por favor, ingrese una fecha de vencimiento válida.";
+                    aviso.style.color = "red";
+
+                    aviso.id = "avisoFechaVencimientoTarjeta";
+                    campoContenedor.appendChild(aviso);
+                }
+
+                return false;
+
+            } else {
+
+                if (avisoExistente) {
+                    avisoExistente.parentElement.removeChild(avisoExistente);
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /* validar código de seguridad */
+    function validarCodigoSeguridad(idDeCampo, idDeCampoContenedor) {
+        let campoContenedor = document.querySelector(idDeCampoContenedor);
+        let avisoExistente = campoContenedor.querySelector("#avisoCodigoSeguridadTarjeta");
+
+        let codigoSeguridad = document.querySelector(idDeCampo).value;
+
+        if (document.querySelector(idDeCampo).value !== "") {
+
+            if (codigoSeguridad.length != 3) {
+                if (!avisoExistente) {
+                    let aviso = document.createElement("p");
+                    aviso.innerHTML = "* Por favor, ingrese un código de seguridad válido.";
+                    aviso.style.color = "red";
+
+                    aviso.id = "avisoCodigoSeguridadTarjeta";
+                    campoContenedor.appendChild(aviso);
+                }
+
+                return false;
+
+            } else {
+
+                if (avisoExistente) {
+                    avisoExistente.parentElement.removeChild(avisoExistente);
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /* validar numero de celular */
+    function validarNumeroCelular(idDeCampo, idDeCampoContenedor) {
+        let campoContenedor = document.querySelector(idDeCampoContenedor);
+        let avisoExistente = campoContenedor.querySelector("#avisoNumeroCelularEfectivo");
+
+        let numeroDeCelular = document.querySelector(idDeCampo).value;
+        let primerosDosDigitos = numeroDeCelular.substring(0, 2);
+
+
+        if (document.querySelector(idDeCampo).value !== "") {
+
+            if (numeroDeCelular.length != 10 || primerosDosDigitos != 15 && primerosDosDigitos != 11) {
+                if (!avisoExistente) {
+                    let aviso = document.createElement("p");
+                    aviso.innerHTML = "* Por favor, ingrese un número de celular válido.";
+                    aviso.style.color = "red";
+
+                    aviso.id = "avisoNumeroCelularEfectivo";
+                    campoContenedor.appendChild(aviso);
+                }
+
+                return false;
+
+            } else {
+
+                if (avisoExistente) {
+                    avisoExistente.parentElement.removeChild(avisoExistente);
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /* validar el correo */
+    function validarElCorreoElectronico(idDeCampo, idDeCampoContenedor) {
+        let campoContenedor = document.querySelector(idDeCampoContenedor);
+        let avisoExistente = campoContenedor.querySelector("#avisoValidarCorreo");
+
+        let correoElectronico = document.querySelector(idDeCampo).value;
+        let expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (document.querySelector(idDeCampo).value !== "") {
+            if (!expresionRegular.test(correoElectronico)) {
+                if (!avisoExistente) {
+                    let aviso = document.createElement("p");
+                    aviso.innerHTML = "* Por favor, ingrese una dirección de correo electrónico válida.";
+                    aviso.style.color = "red";
+
+                    aviso.id = "avisoValidarCorreo";
+                    campoContenedor.appendChild(aviso);
+                }
+
+                return false;
+            } else {
+                if (avisoExistente) {
+                    avisoExistente.parentElement.removeChild(avisoExistente);
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /* ------------------- */
+    /* cargar metodos de pago del usuario */
+    let metodosDePagoDelUsuario = null;
+    metodosDePagoDelUsuario = usuario.metodosDePago;
+
+    if (metodosDePagoDelUsuario.length != 0) {
+        
+    }else{
+        document.querySelector("#metodosDePagosDelUsuario").innerHTML=`
+        
+        <h6>Tús metodos de pago: </h6>
+        <div> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-slash-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="M11.354 4.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708"/>
+            </svg>
+            <p> No tienes metodos de pagos. </p>
+        </div>
+        `
+    }
+
 })
