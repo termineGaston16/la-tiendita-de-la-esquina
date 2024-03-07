@@ -431,7 +431,25 @@ document.querySelector("#btnCarritoPerfilNav").addEventListener("click", () => {
         `
 
         cargarCarrito(carritoActual);
+
+        /* generar el btn de finalizar compra */
+        let btnFinalizarCompra = document.createElement("button")
+        btnFinalizarCompra.id="idBtnFinalizarCompra";
+        btnFinalizarCompra.classList.add("btn")
+        btnFinalizarCompra.classList.add("btn-primary")
+        btnFinalizarCompra.innerHTML=`
+            <p> Finalizar Compra </p>
+        `
+        document.querySelector("#tarjetaDatos").append(btnFinalizarCompra);
+
+        /* finalizar la compra */
+        document.querySelector("#idBtnFinalizarCompra").addEventListener("click", ()=>{
+            window.location.href = "../index/finalizarCompra.html";
+        })
+
     } else {
+        document.querySelector("#tarjetaDatos").innerHTML = "";
+
         document.querySelector("#tarjetaDatos").innerHTML = `
         <div class="container text-center mainPerfilTarjetaDatosCarritoVacio">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bag-x" viewBox="0 0 16 16">
@@ -575,7 +593,7 @@ function anularrUnidadProducto(arrayCarrito, claseBoton, callBack) {
     botonesAnularProducto.forEach(boton => {
         boton.addEventListener("click", (e) => {
 
-            /* encontrar la consola cuando se hace click en "boton sumar unidad" */
+            /* encontrar la consola cuando se hace click en "boton anular unidad" */
             let consola = arrayCarrito.find(consolaCarrito => (consolaCarrito.id + "anularUnidad") == e.currentTarget.id);
 
             /* si la consola existe, eliminarla */
@@ -598,6 +616,10 @@ function anularrUnidadProducto(arrayCarrito, claseBoton, callBack) {
             }
 
             callBack(arrayCarrito)
+
+            if (arrayCarrito.length == 0) {
+                window.location.href = "../index/perfil.html";
+            }
         });
     });
 }
@@ -608,7 +630,7 @@ let consolasFavoritas = null;
 favoritos = usuario.fav;
 
 /* --------------- */
-/* Cargar Productos */
+/* Cargar Productos favoritos */
 document.querySelector("#btnFavPerfilNav").addEventListener("click", () => {
     document.querySelector("#tarjetaDatos").innerHTML = "";
 
@@ -619,7 +641,7 @@ document.querySelector("#btnFavPerfilNav").addEventListener("click", () => {
             </div>
         </div>
         `
-        cargarFav(favoritos)
+        cargarFav(favoritos) 
     } else {
         document.querySelector("#tarjetaDatos").innerHTML = `
         <div class="container text-center mainPerfilTarjetaDatosFavVacia">
@@ -664,44 +686,44 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
     <div class="row g-3 mainPerfilTarjetaDatosContenedor">
         <h4>Métodos de Pago:</h4>
                 
-        <div class="row">
+        <div class="row mainPerfilTarjetaDatosMetodosDePago">
 
             <!-- Agregar Método de pago -->
-            <div class="col-xl-6 col-md-6 col-sm-12 container text-center">
+            <div class="col-xl-6 col-md-6 col-sm-12 container text-center mainPerfilTarjetaDatosMetodosDePagoAgregar">
 
                 <h6>Agregar método de pago: </h6>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-primary" id="btnAgregarTarjeta">
+                <div class="row mainPerfilTarjetaDatosMetodosDePagoAgregarBtns">
+                    <div class="col mainPerfilTarjetaDatosMetodosDePagoAgregarBtnsCol">
+                        <button type="button" class="btn btnAgregarTarjetaClass" id="btnAgregarTarjeta">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
                                 <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
                             </svg>
                         </button>
-                        <p>Tarjeta (Crédito / Débido)</p>
+                        <p class="btnAgregarTarjetaClassText">Tarjeta (Crédito / Débido)</p>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-primary" id="btnAgregarEfectivo">
+                    <div class="col mainPerfilTarjetaDatosMetodosDePagoAgregarBtnsCol">
+                        <button type="button" class="btn btnAgregarTarjetaClass" id="btnAgregarEfectivo">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
                                 <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
                                 <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
                             </svg>
                         </button> 
-                        <p>Efectivo</p>
+                        <p class="btnAgregarTarjetaClassText">Efectivo</p>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-primary" id="btnAgregarPaypal">
+                    <div class="col mainPerfilTarjetaDatosMetodosDePagoAgregarBtnsCol">
+                        <button type="button" class="btn btnAgregarTarjetaClass" id="btnAgregarPaypal">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16">
                                 <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z"/>
                             </svg>
                         </button>
-                        <p>Paypal</p>
+                        <p class="btnAgregarTarjetaClassText">Paypal</p>
                     </div>
                 </div>
             </div>
 
             <!-- Métodos de pago del usuario -->
-            <div class="col-xl-6 col-md-6 col-sm-12" id="metodosDePagosDelUsuario">
+            <div class="col-xl-6 col-md-6 col-sm-12 metodosDePagoDelUsuario" id="metodosDePagosDelUsuario">
                 <h6>Tús metodos de pago: </h6>
                 
             </div>
@@ -717,34 +739,34 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
     document.querySelector("#btnAgregarTarjeta").addEventListener("click", () => {
         Swal.fire({
             html: `
-                <div class="custom-swal-content container-fluid"> 
+                <div class="custom-swal-content container-fluid alertAgregarTarjeta"> 
                     <h4> Datos de la Tarjeta: </h4>
 
-                    <div class="row gy-3">
-                        <div class="col-md-6" id="tarjetaNombreContenedor">
+                    <div class="row gy-3 alertAgregarTarjetaSub">
+                        <div class="col-md-6 alertAgregarTarjetaInputContenedor" id="tarjetaNombreContenedor">
                             <label for="tarjetaNombre" class="form-label">Titular de la tarjeta: </label>
-                            <input type="text" class="form-control" id="tarjetaNombre" placeholder="nombre y apellidos completos">
+                            <input type="text" class="form-control alertAgregarTarjetaInput" id="tarjetaNombre" placeholder="nombre y apellidos completos">
                         </div>
 
-                        <div class="col-md-6" id="tarjetaNumeroContenedor">
+                        <div class="col-md-6 alertAgregarTarjetaInputContenedor" id="tarjetaNumeroContenedor">
                             <label for="tarjetaNumero" class="form-label">Nº Tarjeta: </label>
-                            <input type="number" class="form-control" id="tarjetaNumero" placeholder="1111 1111 1111 1111">
+                            <input type="number" class="form-control alertAgregarTarjetaInput" id="tarjetaNumero" placeholder="1111 1111 1111 1111">
                         </div>
 
-                        <div class="col-md-6" id="tarjetaVenciContenedor">
+                        <div class="col-md-6 alertAgregarTarjetaInputContenedor" id="tarjetaVenciContenedor">
                             <label for="tarjetaVenci" class="form-label">Fecha de Vencimiento: </label>
-                            <input type="number" class="form-control" id="tarjetaVenci" placeholder="MM / YY">
+                            <input type="number" class="form-control alertAgregarTarjetaInput" id="tarjetaVenci" placeholder="MM / YY">
                         </div>
 
-                        <div class="col-md-6" id="tarjetaCvvContenedor">
+                        <div class="col-md-6 alertAgregarTarjetaInputContenedor" id="tarjetaCvvContenedor">
                             <label for="tarjetaCvv" class="form-label">CVV</label>
-                            <input type="number" class="form-control" id="tarjetaCvv" placeholder="123">
+                            <input type="number" class="form-control alertAgregarTarjetaInput" id="tarjetaCvv" placeholder="123">
                         </div>
                     </div>
 
                     <hr class="my-4">
 
-                    <button class="btn btn-primary" type="submit" id="btnMetodoPagoTarjeta">Agregar Tarjeta</button>
+                    <button class="btn alertAgregarTarjetaBtn" type="submit" id="btnMetodoPagoTarjeta">Agregar Tarjeta</button>
                 </div>
             `,
             customClass: {
@@ -863,29 +885,29 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
     document.querySelector("#btnAgregarEfectivo").addEventListener("click", () => {
         Swal.fire({
             html: `
-                <div class="custom-swal-content container-fluid"> 
+                <div class="custom-swal-content container-fluid alertAgregarTarjeta"> 
                     <h4> Datos Voleta Efectiva: </h4>
 
-                    <div class="row gy-3">
-                        <div class="col-md-6" id="efectivoNombreContenedor">
+                    <div class="row gy-3 alertAgregarTarjetaSub">
+                        <div class="col-md-6 alertAgregarTarjetaInputContenedor" id="efectivoNombreContenedor">
                             <label for="efectivoNombre" class="form-label">Titular: </label>
-                            <input type="text" class="form-control" id="efectivoNombre" placeholder="nombre y apellidos completos">
+                            <input type="text" class="form-control alertAgregarTarjetaInput" id="efectivoNombre" placeholder="nombre y apellidos completos">
                         </div>
 
-                        <div class="col-md-6" id="efectivoNumeroCelularContenedor">
+                        <div class="col-md-6 alertAgregarTarjetaInputContenedor" id="efectivoNumeroCelularContenedor">
                             <label for="efectivoNumeroCelular" class="form-label">Nº de Celular: </label>
-                            <input type="number" class="form-control" id="efectivoNumeroCelular" placeholder="15-1111-1111">
+                            <input type="number" class="form-control alertAgregarTarjetaInput" id="efectivoNumeroCelular" placeholder="15-1111-1111">
                         </div>
 
-                        <div class="col-md-6" id="direccionDeEntregaContenedor">
+                        <div class="col-md-6 alertAgregarTarjetaInputContenedor" id="direccionDeEntregaContenedor">
                             <label for="direccionDeEntrega" class="form-label">Dirección de Entrega: </label>
-                            <input type="text" class="form-control" id="direccionDeEntrega" placeholder="calle falsa 123">
+                            <input type="text" class="form-control alertAgregarTarjetaInput" id="direccionDeEntrega" placeholder="calle falsa 123">
                         </div>
                     </div>
 
                     <hr class="my-4">
 
-                    <button class="btn btn-primary" type="submit" id="btnMetodoPagoEfectivo">Agregar Efectivo</button>
+                    <button class="btn alertAgregarTarjetaBtn" type="submit" id="btnMetodoPagoEfectivo">Agregar Efectivo</button>
                 </div>
             `,
             customClass: {
@@ -921,7 +943,7 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
             let direccionTitular = document.querySelector("#direccionDeEntrega").value;
 
             if (metodosDePagosDelUsuario.length != 0) {
-                if (metodosDePagosDelUsuario.some(metodo => metodo.numeroTitularUser == numeroTitular || metodo.direccionTitularUser == direccionTitular)) {
+                if (metodosDePagosDelUsuario.some(metodo => metodo.numeroTitularUser == numeroTitular && metodo.direccionTitularUser == direccionTitular)) {
 
                     if (!avisoExistente) {
                         let aviso = document.createElement("p");
@@ -996,25 +1018,25 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
     document.querySelector("#btnAgregarPaypal").addEventListener("click", () => {
         Swal.fire({
             html: `
-                <div class="custom-swal-content container-fluid"> 
+                <div class="custom-swal-content container-fluid alertAgregarTarjeta"> 
                     <h4> PayPal: </h4>
 
-                    <div class="row gy-3">
-                        <div class="col-md-12" id="paypalCorreoElectronicoContenedor">
+                    <div class="row gy-3 alertAgregarTarjetaSub">
+                        <div class="col-md-12 alertAgregarTarjetaInputContenedor" id="paypalCorreoElectronicoContenedor">
                             <label for="paypalCorreoElectronico" class="form-label">Correo Electrónico asociado a Paypal: </label>
-                            <input type="email" class="form-control" id="paypalCorreoElectronico" placeholder="nombreYapellido@example.com">
+                            <input type="email" class="form-control alertAgregarTarjetaInput" id="paypalCorreoElectronico" placeholder="nombreYapellido@example.com">
                         </div>
 
-                        <div class="col-md-12" id="paypalContraseniaContenedor">
+                        <div class="col-md-12 alertAgregarTarjetaInputContenedor" id="paypalContraseniaContenedor">
                             <label for="paypalContrasenia" class="form-label">Contraseña asociada a Paypal: </label>
-                            <input type="password" class="form-control" id="paypalContrasenia" placeholder="******">
+                            <input type="password" class="form-control alertAgregarTarjetaInput" id="paypalContrasenia" placeholder="******">
                         </div>
 
                     </div>
 
                     <hr class="my-4">
 
-                    <button class="btn btn-primary" type="submit" id="btnMetodoPagoPaypal">Agregar Paypal</button>
+                    <button class="btn alertAgregarTarjetaBtn" type="submit" id="btnMetodoPagoPaypal">Agregar Paypal</button>
                 </div>
             `,
             customClass: {
@@ -1048,7 +1070,7 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
             let contraseniaTitular = document.querySelector("#paypalContrasenia").value;
 
             if (metodosDePagosDelUsuario.length != 0) {
-                if (metodosDePagosDelUsuario.some(metodo => metodo.correoTitularUser == correoTitular && metodo.contraseniaTitularUser == contraseniaTitular)) {
+                if (metodosDePagosDelUsuario.some(metodo => metodo.correoTitularUser == correoTitular || metodo.contraseniaTitularUser == contraseniaTitular)) {
 
                     if (!avisoExistente) {
                         let aviso = document.createElement("p");
@@ -1056,11 +1078,11 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
                         aviso.innerHTML = "* Esta cuenta de PayPal ya está registrada.";
                         aviso.style.color = "red";
 
-                        let campoContenedor = document.querySelector("#paypalCorreoElectronicoContenedor");
+                        let campoContenedor = document.querySelector("#paypalContraseniaContenedor");
                         campoContenedor.appendChild(aviso);
                     }
 
-                    titularValido = false;
+                    correoValido = false;
 
                 } else {
 
@@ -1068,7 +1090,7 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
                         avisoExistente.parentElement.removeChild(avisoExistente);
                     }
 
-                    titularValido = true;
+                    correoValido = true;
                 }
             }
 
@@ -1324,19 +1346,224 @@ document.querySelector("#btnMetodosDePago").addEventListener("click", () => {
     metodosDePagoDelUsuario = usuario.metodosDePago;
 
     if (metodosDePagoDelUsuario.length != 0) {
+        document.querySelector("#metodosDePagosDelUsuario").innerHTML = ""
+        document.querySelector("#metodosDePagosDelUsuario").innerHTML = `
+            <h6>Tús metodos de pago: </h6>
+            <ul class="metodosDePagoDelUsuarioLleno" id="listaMetodosDePago"></ul>
+        `
+        let metodosEnTarjeta = metodosDePagoDelUsuario.filter(metodo => metodo.tipoUser == "TARJETA")
+        let metodosEnEfectivo = metodosDePagoDelUsuario.filter(metodo => metodo.tipoUser == "EFECTIVO")
+        let metodosEnPaypal = metodosDePagoDelUsuario.filter(metodo => metodo.tipoUser == "PAYPAL")
+
+
+        /* tarjeta */
+        metodosEnTarjeta.forEach(metodoUser => {
+
+            // Crear el elemento button
+            let liPagoTarjeta = document.createElement("li");
+            liPagoTarjeta.id = metodoUser.cvvUser;
+            liPagoTarjeta.classList.add("metodosDePagoDelUsuarioLlenoLi")
+
+            // obtener los últimos 4 digitos.
+            let ultimosCuatroDigitos = (metodoUser.numeroTarjetaUser).slice(-4);
+
+            liPagoTarjeta.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card metodosDePagoDelUsuarioLlenoLiLogo" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+            </svg>
+
+            <p class="metodosDePagoDelUsuarioLlenoLiText">${ultimosCuatroDigitos}.</p>
+
+            <button class="btn btnEliminarMetodoPagoTarjeta" id="eliminar${metodoUser.cvvUser}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+        `
+            document.querySelector("#listaMetodosDePago").append(liPagoTarjeta)
+        })
+
+        /* efectivo */
+        metodosEnEfectivo.forEach(metodoUser => {
+
+            // Crear el elemento button
+            let liPagoEfectivo = document.createElement("li");
+            liPagoEfectivo.id = (metodoUser.direccionTitularUser + metodoUser.numeroTitularUser);
+            liPagoEfectivo.classList.add("metodosDePagoDelUsuarioLlenoLi")
+
+            liPagoEfectivo.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack metodosDePagoDelUsuarioLlenoLiLogo" viewBox="0 0 16 16">
+                <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+            </svg>
+
+            <p class="metodosDePagoDelUsuarioLlenoLiText">${metodoUser.direccionTitularUser}, ${metodoUser.numeroTitularUser}.<p>
+
+            <button class="btn btnEliminarMetodoPagoEfectivo" id="eliminar${(metodoUser.direccionTitularUser + metodoUser.numeroTitularUser)}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+        `
+            document.querySelector("#listaMetodosDePago").append(liPagoEfectivo)
+        })
+
+        /* paypal */
+        metodosEnPaypal.forEach(metodoUser => {
+
+            // Crear el elemento button
+            let liPagoPaypal = document.createElement("li");
+            liPagoPaypal.id = metodoUser.contraseniaTitularUser;
+            liPagoPaypal.classList.add("metodosDePagoDelUsuarioLlenoLi")
+
+            liPagoPaypal.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paypal metodosDePagoDelUsuarioLlenoLiLogo" viewBox="0 0 16 16">
+                <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z"/>
+            </svg>
+           
+            <p class="metodosDePagoDelUsuarioLlenoLiText">${metodoUser.correoTitularUser}.</p>
+
+            <button class="btn btnEliminarMetodoPagoPaypal" id="eliminar${metodoUser.contraseniaTitularUser}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+        `
+            document.querySelector("#listaMetodosDePago").append(liPagoPaypal)
+        })
+
         
-    }else{
-        document.querySelector("#metodosDePagosDelUsuario").innerHTML=`
+        /* ------------------- */
+        /* eliminar metodos */
+
+        /* ----- */
+        /* tarjeta */
+        let btnEliminarTarjeta = document.querySelectorAll(".btnEliminarMetodoPagoTarjeta");
+
+        // Convertir la NodeList en un array utilizando Array.from
+        let arrayBtnEliminarTarjeta = Array.from(btnEliminarTarjeta);
+
+        btnEliminarTarjeta.forEach(btnEliminar => {
+            btnEliminar.addEventListener("click", (e) => {
+
+                /* encontrar el metodo de pago cuando se hace click en la "X" */
+                let btnEncontrado = arrayBtnEliminarTarjeta.filter(btn => btn.id == e.currentTarget.id)
+
+                /* si el metodo existe, eliminarla */
+                if (btnEncontrado) {
+
+                    let index = metodosDePagoDelUsuario.findIndex(producto => producto.id == btnEncontrado.id)
+                    if (index !== -1) {
+                        metodosDePagoDelUsuario.splice(index, 1);
+                        usuario.metodosDePago = metodosDePagoDelUsuario;
+                    }
+
+                    /* actualizar el local */
+                    localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+                    let listaDeUsuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+                    let usuarioEncontrado = listaDeUsuarios.find(usuarioLista => usuarioLista.id == usuario.id);
+                    if (usuarioEncontrado) {
+                        usuarioEncontrado.metodosDePago = usuario.metodosDePago;
+                        localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
+                    }
+
+                    window.location.href="../index/perfil.html"
+                }
+
+
+            })
+        })
+
+        /* ----- */
+        /* efectivo */
+        let btnEliminarEfectivo = document.querySelectorAll(".btnEliminarMetodoPagoEfectivo");
+
+        // Convertir la NodeList en un array utilizando Array.from
+        let arrayBtnEliminarEfectivo = Array.from(btnEliminarEfectivo);
+
+        arrayBtnEliminarEfectivo.forEach(btnEliminar => {
+            btnEliminar.addEventListener("click", (e) => {
+
+                /* encontrar el metodo de pago cuando se hace click en la "X" */
+                let btnEncontrado = arrayBtnEliminarTarjeta.filter(btn => btn.id == e.currentTarget.id)
+
+                /* si el metodo existe, eliminarla */
+                if (btnEncontrado) {
+
+                    let index = metodosDePagoDelUsuario.findIndex(producto => producto.id == btnEncontrado.id)
+                    if (index !== -1) {
+                        metodosDePagoDelUsuario.splice(index, 1);
+                        usuario.metodosDePago = metodosDePagoDelUsuario;
+                    }
+
+                    /* actualizar el local */
+                    localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+                    let listaDeUsuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+                    let usuarioEncontrado = listaDeUsuarios.find(usuarioLista => usuarioLista.id == usuario.id);
+                    if (usuarioEncontrado) {
+                        usuarioEncontrado.metodosDePago = usuario.metodosDePago;
+                        localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
+                    }
+
+                    window.location.href="../index/perfil.html"
+                }
+
+
+            })
+        })
+
+        /* ----- */
+        /* paypal */
+        let btnEliminarPaypal = document.querySelectorAll(".btnEliminarMetodoPagoPaypal");
+
+        // Convertir la NodeList en un array utilizando Array.from
+        let arrayBtnEliminarPaypal = Array.from(btnEliminarPaypal);
+
+        arrayBtnEliminarPaypal.forEach(btnEliminar => {
+            btnEliminar.addEventListener("click", (e) => {
+
+                /* encontrar el metodo de pago cuando se hace click en la "X" */
+                let btnEncontrado = arrayBtnEliminarTarjeta.filter(btn => btn.id == e.currentTarget.id)
+
+                /* si el metodo existe, eliminarla */
+                if (btnEncontrado) {
+
+                    let index = metodosDePagoDelUsuario.findIndex(producto => producto.id == btnEncontrado.id)
+                    if (index !== -1) {
+                        metodosDePagoDelUsuario.splice(index, 1);
+                        usuario.metodosDePago = metodosDePagoDelUsuario;
+                    }
+
+                    /* actualizar el local */
+                    localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+                    let listaDeUsuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+                    let usuarioEncontrado = listaDeUsuarios.find(usuarioLista => usuarioLista.id == usuario.id);
+                    if (usuarioEncontrado) {
+                        usuarioEncontrado.metodosDePago = usuario.metodosDePago;
+                        localStorage.setItem("usuariosRegistrados", JSON.stringify(listaDeUsuarios));
+                    }
+
+                    window.location.href="../index/perfil.html"
+                }
+            })
+        })
+
+    } else {
+        document.querySelector("#metodosDePagosDelUsuario").innerHTML = ""
+
+        document.querySelector("#metodosDePagosDelUsuario").innerHTML = `
         
         <h6>Tús metodos de pago: </h6>
-        <div> 
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-slash-circle" viewBox="0 0 16 16">
+        <div class="metodosDePagoDelUsuarioVacio"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-slash-circle metodosDePagoDelUsuarioVacioLogo" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                 <path d="M11.354 4.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708"/>
             </svg>
-            <p> No tienes metodos de pagos. </p>
+            <p class="metodosDePagoDelUsuarioVacioText"> No tienes metodos de pagos. </p>
         </div>
         `
     }
+
 
 })

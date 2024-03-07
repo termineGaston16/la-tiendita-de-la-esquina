@@ -538,13 +538,15 @@
         @include allCentro;
         flex-direction: column;
 
-        /* cambiar los datos */
+        /* cambiar los datos y metodos de pago */
         .mainPerfilTarjetaDatosContenedor {
             background-color: white;
             margin-top: 4%;
             width: 90%;
             border-radius: 15px;
+            margin-bottom: 5%;
 
+            /* datos personales */
             .mainPerfilTarjetaDatosContenedorSub {
                 .mainPerfilTarjetaDatosContenedorLabel {}
 
@@ -567,6 +569,96 @@
                     color: white;
                     margin: 2%;
                 }
+            }
+
+            /* metodos de pago */
+            .mainPerfilTarjetaDatosMetodosDePago {
+                 
+                /* agregar Método de pago */
+                .mainPerfilTarjetaDatosMetodosDePagoAgregar {
+                    .mainPerfilTarjetaDatosMetodosDePagoAgregarBtns {
+                        .mainPerfilTarjetaDatosMetodosDePagoAgregarBtnsCol {
+                            .btnAgregarTarjetaClass {
+                                background-color: rgb(11, 11, 11);
+                                color: white;
+                                transition: 0.3s;
+
+                                &:hover {
+                                    background-color: white;
+                                    color: rgb(11, 11, 11);
+                                    border: 1px solid rgb(11, 11, 11);
+                                    box-shadow: 0px 0px 5px rgb(11, 11, 11);
+                                }    
+                            }
+
+                            .btnAgregarTarjetaClassText {}  
+                        }
+                    }   
+                }
+
+                /* Métodos de pago del usuario */
+                .metodosDePagoDelUsuario {
+
+                    /* Si NO tiene metodos agregados */
+                    .metodosDePagoDelUsuarioVacio {
+                        @include allCentro;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .metodosDePagoDelUsuarioVacioLogo {}
+
+                        .metodosDePagoDelUsuarioVacioText {}
+                    }
+
+                    /* Si tiene metodos agregados */
+                    .metodosDePagoDelUsuarioLleno {
+                        list-style: none;
+                        overflow: auto;
+                        height: 200px;
+
+                        .metodosDePagoDelUsuarioLlenoLi {
+                            width: 100%;
+                            height: 25%;
+
+                            color: white;
+
+                            background-color: rgb(11, 11, 11);
+                            border-radius: 15px;
+                            border: 1px solid white;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            gap: 5%;
+
+
+                            .metodosDePagoDelUsuarioLlenoLiLogo {
+                                margin-left: 8%;
+                            }
+
+                            .metodosDePagoDelUsuarioLlenoLiText {
+                                margin-top: 3%;
+                            }
+
+                            .btnEliminarMetodoPagoTarjeta,
+                            .btnEliminarMetodoPagoEfectivo,
+                            .btnEliminarMetodoPagoPaypal {
+                                color: white;
+                                transition: 0.2s;
+
+                                &:hover {
+                                    color: red;
+                                }
+
+                                &:active{
+                                    border: 1px solid rgb(11, 11, 11);
+                                }
+                            }
+                        }
+                    }
+                }
+
             }
         }
 
@@ -653,20 +745,20 @@
         }
 
         /* lista da favoritos vacía*/
-        .mainPerfilTarjetaDatosFavVacia{
+        .mainPerfilTarjetaDatosFavVacia {
             margin-top: 5%;
             color: white;
             padding: 2%;
         }
 
-        .mainPerfilTarjetaDatosFavVaciaText{
+        .mainPerfilTarjetaDatosFavVaciaText {
             margin-bottom: 5%;
             color: white;
             text-shadow: 0px 0px 5px white;
         }
 
         /* lista da favoritos llena*/
-        .mainPerfilTarjetaDatosFavLlena{
+        .mainPerfilTarjetaDatosFavLlena {
             display: flex;
             align-items: start;
             justify-content: center;
@@ -677,21 +769,21 @@
             border: 1px solid black;
             border-radius: 10px;
 
-            .mainPerfilTarjetaDatosFavLlenaImg{
+            .mainPerfilTarjetaDatosFavLlenaImg {
                 width: 100%;
                 height: 50%;
             }
 
-            .mainPerfilTarjetaDatosFavLlenaNome{
+            .mainPerfilTarjetaDatosFavLlenaNome {
                 text-align: start;
             }
 
-            .mainPerfilTarjetaDatosFavLlenaFecha{
+            .mainPerfilTarjetaDatosFavLlenaFecha {
                 font-style: italic;
                 color: gray;
             }
 
-            .mainPerfilTarjetaDatosFavLlenaPrecio{
+            .mainPerfilTarjetaDatosFavLlenaPrecio {
                 background-color: black;
                 border-radius: 15px;
                 padding: 5px;
