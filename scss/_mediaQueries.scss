@@ -1,0 +1,819 @@
+/* ---------------------------  0px  | | 400px --------------------------- */
+
+@media (min-width: 0px) and (max-width: 400px) {
+
+    /* ---------- index html ---------- */
+
+    /* header */
+    .headerIndex {
+        .headerIndexNav {
+
+            .menuHeader {
+                @include allCentro;
+                flex-direction: column;
+
+                .menuHeaderForm {
+                    margin-top: 1%;
+
+                    .menuHeaderFormInput {
+                        width: 100% !important;
+                    }
+                }
+            }
+
+            .menuNavOpen {
+                width: 85%;
+
+            }
+        }
+    }
+
+    /* main */
+    .mainIndex {
+
+        /* portada */
+        .mainIndexPortadas {
+            height: 90vh !important;
+
+            .row {
+                .mainIndexPortadasPart1 {
+                    .mainIndexPortadasPart1Img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        /* catálogo */
+        .mainIndexCatalogo {
+            .mainIndexCatalogoContendor {
+                .logoNintendo {
+                    order: 1 !important;
+                }
+
+                .mainIndexCatalogoContendorLogo {
+                    padding: 20%;
+                    margin-bottom: 5%;
+
+                    .mainIndexCatalogoContendorLogoSvg {
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                }
+
+                .mainIndexCatalogoContendorTexts {
+                    padding: 10%;
+                }
+            }
+        }
+    }
+
+    /* ---------- buscador html ---------- */
+
+    /* main */
+    .mainProductos {
+
+        /* mini header */
+        .mainProductosMiniHeader {
+            padding: 10%;
+
+            .mainProductosMiniHeaderTitulo {}
+        }
+
+        /* productos */
+        .mainProductosConsolasTitle {
+            margin-top: 5%;
+        }
+
+        .mainProductosConsolas {
+            margin-top: 5%;
+
+            .mainProductosConsolasProductosCargados {
+                margin: 8% 0px;
+                width: 80%;
+                margin-left: 10%;
+                padding: 5%;
+            }
+        }
+
+    }
+
+    /* ---------- finalizar compra html ---------- */
+
+    /* header */
+    .headerFinalizarCompra {
+        .headerFinalizarCompraNav {
+            width: 90%;
+
+            .headerFinalizarCompraNavTitle {
+                padding: 0px;
+            }
+        }
+    }
+
+    /* main */
+    .mainFinalizarCompra {
+        .mainFinalizarCompraSub {
+            margin: 5%;
+
+            .mainFinalizarCompraDatosDeLaCompra,
+            .mainFinalizarCompraResumen {
+                margin: 5% 0px;
+            }
+
+            .mainFinalizarCompraDatosDeLaCompra {
+                padding: 5%;
+            }
+
+            .mainFinalizarCompraResumen {
+                padding: 0px;
+
+                .mainFinalizarCompraResumenSub {
+                    padding: 5%;
+
+                    .mainFinalizarCompraResumenUl {
+                        padding: 0px;
+
+                        .mainFinalizarCompraResumenUlLi {
+                            margin: 5% 0px;
+
+                            .mainFinalizarCompraResumenUlLiSub {
+                                .mainFinalizarCompraResumenUlLiSub1 {
+                                    @include allCentro;
+                                    overflow: hidden;
+
+                                    .mainFinalizarCompraResumenUlLiSub1Img {
+                                        width: 150px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------- loguearse html ---------- */
+
+    /* main */
+    .bodyLoguearseMain {
+
+        .bodyLoguearseMainContCorreo,
+        .bodyLoguearseMainContContra,
+        .bodyLoguearseMainBtn {
+            width: 90%;
+        }
+    }
+
+    /* ---------- play, xbox, nintendo html ---------- */
+
+    /* main */
+    .mainProductos {
+        .mainProductosMiniHeader {
+            .mainProductosMiniHeaderFiltros {
+                .mainProductosMiniHeaderFiltrosPrecios {
+                    margin-bottom: 10%;
+                }
+            }
+        }
+    }
+
+    /* ---------- perfil html ---------- */
+
+    /* header */
+    .headerPerfil {
+        .headerPerfilNav {
+
+            .menuNavPerfilOpen {
+                top: 0px;
+                left: 0px;
+                width: 100%;
+            }
+        }
+    }
+
+    /* main */
+    .mainPerfil {
+        .mainPerfilTarjetaDatos {
+            .mainPerfilTarjetaDatosContenedor {
+                .mainPerfilTarjetaDatosMetodosDePago {
+                    .metodosDePagoDelUsuario {
+                        .metodosDePagoDelUsuarioLleno {
+                            width: 100%;
+
+                            .metodosDePagoDelUsuarioLlenoLi {
+
+                                .btnEliminarMetodoPagoPaypal,
+                                .btnEliminarMetodoPagoEfectivo,
+                                .btnEliminarMetodoPagoTarjeta {
+                                    color: red;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------- registracion html ---------- */
+
+    /* main */
+    .bodyRegistrarMain {
+
+        .bodyRegistrarMainLogoContenedor {
+            .bodyRegistrarMainLogoContenedorImg {
+                width: 100%;
+            }
+        }
+
+        .bodyRegistrarMainBodyContenedor {
+            width: 100%;
+
+            .bodyRegistrarMainBodyContenedorSub {
+                padding: 0px 5%;
+
+                .bodyRegistrarMainBodyContenedorBtn {
+                    margin-top: 10%;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------  401px  | | 575px --------------------------- */
+@media (min-width: 401px) and (max-width: 575px) {
+
+    /* ---------- index html ---------- */
+
+    /* header */
+    .headerIndex {
+        .headerIndexNav {
+            .menuNavOpen {
+                width: 60%;
+
+            }
+        }
+    }
+
+    /* main */
+    .mainIndex {
+
+        /* portada */
+        .mainIndexPortadas {
+            height: 80vh !important;
+
+            .row {
+                .mainIndexPortadasPart1 {
+                    .mainIndexPortadasPart1Img {
+                        width: 55%;
+                    }
+                }
+            }
+        }
+
+        /* catálogo */
+        .mainIndexCatalogo {
+            .mainIndexCatalogoContendor {
+                .logoNintendo {
+                    order: 1 !important;
+                }
+
+                .mainIndexCatalogoContendorLogo {
+                    padding: 20%;
+                    margin-bottom: 5%;
+
+                    .mainIndexCatalogoContendorLogoSvg {
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                }
+
+                .mainIndexCatalogoContendorTexts {
+                    padding: 10%;
+                }
+            }
+        }
+    }
+
+    /* ---------- buscador html ---------- */
+
+    /* main */
+    .mainProductos {
+
+        /* mini header */
+        .mainProductosMiniHeader {
+            padding: 2%;
+        }
+
+        /* productos */
+        .mainProductosConsolasTitle {
+            margin-top: 5%;
+        }
+
+        .mainProductosConsolas {
+
+            .mainProductosConsolasProductosCargados {
+                margin: 3% 1%;
+                margin-left: 6%;
+                width: 40%;
+                padding: 5%;
+            }
+        }
+
+    }
+
+    /* ---------- finalizar compra html ---------- */
+
+    /* header */
+    .headerFinalizarCompra {
+        .headerFinalizarCompraNav {
+            width: 90%;
+
+            .headerFinalizarCompraNavTitle {
+                padding: 0px;
+            }
+        }
+    }
+
+    /* main */
+    .mainFinalizarCompra {
+        .mainFinalizarCompraSub {
+            margin: 2%;
+
+            .mainFinalizarCompraDatosDeLaCompra,
+            .mainFinalizarCompraResumen {
+                margin: 5% 0px;
+            }
+
+            .mainFinalizarCompraDatosDeLaCompra {
+                padding: 5%;
+            }
+
+            .mainFinalizarCompraResumen {
+                padding: 0px;
+
+                .mainFinalizarCompraResumenSub {
+                    padding: 5%;
+
+                    .mainFinalizarCompraResumenUl {
+                        padding: 0px;
+
+                        .mainFinalizarCompraResumenUlLi {
+                            margin: 5% 0px;
+
+                            .mainFinalizarCompraResumenUlLiSub {
+                                .mainFinalizarCompraResumenUlLiSub1 {
+                                    @include allCentro;
+                                    overflow: hidden;
+
+                                    .mainFinalizarCompraResumenUlLiSub1Img {
+                                        width: 150px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------- loguearse html ---------- */
+
+    /* main */
+    .bodyLoguearseMain {
+
+        .bodyLoguearseMainContCorreo,
+        .bodyLoguearseMainContContra,
+        .bodyLoguearseMainBtn {
+            width: 70%;
+        }
+    }
+
+    /* ---------- play, xbox, nintendo html ---------- */
+
+    /* main */
+    .mainProductos {
+        .mainProductosMiniHeader {
+            .mainProductosMiniHeaderFiltros {
+                .mainProductosMiniHeaderFiltrosPrecios {
+                  margin-bottom: 5%;
+                }
+            }
+        }
+    }
+
+    /* ---------- perfil html ---------- */
+
+    /* header */
+    .headerPerfil {
+        .headerPerfilNav {
+
+            .menuNavPerfilOpen {
+                top: 0px;
+                left: 0px;
+                width: 100%;
+            }
+        }
+    }
+
+    /* main */
+    .mainPerfil {
+        .mainPerfilTarjetaDatos {
+            .mainPerfilTarjetaDatosContenedor {
+                .mainPerfilTarjetaDatosMetodosDePago {
+                    .metodosDePagoDelUsuario {
+                        .metodosDePagoDelUsuarioLleno {
+                            width: 100%;
+
+                            .metodosDePagoDelUsuarioLlenoLi {
+
+                                .btnEliminarMetodoPagoPaypal,
+                                .btnEliminarMetodoPagoEfectivo,
+                                .btnEliminarMetodoPagoTarjeta {
+                                    color: red;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------- registracion html ---------- */
+
+    /* main */
+    .bodyRegistrarMain {
+
+        .bodyRegistrarMainLogoContenedor {
+            .bodyRegistrarMainLogoContenedorImg {
+                width: 80%;
+            }
+        }
+
+        .bodyRegistrarMainBodyContenedor {
+            width: 100%;
+
+            .bodyRegistrarMainBodyContenedorSub {
+                padding: 0px 5%;
+
+                .bodyRegistrarMainBodyContenedorBtn {
+                    margin-top: 10%;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------  576px  | | 767px --------------------------- */
+@media (min-width: 576px) and (max-width: 767px) {
+
+    /* ---------- index html ---------- */
+
+    /* header */
+    .headerIndex {
+        .headerIndexNav {
+            .menuNavOpen {
+                width: 45%;
+            }
+        }
+    }
+
+    /* main */
+    .mainIndex {
+
+        /* portada */
+        .mainIndexPortadas {
+            height: 70vh !important;
+
+            .row {
+                .mainIndexPortadasPart1 {
+                    .mainIndexPortadasPart1Img {
+                        width: 35%;
+                    }
+                }
+            }
+        }
+
+        /* catálogo */
+        .mainIndexCatalogo {
+            .mainIndexCatalogoContendor {
+                .logoNintendo {
+                    order: 1 !important;
+                }
+
+                .mainIndexCatalogoContendorLogo {
+                    padding: 10%;
+                    margin-bottom: 5%;
+
+                    .mainIndexCatalogoContendorLogoSvg {
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                }
+
+                .mainIndexCatalogoContendorTexts {
+                    padding: 10%;
+                }
+            }
+        }
+    }
+
+    /* ---------- buscador html ---------- */
+
+    /* main */
+    .mainProductos {
+
+        /* mini header */
+        .mainProductosMiniHeader {
+            padding: 5%;
+        }
+
+        /* productos */
+        .mainProductosConsolasTitle {
+            margin-top: 5%;
+        }
+
+        .mainProductosConsolas {
+
+            .mainProductosConsolasProductosCargados {
+                margin: 3% 0%;
+                width: 50%;
+                padding: 5%;
+            }
+        }
+
+    }
+
+    /* ---------- finalizar compra html ---------- */
+
+    /* header */
+    .headerFinalizarCompra {
+        .headerFinalizarCompraNav {
+            width: 100%;
+
+        }
+    }
+
+    /* main */
+    .mainFinalizarCompra {
+        .mainFinalizarCompraSub {
+            margin: 5%;
+
+            .mainFinalizarCompraDatosDeLaCompra,
+            .mainFinalizarCompraResumen {
+                margin: 5% 0px;
+            }
+
+            .mainFinalizarCompraDatosDeLaCompra {
+                padding: 5%;
+            }
+
+            .mainFinalizarCompraResumen {
+                padding: 0px;
+
+                .mainFinalizarCompraResumenSub {
+                    padding: 5%;
+
+                    .mainFinalizarCompraResumenUl {
+                        padding: 0px;
+
+                        .mainFinalizarCompraResumenUlLi {
+                            margin: 5% 0px;
+
+                            .mainFinalizarCompraResumenUlLiSub {
+                                .mainFinalizarCompraResumenUlLiSub1 {
+                                    @include allCentro;
+                                    overflow: hidden;
+
+                                    .mainFinalizarCompraResumenUlLiSub1Img {
+                                        width: 150px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------- loguearse html ---------- */
+
+    /* main */
+    .bodyLoguearseMain {
+
+        .bodyLoguearseMainContCorreo,
+        .bodyLoguearseMainContContra,
+        .bodyLoguearseMainBtn {
+            width: 50%;
+        }
+    }
+
+    /* ---------- play, xbox, nintendo html ---------- */
+
+    /* main */
+    .mainProductos {
+        .mainProductosMiniHeader {
+            .mainProductosMiniHeaderFiltros {
+                .mainProductosMiniHeaderFiltrosPrecios {
+                  margin-bottom: 5%;
+                }
+            }
+        }
+    }
+
+    /* ---------- perfil html ---------- */
+
+
+    /* main */
+    .mainPerfil {
+        .mainPerfilTarjetaDatos {
+            .mainPerfilTarjetaDatosContenedor {
+                .mainPerfilTarjetaDatosMetodosDePago {
+                    .metodosDePagoDelUsuario {
+                        .metodosDePagoDelUsuarioLleno {
+                            width: 100%;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------- registracion html ---------- */
+
+    /* main */
+    .bodyRegistrarMain {
+
+        .bodyRegistrarMainLogoContenedor {
+            .bodyRegistrarMainLogoContenedorImg {
+                width: 70%;
+            }
+        }
+
+        .bodyRegistrarMainBodyContenedor {
+            width: 80%;
+
+            .bodyRegistrarMainBodyContenedorSub {
+                padding: 0px 5%;
+
+                .bodyRegistrarMainBodyContenedorBtn {
+                    margin-top: 10%;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------  768px  | | 1023px --------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* ---------- index html ---------- */
+
+    /* header */
+    .headerIndex {
+        .headerIndexNav {
+            .menuNavOpen {
+                width: 40%;
+            }
+        }
+    }
+
+    /* main */
+    .mainIndex {
+
+        /* portada */
+        .mainIndexPortadas {
+            height: 70vh !important;
+
+            .row {
+                .mainIndexPortadasPart1 {
+                    .mainIndexPortadasPart1Img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        /* catálogo */
+        .mainIndexCatalogo {
+            .mainIndexCatalogoContendor {
+               
+                .mainIndexCatalogoContendorTexts {
+                    padding: 5%;
+                }
+            }
+        }
+    }
+
+    /* ---------- buscador html ---------- */
+
+    /* main */
+    .mainProductos {
+
+        /* mini header */
+        .mainProductosMiniHeader {
+            padding: 5%;
+        }
+
+        /* productos */
+        .mainProductosConsolasTitle {
+            margin-top: 5%;
+        }
+
+        .mainProductosConsolas {
+
+            .mainProductosConsolasProductosCargados {
+                margin: 3% 0%;
+                padding: 2%;
+            }
+        }
+
+    }
+
+    /* ---------- finalizar compra html ---------- */
+
+    /* main */
+    .mainFinalizarCompra {
+        .mainFinalizarCompraSub {
+            margin: 5%;
+
+            .mainFinalizarCompraDatosDeLaCompra,
+            .mainFinalizarCompraResumen {
+                margin: 5% 0px;
+            }
+
+            .mainFinalizarCompraDatosDeLaCompra {
+                padding: 5%;
+            }
+
+            .mainFinalizarCompraResumen {
+                padding: 0px;
+
+                .mainFinalizarCompraResumenSub {
+                    padding: 5%;
+
+                    .mainFinalizarCompraResumenUl {
+                        padding: 0px;
+
+                        .mainFinalizarCompraResumenUlLi {
+                            margin: 5% 0px;
+
+                            .mainFinalizarCompraResumenUlLiSub {
+                                .mainFinalizarCompraResumenUlLiSub1 {
+                                    @include allCentro;
+                                    overflow: hidden;
+
+                                    .mainFinalizarCompraResumenUlLiSub1Img {
+                                        width: 100px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------- loguearse html ---------- */
+
+    /* main */
+    .bodyLoguearseMain {
+
+        .bodyLoguearseMainContCorreo,
+        .bodyLoguearseMainContContra,
+        .bodyLoguearseMainBtn {
+            width: 50%;
+        }
+    }
+
+}
+
+/* ---------------------------  1024px  | | 1200px --------------------------- */
+@media (min-width: 1024px) and (max-width: 1200px) {
+
+    /* main */
+    .mainIndex {
+
+        /* catálogo */
+        .mainIndexCatalogo {
+            .mainIndexCatalogoContendor {
+               
+                .mainIndexCatalogoContendorTexts {
+                    padding: 5%;
+                }
+            }
+        }
+    }
+}

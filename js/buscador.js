@@ -34,8 +34,8 @@ fetch(url)
         /* verificar si la palabra no está vacía o si existe el local */
         if (palabraBuscada == null || palabraBuscada == "") {
             document.querySelector("#idProductosContenedor").innerHTML = `
-            <div class="container text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-slash-circle" viewBox="0 0 16 16">
+            <div class="container text-center" style="margin-top:5%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" style="color:white; margin-bottom:1%;" class="bi bi-slash-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                     <path d="M11.354 4.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708"/>
                 </svg>
@@ -52,8 +52,8 @@ fetch(url)
         /* Si no se encontraron resultados al respecto */
         if (resultados.length == 0) {
             document.querySelector("#idProductosContenedor").innerHTML = `
-            <div class="container text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-slash-circle" viewBox="0 0 16 16">
+            <div class="container text-center" style="margin-top:5%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" style="color:white; margin-bottom:1%;" class="bi bi-slash-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                     <path d="M11.354 4.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 .708.708l6-6a.5.5 0 0 0 0-.708"/>
                 </svg>

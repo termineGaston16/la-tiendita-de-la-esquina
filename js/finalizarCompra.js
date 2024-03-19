@@ -41,20 +41,20 @@ precioTotal = precioFinalConDescuentoAplicado;
 document.querySelector("#datosDeLaCompraFinal").innerHTML = "";
 
 document.querySelector("#datosDeLaCompraFinal").innerHTML = `
-    <div class="container-fluid"> 
+    <div class="container-fluid compraFinal"> 
         
         <!-- Datos de la compra -->
-        <div>
-            <p> Subtotal: $${subTotal}.</p>
-            <p> Impuestos: $${montoImpuesto}.</p>
-            <p> Descuento: $0.00.</p>
-            <p> Precio total (${carritoActual.length} artículos): $${precioTotal}.</p>
+        <div class="compraFinalInfo">
+            <p class="compraFinalInfoText"> Subtotal: $<span class="compraFinalInfoTextSpecial">${subTotal}</span>.</p>
+            <p class="compraFinalInfoText"> Impuestos: $<span class="compraFinalInfoTextSpecial">${montoImpuesto}</span>.</p>
+            <p class="compraFinalInfoText"> Descuento: $<span class="compraFinalInfoTextSpecial">0.00</span>.</p>
+            <p class="compraFinalInfoText"> Precio total (<span class="compraFinalInfoTextSpecial">${carritoActual.length}</span> artículos): $<span class="compraFinalInfoTextSpecial">${precioTotal}</span>.</p>
         </div>
 
         <!-- Canjear código -->
-        <div>
-            <h6> Canjear Código </h6>
-            <input class="form-control me-2" type="text" placeholder="Introduce código de descuento">  
+        <div class="compraFinalCodigo">
+            <h6 class="compraFinalCodigoTitle"> Canjear Código </h6>
+            <input class="form-control me-2 compraFinalCodigoInput" type="text" placeholder="Introduce código de descuento">  
         </div>
     </div>
 `
@@ -64,9 +64,9 @@ document.querySelector("#datosDeLaCompraFinal").innerHTML = `
 document.querySelector("#datosDelResumenCompleto").innerHTML = "";
 
 document.querySelector("#datosDelResumenCompleto").innerHTML = `
-    <div class="container-fluid"> 
-        <h5> Resumen: </h5>
-        <ul id="listaDeResumenes"> 
+    <div class="container-fluid mainFinalizarCompraResumenSub"> 
+        <h5 class="mainFinalizarCompraResumenSubTitle"> Resumen: </h5>
+        <ul class="mainFinalizarCompraResumenUl" id="listaDeResumenes"> 
         </ul>
     </div>
 `;
@@ -77,16 +77,17 @@ document.querySelector("#listaDeResumenes").innerHTML = "";
 carritoActual.forEach(consola => {
 
     let listaIndividualDeResumen = document.createElement("li");
+    listaIndividualDeResumen.classList.add("mainFinalizarCompraResumenUlLi")
     listaIndividualDeResumen.innerHTML = `
-        <div class="row">
-            <div class="col-4">
-                <img src="${consola.imagenReferente}" alt="" class="w-50">
+        <div class="row mainFinalizarCompraResumenUlLiSub">
+            <div class="col-4 mainFinalizarCompraResumenUlLiSub1">
+                <img src="${consola.imagenReferente}" alt="" class="mainFinalizarCompraResumenUlLiSub1Img">
             </div>
 
-            <div class="col-8">
-                <h5>${consola.nombreConsola}</h5>
-                <h6>${consola.anioDeEstreno} || ${consola.compania}</h6>
-                <p>$${consola.precioConsola}, (${consola.cantidad})</p>
+            <div class="col-8 mainFinalizarCompraResumenUlLiSub2">
+                <h5 class="mainFinalizarCompraResumenUlLiSub2H5">${consola.nombreConsola}</h5>
+                <h6 class="mainFinalizarCompraResumenUlLiSub2H6">${consola.anioDeEstreno} || ${consola.compania}</h6>
+                <p  class="mainFinalizarCompraResumenUlLiSub2Text">$${consola.precioConsola}, (${consola.cantidad})</p>
             </div>
         </div>
     `
@@ -101,15 +102,15 @@ let contendorFooter = document.createElement("footer")
 contendorFooter.innerHTML = `
 
         <!-- Términos y Condiciones -->
-        <div id="terminosYcondiciones"> 
-            <input type="checkbox" id="aceptarPrimerTermino"> 
-            <span>
+        <div id="terminosYcondiciones" class="terminosYCondicionesContenedor"> 
+            <input type="checkbox" id="aceptarPrimerTermino" class="terminosYCondicionesContenedorCheckbox"> 
+            <span class="terminosYCondicionesContenedorText">
                 Solicito acceso inmediato a mi compra y acepto que no podré cancelarla una vez que haya empezado 
                 a descargar o transmitir por streaming el contenido.
             </span>
         </div>
 
-        <button type="button" id="btnFinalizarCompra" class="btn">Encargar y Abonar</button>
+        <button type="button" id="btnFinalizarCompra" class="btn btnNulo">Encargar y Abonar</button>
     `
 document.querySelector("#contendorFinalizarCompra").append(contendorFooter)
 
@@ -128,8 +129,8 @@ document.querySelector("#aceptarPrimerTermino").addEventListener("click", () => 
             let segundoTerminoDiv = document.createElement("div")
             segundoTerminoDiv.id = "terminosYcondiciones2";
             segundoTerminoDiv.innerHTML = `
-                <input type="checkbox" id="aceptarSegundoTermino"> 
-                <span>
+                <input type="checkbox" id="aceptarSegundoTermino" class="terminosYCondicionesContenedorCheckbox"> 
+                <span class="terminosYCondicionesContenedorText">
                     Esta tienda virtual realiza los cargos en dólares estadounidenses y se requiere 
                     una tarjeta de crédito/débito internacional para realizar las transacciones.
                 </span>
@@ -142,11 +143,11 @@ document.querySelector("#aceptarPrimerTermino").addEventListener("click", () => 
             let valorSegundoTermino = document.querySelector("#aceptarSegundoTermino");
 
             if (valorSegundoTermino.checked) {
-                btnFinal.classList.add("btn-primary")
+                btnFinal.classList.add("btnListo")
                 finalizarCompra(btnFinal)
 
             } else {
-                btnFinal.classList.remove("btn-primary")
+                btnFinal.classList.remove("btnListo")
             }
         })
 
@@ -156,7 +157,7 @@ document.querySelector("#aceptarPrimerTermino").addEventListener("click", () => 
             document.querySelector("#terminosYcondiciones").removeChild(segundoTermino);
         }
 
-        btnFinal.classList.remove("btn-primary")
+        btnFinal.classList.remove("btnListo")
     }
 })
 
@@ -168,14 +169,14 @@ function finalizarCompra(botonFinalCompra) {
         let metodosDePagoDelUsuario = null;
         metodosDePagoDelUsuario = usuario.metodosDePago;
 
-        if (botonFinalCompra.classList.contains("btn-primary") && metodosDePagoDelUsuario.length != 0) {
+        if (botonFinalCompra.classList.contains("btnListo") && metodosDePagoDelUsuario.length != 0) {
 
             Swal.fire({
                 html: `
-                    <div class="custom-swal-content container-fluid"> 
-                        <h4> Selecciona un método de pago: </h4>
+                    <div class="custom-swal-content container-fluid metodosDePagoParaPagar"> 
+                        <h4 style="color:black;"> Selecciona un método de pago: </h4>
     
-                        <div id="listaDeMetodosDePago">
+                        <div id="listaDeMetodosDePago" class="metodosParaPagarContenedor">
                         </div>
     
                     </div>
@@ -257,7 +258,7 @@ function finalizarCompra(botonFinalCompra) {
                 document.querySelector("#listaMetodosDePago").append(liPagoPaypal)
             })
             
-        } else if (botonFinalCompra.classList.contains("btn-primary") && metodosDePagoDelUsuario.length == 0) {
+        } else if (botonFinalCompra.classList.contains("btnListo") && metodosDePagoDelUsuario.length == 0) {
             Swal.fire({
                 html: `
                     <div class="custom-swal-content container-fluid"> 

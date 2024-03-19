@@ -281,3 +281,34 @@
         }
     }
 }
+
+/* finalizar compra */
+.headerFinalizarCompra{
+    background-color: rgb(22, 22, 22);
+    padding: 1% 0px;
+
+    .headerFinalizarCompraNav{
+
+        /* Volver atrás */
+        .headerFinalizarCompraNavBack{
+            margin-top: 8px;
+
+            .headerFinalizarCompraNavBackLink{
+                color: black;
+                transition: 0.3s;
+    
+                &:hover{
+                    color: white;
+                }
+            }
+        }
+
+        /* Titulo */
+        .headerFinalizarCompraNavTitle{
+            .headerFinalizarCompraNavTitleText{
+                color: white;
+                text-shadow: 0px 0px 5px white;
+            }
+        }
+    }
+}

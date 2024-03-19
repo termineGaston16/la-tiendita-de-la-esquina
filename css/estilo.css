@@ -28,6 +28,7 @@ html {
   background-color: black;
   font-family: "Didact Gothic", sans-serif;
   /* alert */
+  /* Si tiene metodos agregados */
 }
 .bodyRegistrar .alertFondo {
   background-color: rgba(255, 255, 255, 0);
@@ -51,6 +52,46 @@ html {
   background-color: black;
   color: white;
   border: 1px solid white;
+}
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno {
+  list-style: none;
+  overflow: auto;
+  height: 200px;
+}
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi {
+  width: 100%;
+  height: 25%;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(11, 11, 11);
+  border-radius: 15px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5%;
+}
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .metodosDePagoDelUsuarioLlenoLiLogo {
+  margin-left: 8%;
+}
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .metodosDePagoDelUsuarioLlenoLiText {
+  margin-top: 3%;
+}
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoTarjeta,
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoEfectivo,
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoPaypal {
+  color: white;
+  transition: 0.2s;
+}
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoTarjeta:hover,
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoEfectivo:hover,
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoPaypal:hover {
+  color: red;
+}
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoTarjeta:active,
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoEfectivo:active,
+.bodyRegistrar .metodosDePagoParaPagar .metodosParaPagarContenedor .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoPaypal:active {
+  border: 1px solid rgb(11, 11, 11);
 }
 
 /* perfil */
@@ -279,6 +320,30 @@ html {
 .headerPerfil .headerPerfilNav .menuNavPerfilOpen.open {
   transform: translateY(0);
   visibility: visible;
+}
+
+/* finalizar compra */
+.headerFinalizarCompra {
+  background-color: rgb(22, 22, 22);
+  padding: 1% 0px;
+}
+.headerFinalizarCompra .headerFinalizarCompraNav {
+  /* Volver atrás */
+  /* Titulo */
+}
+.headerFinalizarCompra .headerFinalizarCompraNav .headerFinalizarCompraNavBack {
+  margin-top: 8px;
+}
+.headerFinalizarCompra .headerFinalizarCompraNav .headerFinalizarCompraNavBack .headerFinalizarCompraNavBackLink {
+  color: black;
+  transition: 0.3s;
+}
+.headerFinalizarCompra .headerFinalizarCompraNav .headerFinalizarCompraNavBack .headerFinalizarCompraNavBackLink:hover {
+  color: white;
+}
+.headerFinalizarCompra .headerFinalizarCompraNav .headerFinalizarCompraNavTitle .headerFinalizarCompraNavTitleText {
+  color: white;
+  text-shadow: 0px 0px 5px white;
 }
 
 .mainIndex {
@@ -750,6 +815,7 @@ html {
   /* carrito con productos */
   /* lista da favoritos vacía*/
   /* lista da favoritos llena*/
+  /* botón finalizar compra */
 }
 .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor {
   background-color: white;
@@ -944,6 +1010,140 @@ html {
   padding: 5px;
   color: white;
 }
+.mainPerfil .mainPerfilTarjetaDatos .btnFinalizarLaCompra {
+  background-color: white;
+  color: black;
+  text-align: center;
+  margin-bottom: 5%;
+  width: 50%;
+  padding: 0px;
+  padding-top: 1%;
+  transition: 0.3s;
+}
+.mainPerfil .mainPerfilTarjetaDatos .btnFinalizarLaCompra:hover {
+  background-color: black;
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  border: 1px solid white;
+  box-shadow: 0px 0px 5px white;
+}
+
+/* Finalizar Compra */
+.mainFinalizarCompra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub {
+  margin: 2% 0px;
+  /* Logo de Cargar */
+  /* Datos de la compra */
+  /* Resumen */
+  /* Términos y Condiciones */
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra,
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  background-color: rgb(8, 8, 8);
+  border: 2px solid white;
+  border-radius: 15px;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra .logoLoading,
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .logoLoading {
+  color: white;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra {
+  /* datos */
+  /* canjear codigo */
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra .compraFinalInfo .compraFinalInfoText {
+  color: white;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra .compraFinalInfo .compraFinalInfoText .compraFinalInfoTextSpecial {
+  color: rgb(244, 236, 162);
+  text-shadow: 0px 0px 5px rgb(244, 236, 162);
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra .compraFinalCodigo {
+  background-color: rgb(3, 3, 3);
+  border-radius: 15px;
+  padding: 5%;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra .compraFinalCodigo .compraFinalCodigoTitle {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra .compraFinalCodigo .compraFinalCodigoInput {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra .compraFinalCodigo .compraFinalCodigoInput:focus {
+  box-shadow: none;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra .compraFinalCodigo .compraFinalCodigoInput::placeholder {
+  color: rgb(204, 204, 204);
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub {
+  /* lista */
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenSubTitle {
+  color: white;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl {
+  margin-top: 2%;
+  overflow: auto;
+  height: 400px;
+  list-style: none;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi {
+  background-color: black;
+  border: 1px solid white;
+  padding: 5%;
+  border-radius: 15px;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 {
+  background-color: white;
+  border-radius: 15px;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 .mainFinalizarCompraResumenUlLiSub1Img {
+  width: 100%;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub2 .mainFinalizarCompraResumenUlLiSub2H5,
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub2 .mainFinalizarCompraResumenUlLiSub2H6,
+.mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub2 .mainFinalizarCompraResumenUlLiSub2Text {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .terminosYCondicionesContenedor {
+  margin-top: 5%;
+  margin-left: 2%;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .terminosYCondicionesContenedor .terminosYCondicionesContenedorText {
+  text-align: center;
+  color: white;
+  margin-left: 2%;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .btnNulo {
+  width: 100%;
+  border: 1px solid rgb(15, 15, 15);
+  margin: 2% 0px;
+  transition: 0.5s;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .btnListo {
+  border: 1px solid white;
+  color: white;
+  transition: 0.5s;
+}
+.mainFinalizarCompra .mainFinalizarCompraSub .btnListo:hover {
+  background-color: white;
+  color: black;
+}
 
 .footerGlobal .footerGlobalCopy {
   color: aqua;
@@ -960,6 +1160,494 @@ html {
 }
 .footerGlobal .footerGlobalCopyUl .footerGlobalCopyUlLi .footerGlobalCopyUlLiLink:hover {
   transform: scale(0.9);
+}
+
+/* ---------------------------  0px  | | 400px --------------------------- */
+@media (min-width: 0px) and (max-width: 400px) {
+  /* ---------- index html ---------- */
+  /* header */
+  .headerIndex .headerIndexNav .menuHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .headerIndex .headerIndexNav .menuHeader .menuHeaderForm {
+    margin-top: 1%;
+  }
+  .headerIndex .headerIndexNav .menuHeader .menuHeaderForm .menuHeaderFormInput {
+    width: 100% !important;
+  }
+  .headerIndex .headerIndexNav .menuNavOpen {
+    width: 85%;
+  }
+  /* main */
+  .mainIndex {
+    /* portada */
+    /* catálogo */
+  }
+  .mainIndex .mainIndexPortadas {
+    height: 90vh !important;
+  }
+  .mainIndex .mainIndexPortadas .row .mainIndexPortadasPart1 .mainIndexPortadasPart1Img {
+    width: 80%;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .logoNintendo {
+    order: 1 !important;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorLogo {
+    padding: 20%;
+    margin-bottom: 5%;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorLogo .mainIndexCatalogoContendorLogoSvg {
+    width: 100px;
+    height: 100px;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts {
+    padding: 10%;
+  }
+  /* ---------- buscador html ---------- */
+  /* main */
+  .mainProductos {
+    /* mini header */
+    /* productos */
+  }
+  .mainProductos .mainProductosMiniHeader {
+    padding: 10%;
+  }
+  .mainProductos .mainProductosConsolasTitle {
+    margin-top: 5%;
+  }
+  .mainProductos .mainProductosConsolas {
+    margin-top: 5%;
+  }
+  .mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados {
+    margin: 8% 0px;
+    width: 80%;
+    margin-left: 10%;
+    padding: 5%;
+  }
+  /* ---------- finalizar compra html ---------- */
+  /* header */
+  .headerFinalizarCompra .headerFinalizarCompraNav {
+    width: 90%;
+  }
+  .headerFinalizarCompra .headerFinalizarCompraNav .headerFinalizarCompraNavTitle {
+    padding: 0px;
+  }
+  /* main */
+  .mainFinalizarCompra .mainFinalizarCompraSub {
+    margin: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra,
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+    margin: 5% 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra {
+    padding: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+    padding: 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub {
+    padding: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl {
+    padding: 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi {
+    margin: 5% 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 .mainFinalizarCompraResumenUlLiSub1Img {
+    width: 150px;
+  }
+  /* ---------- loguearse html ---------- */
+  /* main */
+  .bodyLoguearseMain .bodyLoguearseMainContCorreo,
+  .bodyLoguearseMain .bodyLoguearseMainContContra,
+  .bodyLoguearseMain .bodyLoguearseMainBtn {
+    width: 90%;
+  }
+  /* ---------- play, xbox, nintendo html ---------- */
+  /* main */
+  .mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios {
+    margin-bottom: 10%;
+  }
+  /* ---------- perfil html ---------- */
+  /* header */
+  .headerPerfil .headerPerfilNav .menuNavPerfilOpen {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+  /* main */
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno {
+    width: 100%;
+  }
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoPaypal,
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoEfectivo,
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoTarjeta {
+    color: red;
+  }
+  /* ---------- registracion html ---------- */
+  /* main */
+  .bodyRegistrarMain .bodyRegistrarMainLogoContenedor .bodyRegistrarMainLogoContenedorImg {
+    width: 100%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor {
+    width: 100%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor .bodyRegistrarMainBodyContenedorSub {
+    padding: 0px 5%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor .bodyRegistrarMainBodyContenedorSub .bodyRegistrarMainBodyContenedorBtn {
+    margin-top: 10%;
+  }
+}
+/* ---------------------------  401px  | | 575px --------------------------- */
+@media (min-width: 401px) and (max-width: 575px) {
+  /* ---------- index html ---------- */
+  /* header */
+  .headerIndex .headerIndexNav .menuNavOpen {
+    width: 60%;
+  }
+  /* main */
+  .mainIndex {
+    /* portada */
+    /* catálogo */
+  }
+  .mainIndex .mainIndexPortadas {
+    height: 80vh !important;
+  }
+  .mainIndex .mainIndexPortadas .row .mainIndexPortadasPart1 .mainIndexPortadasPart1Img {
+    width: 55%;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .logoNintendo {
+    order: 1 !important;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorLogo {
+    padding: 20%;
+    margin-bottom: 5%;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorLogo .mainIndexCatalogoContendorLogoSvg {
+    width: 100px;
+    height: 100px;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts {
+    padding: 10%;
+  }
+  /* ---------- buscador html ---------- */
+  /* main */
+  .mainProductos {
+    /* mini header */
+    /* productos */
+  }
+  .mainProductos .mainProductosMiniHeader {
+    padding: 2%;
+  }
+  .mainProductos .mainProductosConsolasTitle {
+    margin-top: 5%;
+  }
+  .mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados {
+    margin: 3% 1%;
+    margin-left: 6%;
+    width: 40%;
+    padding: 5%;
+  }
+  /* ---------- finalizar compra html ---------- */
+  /* header */
+  .headerFinalizarCompra .headerFinalizarCompraNav {
+    width: 90%;
+  }
+  .headerFinalizarCompra .headerFinalizarCompraNav .headerFinalizarCompraNavTitle {
+    padding: 0px;
+  }
+  /* main */
+  .mainFinalizarCompra .mainFinalizarCompraSub {
+    margin: 2%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra,
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+    margin: 5% 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra {
+    padding: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+    padding: 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub {
+    padding: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl {
+    padding: 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi {
+    margin: 5% 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 .mainFinalizarCompraResumenUlLiSub1Img {
+    width: 150px;
+  }
+  /* ---------- loguearse html ---------- */
+  /* main */
+  .bodyLoguearseMain .bodyLoguearseMainContCorreo,
+  .bodyLoguearseMain .bodyLoguearseMainContContra,
+  .bodyLoguearseMain .bodyLoguearseMainBtn {
+    width: 70%;
+  }
+  /* ---------- play, xbox, nintendo html ---------- */
+  /* main */
+  .mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios {
+    margin-bottom: 5%;
+  }
+  /* ---------- perfil html ---------- */
+  /* header */
+  .headerPerfil .headerPerfilNav .menuNavPerfilOpen {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+  /* main */
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno {
+    width: 100%;
+  }
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoPaypal,
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoEfectivo,
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno .metodosDePagoDelUsuarioLlenoLi .btnEliminarMetodoPagoTarjeta {
+    color: red;
+  }
+  /* ---------- registracion html ---------- */
+  /* main */
+  .bodyRegistrarMain .bodyRegistrarMainLogoContenedor .bodyRegistrarMainLogoContenedorImg {
+    width: 80%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor {
+    width: 100%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor .bodyRegistrarMainBodyContenedorSub {
+    padding: 0px 5%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor .bodyRegistrarMainBodyContenedorSub .bodyRegistrarMainBodyContenedorBtn {
+    margin-top: 10%;
+  }
+}
+/* ---------------------------  576px  | | 767px --------------------------- */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* ---------- index html ---------- */
+  /* header */
+  .headerIndex .headerIndexNav .menuNavOpen {
+    width: 45%;
+  }
+  /* main */
+  .mainIndex {
+    /* portada */
+    /* catálogo */
+  }
+  .mainIndex .mainIndexPortadas {
+    height: 70vh !important;
+  }
+  .mainIndex .mainIndexPortadas .row .mainIndexPortadasPart1 .mainIndexPortadasPart1Img {
+    width: 35%;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .logoNintendo {
+    order: 1 !important;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorLogo {
+    padding: 10%;
+    margin-bottom: 5%;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorLogo .mainIndexCatalogoContendorLogoSvg {
+    width: 100px;
+    height: 100px;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts {
+    padding: 10%;
+  }
+  /* ---------- buscador html ---------- */
+  /* main */
+  .mainProductos {
+    /* mini header */
+    /* productos */
+  }
+  .mainProductos .mainProductosMiniHeader {
+    padding: 5%;
+  }
+  .mainProductos .mainProductosConsolasTitle {
+    margin-top: 5%;
+  }
+  .mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados {
+    margin: 3% 0%;
+    width: 50%;
+    padding: 5%;
+  }
+  /* ---------- finalizar compra html ---------- */
+  /* header */
+  .headerFinalizarCompra .headerFinalizarCompraNav {
+    width: 100%;
+  }
+  /* main */
+  .mainFinalizarCompra .mainFinalizarCompraSub {
+    margin: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra,
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+    margin: 5% 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra {
+    padding: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+    padding: 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub {
+    padding: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl {
+    padding: 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi {
+    margin: 5% 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 .mainFinalizarCompraResumenUlLiSub1Img {
+    width: 150px;
+  }
+  /* ---------- loguearse html ---------- */
+  /* main */
+  .bodyLoguearseMain .bodyLoguearseMainContCorreo,
+  .bodyLoguearseMain .bodyLoguearseMainContContra,
+  .bodyLoguearseMain .bodyLoguearseMainBtn {
+    width: 50%;
+  }
+  /* ---------- play, xbox, nintendo html ---------- */
+  /* main */
+  .mainProductos .mainProductosMiniHeader .mainProductosMiniHeaderFiltros .mainProductosMiniHeaderFiltrosPrecios {
+    margin-bottom: 5%;
+  }
+  /* ---------- perfil html ---------- */
+  /* main */
+  .mainPerfil .mainPerfilTarjetaDatos .mainPerfilTarjetaDatosContenedor .mainPerfilTarjetaDatosMetodosDePago .metodosDePagoDelUsuario .metodosDePagoDelUsuarioLleno {
+    width: 100%;
+  }
+  /* ---------- registracion html ---------- */
+  /* main */
+  .bodyRegistrarMain .bodyRegistrarMainLogoContenedor .bodyRegistrarMainLogoContenedorImg {
+    width: 70%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor {
+    width: 80%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor .bodyRegistrarMainBodyContenedorSub {
+    padding: 0px 5%;
+  }
+  .bodyRegistrarMain .bodyRegistrarMainBodyContenedor .bodyRegistrarMainBodyContenedorSub .bodyRegistrarMainBodyContenedorBtn {
+    margin-top: 10%;
+  }
+}
+/* ---------------------------  768px  | | 1023px --------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* ---------- index html ---------- */
+  /* header */
+  .headerIndex .headerIndexNav .menuNavOpen {
+    width: 40%;
+  }
+  /* main */
+  .mainIndex {
+    /* portada */
+    /* catálogo */
+  }
+  .mainIndex .mainIndexPortadas {
+    height: 70vh !important;
+  }
+  .mainIndex .mainIndexPortadas .row .mainIndexPortadasPart1 .mainIndexPortadasPart1Img {
+    width: 80%;
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts {
+    padding: 5%;
+  }
+  /* ---------- buscador html ---------- */
+  /* main */
+  .mainProductos {
+    /* mini header */
+    /* productos */
+  }
+  .mainProductos .mainProductosMiniHeader {
+    padding: 5%;
+  }
+  .mainProductos .mainProductosConsolasTitle {
+    margin-top: 5%;
+  }
+  .mainProductos .mainProductosConsolas .mainProductosConsolasProductosCargados {
+    margin: 3% 0%;
+    padding: 2%;
+  }
+  /* ---------- finalizar compra html ---------- */
+  /* main */
+  .mainFinalizarCompra .mainFinalizarCompraSub {
+    margin: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra,
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+    margin: 5% 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraDatosDeLaCompra {
+    padding: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen {
+    padding: 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub {
+    padding: 5%;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl {
+    padding: 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi {
+    margin: 5% 0px;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .mainFinalizarCompra .mainFinalizarCompraSub .mainFinalizarCompraResumen .mainFinalizarCompraResumenSub .mainFinalizarCompraResumenUl .mainFinalizarCompraResumenUlLi .mainFinalizarCompraResumenUlLiSub .mainFinalizarCompraResumenUlLiSub1 .mainFinalizarCompraResumenUlLiSub1Img {
+    width: 100px;
+  }
+  /* ---------- loguearse html ---------- */
+  /* main */
+  .bodyLoguearseMain .bodyLoguearseMainContCorreo,
+  .bodyLoguearseMain .bodyLoguearseMainContContra,
+  .bodyLoguearseMain .bodyLoguearseMainBtn {
+    width: 50%;
+  }
+}
+/* ---------------------------  1024px  | | 1200px --------------------------- */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  /* main */
+  .mainIndex {
+    /* catálogo */
+  }
+  .mainIndex .mainIndexCatalogo .mainIndexCatalogoContendor .mainIndexCatalogoContendorTexts {
+    padding: 5%;
+  }
 }
 
 /*# sourceMappingURL=estilo.css.map */

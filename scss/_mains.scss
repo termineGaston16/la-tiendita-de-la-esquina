@@ -573,7 +573,7 @@
 
             /* metodos de pago */
             .mainPerfilTarjetaDatosMetodosDePago {
-                 
+
                 /* agregar Método de pago */
                 .mainPerfilTarjetaDatosMetodosDePagoAgregar {
                     .mainPerfilTarjetaDatosMetodosDePagoAgregarBtns {
@@ -588,12 +588,12 @@
                                     color: rgb(11, 11, 11);
                                     border: 1px solid rgb(11, 11, 11);
                                     box-shadow: 0px 0px 5px rgb(11, 11, 11);
-                                }    
+                                }
                             }
 
-                            .btnAgregarTarjetaClassText {}  
+                            .btnAgregarTarjetaClassText {}
                         }
-                    }   
+                    }
                 }
 
                 /* Métodos de pago del usuario */
@@ -651,7 +651,7 @@
                                     color: red;
                                 }
 
-                                &:active{
+                                &:active {
                                     border: 1px solid rgb(11, 11, 11);
                                 }
                             }
@@ -790,6 +790,175 @@
                 color: white;
             }
         }
+
+        /* botón finalizar compra */
+        .btnFinalizarLaCompra {
+            background-color: white;
+            color: black;
+
+            text-align: center;
+            margin-bottom: 5%;
+            width: 50%;
+            padding: 0px;
+            padding-top: 1%;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: black;
+                color: white;
+                text-shadow: 0px 0px 5px white;
+                border: 1px solid white;
+                box-shadow: 0px 0px 5px white;
+            }
+        }
     }
 
+}
+
+/* Finalizar Compra */
+.mainFinalizarCompra {
+    @include allCentro;
+
+    .mainFinalizarCompraSub {
+        margin: 2% 0px;
+
+        /* Logo de Cargar */
+        .mainFinalizarCompraDatosDeLaCompra,
+        .mainFinalizarCompraResumen {
+            @include allCentro;
+            padding-top: 5%;
+
+            display: flex;
+            align-items: start;
+            justify-content: center;
+
+            background-color: rgb(8, 8, 8);
+            border: 2px solid white;
+            border-radius: 15px;
+
+            .logoLoading {
+                color: white;
+            }
+        }
+
+        /* Datos de la compra */
+        .mainFinalizarCompraDatosDeLaCompra {
+
+            /* datos */
+            .compraFinalInfo {
+                .compraFinalInfoText {
+                    color: white;
+
+                    .compraFinalInfoTextSpecial {
+                        color: rgb(244, 236, 162);
+                        text-shadow: 0px 0px 5px rgb(244, 236, 162);
+                    }
+                }
+            }
+
+            /* canjear codigo */
+            .compraFinalCodigo {
+                background-color: rgb(3, 3, 3);
+                border-radius: 15px;
+                padding: 5%;
+
+                .compraFinalCodigoTitle {
+                    color: white;
+                    text-shadow: 0px 0px 5px white;
+                }
+
+                .compraFinalCodigoInput {
+                    background-color: black;
+                    border: 1px solid black;
+                    color: white;
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+
+                    &::placeholder {
+                        color: rgb(204, 204, 204);
+                    }
+                }
+            }
+
+        }
+
+        /* Resumen */
+        .mainFinalizarCompraResumen {
+            .mainFinalizarCompraResumenSub {
+
+                .mainFinalizarCompraResumenSubTitle {
+                    color: white;
+                }
+
+                /* lista */
+                .mainFinalizarCompraResumenUl {
+                    margin-top: 2%;
+                    overflow: auto;
+                    height: 400px;
+
+                    list-style: none;
+
+                    .mainFinalizarCompraResumenUlLi {
+                        background-color: black;
+                        border: 1px solid white;
+                        padding: 5%;
+                        border-radius: 15px;
+
+                        .mainFinalizarCompraResumenUlLiSub {
+                            .mainFinalizarCompraResumenUlLiSub1 {
+                                background-color: white;
+                                border-radius: 15px;
+
+                                .mainFinalizarCompraResumenUlLiSub1Img {
+                                    width: 100%;
+                                }
+                            }
+
+                            .mainFinalizarCompraResumenUlLiSub2 {
+
+                                .mainFinalizarCompraResumenUlLiSub2H5,
+                                .mainFinalizarCompraResumenUlLiSub2H6,
+                                .mainFinalizarCompraResumenUlLiSub2Text {
+                                    color: white;
+                                    text-shadow: 0px 0px 5px white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Términos y Condiciones */
+        .terminosYCondicionesContenedor {
+            margin-top: 5%;
+            margin-left: 2%;
+        
+            .terminosYCondicionesContenedorText {
+                text-align: center;
+                color: white;
+                margin-left: 2%;
+            }
+        }
+
+        .btnNulo {
+            width: 100%;
+            border: 1px solid rgb(15, 15, 15);
+            margin: 2% 0px;
+            transition: 0.5s;
+        }
+
+        .btnListo{
+            border: 1px solid white;
+            color: white;
+            transition: 0.5s;
+
+            &:hover{
+                background-color: white;
+                color: black;
+            }
+        }
+    }
 }

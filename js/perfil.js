@@ -436,7 +436,7 @@ document.querySelector("#btnCarritoPerfilNav").addEventListener("click", () => {
         let btnFinalizarCompra = document.createElement("button")
         btnFinalizarCompra.id="idBtnFinalizarCompra";
         btnFinalizarCompra.classList.add("btn")
-        btnFinalizarCompra.classList.add("btn-primary")
+        btnFinalizarCompra.classList.add("btnFinalizarLaCompra")
         btnFinalizarCompra.innerHTML=`
             <p> Finalizar Compra </p>
         `
